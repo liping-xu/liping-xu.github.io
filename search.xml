@@ -4,18 +4,12 @@
   
     
     <entry>
-      <title>算法测试</title>
-      <link href="/2019/12/03/%E7%AE%97%E6%B3%95%E6%B5%8B%E8%AF%95/"/>
-      <url>/2019/12/03/%E7%AE%97%E6%B3%95%E6%B5%8B%E8%AF%95/</url>
+      <title>markdown文档测试</title>
+      <link href="/2019/12/04/markdown%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95/"/>
+      <url>/2019/12/04/markdown%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95/</url>
       
-        <content type="html"><![CDATA[<p>这是测试文章</p>]]></content>
+        <content type="html"><![CDATA[<p>前言:这是前言</p><a id="more"></a><h2 id="我是一级标题："><a href="#我是一级标题：" class="headerlink" title="我是一级标题："></a>我是一级标题：</h2><p>我是一级标题的段落</p><h2 id="我是二级标题："><a href="#我是二级标题：" class="headerlink" title="我是二级标题："></a>我是二级标题：</h2><p>我是二级标题的段落</p><p>我是图片<img src="/2019/12/04/markdown%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95/name.jpeg" alt="name"></p>]]></content>
       
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
       
       
     </entry>
