@@ -1,83 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>发布博客流程说明</title>
-      <link href="/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/"/>
-      <url>/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/</url>
-      
-        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。</p> <a id="more"></a></blockquote><h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p><p><a href>cd /Users/lipixu/Desktop/个人博客</a> </p><p>这个是本人电脑上安装hexo相关的文件夹路径。</p><p><a href>hexo new “文章名”</a> </p><p>然后你会在你的blog/souce/_post下回有你的新建的文件</p><p><a href>hexo server</a>（简写: hexo s）</p><p>可以在本地的localhost:4000上预览一下自己的文章</p><p><a href>hexo generate</a> （简写: hexo g) </p><p>生成网站静态文件到默认设置的public文件夹</p><p><a href>hexo deploy</a> (简写:hexo d)</p><p>自动生成网站静态文件，并部署到设定的仓库。</p><p>这时候文章上传完成。</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>@git之清除本地存在而远程仓库已删除的分支</title>
+    <url>/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> Gitlab服务器上已经合并了分支并且删除了，但是在我本地的sourcetree中的远端分支还存在着，长期会造成大量的分支挂在soureTree上面让人极度不舒服！</p>
+ <a id="more"></a>
+</blockquote>
+<h1 id="1、使用命令行执行命令"><a href="#1、使用命令行执行命令" class="headerlink" title="1、使用命令行执行命令"></a>1、使用命令行执行命令</h1><p>1、cd 进入git拉取的本地文件当中。</p>
+<p>2、命令行输入：git remote prune origin；这样本地的远程分支就同步gitlab服务器的了。</p>
+<p><img src="/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/1.png" alt="1"></p>
+]]></content>
       <categories>
-          
-          <category> 发布文章操作说明 </category>
-          
+        <category>git相关操作</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>iOS组件化学习-02</title>
-      <link href="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/"/>
-      <url>/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/</url>
-      
-        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章主要内容是了解SDK，静态库.a文件和.framework文件的各种概念。因为根据需求制作以上的文件的目的是解耦，给别人用又不想别人看见我们的源码。做SDK都是做静态库也就是.a和.framework文件。为了准确区分各种概念问题，对所有的概念问题做一个汇总。</p> <a id="more"></a></blockquote><h1 id="几个IT行业常用术语"><a href="#几个IT行业常用术语" class="headerlink" title="几个IT行业常用术语"></a>几个IT行业常用术语</h1><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><p>software Deveopment Kit：软件开发工具包</p><p>一般都是一些软件工程师为特定的软件包、软件框架，硬件平台、操作系统等建立应用软件时的开发工具的集合。</p><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Application Programming Interface：应用编程接口。</p><p>其实就是操作系统留给应用程序的一个调用接口，应用程序通过调用操作系统的API从而使操作系统去执行应用程序的命令。</p><h2 id="DLL"><a href="#DLL" class="headerlink" title="DLL"></a>DLL</h2><p>Dynamic Link Library，动态链接库。</p><p>在Windows环境下有大量的.dll格式的文件，这些文件就是动态链接库文件，其实也是一种可执行文件格式。跟.exe不同的是，.dll文件不能直接执行，他们通常由.exe在执行时装入，内容是一些资源以及可执行代码等。</p><h1 id="o文件和-a文件和-so文件的区别"><a href="#o文件和-a文件和-so文件的区别" class="headerlink" title=".o文件和.a文件和.so文件的区别"></a>.o文件和.a文件和.so文件的区别</h1><h2 id="o文件"><a href="#o文件" class="headerlink" title=".o文件"></a>.o文件</h2><p>.o文件就是对象文件，包含编译好的可执行代码，当程序执行时，被链接库链接条用（相当于windows里面的obj文件）。</p><h2 id="a文件"><a href="#a文件" class="headerlink" title=".a文件"></a>.a文件</h2><p>unix中的静态链接库，包含多个需要包含的.o文件，主要特点是在连接阶段即把库代码包含入可执行文件的方式（相当于windows操作系统的后缀名为.lib的静态库）。</p><h2 id="so文件"><a href="#so文件" class="headerlink" title=".so文件"></a>.so文件</h2><p>unix中的动态链接库，主要特点是，在运行阶段，动态加载组件时，在将函数加载到程序中，耦合度低（相当于window里面的dll组件）。</p><h1 id="什么是库"><a href="#什么是库" class="headerlink" title="什么是库"></a>什么是库</h1><p>库从本质上来说是一种可执行的二进制格式，可以被载入内存中执行。</p><p>库就是程序代码的集合，是共享代码的一种方式。</p><p>库从广义上可分为开源库和闭源库，而闭源库才分为静态库和动态库</p><h2 id="开源库"><a href="#开源库" class="headerlink" title="开源库"></a>开源库</h2><p>对外公开源码，能看到具体的代码实现，例如github上的第三方开源库都称为开源库。</p><h2 id="闭源库"><a href="#闭源库" class="headerlink" title="闭源库"></a>闭源库</h2><p>不公开源代码，文件是经过编译后的二进制文件，看不见具体实现，例如.a和.framework文件。</p><h2 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h2><p>链接时完整地拷贝至可执行文件中，被多次使用就是有多份冗余拷贝。</p><p>有两种存在形式：.a和.framework</p><h2 id="动态库"><a href="#动态库" class="headerlink" title="动态库"></a>动态库</h2><p>动态库不会复制，只有一份，程序运行时动态加载到内存；系统只加载一次，多个程序共用，节省内存。</p><p>有两种存在形式：.dylib和.framework</p><p>注意的是：系统的.framework是动态库，我们自己建立的.framework是静态库</p><p>但是项目中用到自己的动态库，苹果不允许上架！</p><h2 id="a"><a href="#a" class="headerlink" title=".a"></a>.a</h2><p>.a文件是一个纯二进制文件不能直接使用，必须要有.h文件才能使用，.h文件对外提供接口，.a文件是代码的具体实现，即.m。</p><h2 id="framework"><a href="#framework" class="headerlink" title=".framework"></a>.framework</h2><p>.framework中除了二进制文件之外还有资源文件，可以直接使用。</p><p>所以开发中建议使用.framework</p><h2 id="静态库的架构"><a href="#静态库的架构" class="headerlink" title="静态库的架构"></a>静态库的架构</h2><p>1、在不同的环境下静态库支持的架构也是不同的，模拟器下的静态库和真机下的静态库不能共用，不同型号编译的静态库也是不能共用的。</p><p>2、不同设备使用的CPU不同，从而使用的CPU架构（指令集）也不同，静态库有其支持的CPU架构，如果静态库在不支持的CPU架构上运行程序机会崩溃。</p><h3 id="模拟器使用的CPU架构"><a href="#模拟器使用的CPU架构" class="headerlink" title="模拟器使用的CPU架构"></a>模拟器使用的CPU架构</h3><p>iPhone4s - iPhone5: i386；</p><p>iphone5s - iPhoneX：x86_64;</p><h3 id="真机使用的CPU架构"><a href="#真机使用的CPU架构" class="headerlink" title="真机使用的CPU架构"></a>真机使用的CPU架构</h3><p>iPhone3gs - iPhone4s：armv7；</p><p>iphone5 - iPhone5c：armv7s；</p><p>iPhone5s - iPhoneX：armv64；</p><h3 id="查看静态库所支持的架构"><a href="#查看静态库所支持的架构" class="headerlink" title="查看静态库所支持的架构"></a>查看静态库所支持的架构</h3><p>使用终端，cd到静态库所在的目录，在执行lipo -info 静态库名称即可。</p><h3 id="如何编译多架构静态库"><a href="#如何编译多架构静态库" class="headerlink" title="如何编译多架构静态库"></a>如何编译多架构静态库</h3><p>怎样一次编译支持多个架构的静态库？</p><p>去工程的Build Settings 里面去修改 Build Active Architecture Only,这个选项是默认的YES，意思是只编译当前活跃环境的架构，设置成NO即可。</p><p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-134203@2x.png" alt="WX20200103-134203@2x">设置以后模拟器编译出来的就支持所有模拟器型号，真机亦是如此。</p><h2 id="静态库的版本"><a href="#静态库的版本" class="headerlink" title="静态库的版本"></a>静态库的版本</h2><p>和iOS证书一样分调试版本（Debug）和发布版本（Release）</p><p>真机 - Debug和Release；</p><p>模拟器 - Debug和Release；</p><h3 id="调试版本Debug"><a href="#调试版本Debug" class="headerlink" title="调试版本Debug"></a>调试版本Debug</h3><p>真机 - Debug版本和模拟器 - Debug版本</p><p>调试版本的特点：</p><p>调试版本会包含完整的符号信息，以方便调试。</p><p>调试版本不会带代码进行优化。</p><h3 id="发布版本Release"><a href="#发布版本Release" class="headerlink" title="发布版本Release"></a>发布版本Release</h3><p>发布版本的特点：</p><p>发布版本不会包含完整的符号信息。</p><p>发布版本的执行代码是进行过优化的。</p><p>发布版本的小大会闭调试版本的略小。</p><p>在执行速度方面，发布版本会更快些，但不意味着会有显著的提升。</p><h2 id="生成不同版本的静态库"><a href="#生成不同版本的静态库" class="headerlink" title="生成不同版本的静态库"></a>生成不同版本的静态库</h2><p>选择项目 -&gt; Edit Scheme -&gt; Run -&gt; Release/Debug分别进行编译，即可得到不同版本的静态库。<img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-140029@2x.png" alt="WX20200103-140029@2x"></p><h2 id="生成-a和-h文件"><a href="#生成-a和-h文件" class="headerlink" title="生成.a和.h文件"></a>生成.a和.h文件</h2><p>正常情况下，生成的.h文件是在<code>..//include/$(PRODUCT_NAME)</code>目录下的，<code>$(PRODUCT_NAME)</code>指的是项目名称。</p><p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-142612@2x.png" alt="WX20200103-142612@2x"></p><p>修改Subpath的路径地址，即可修改.h文件生成的路径，填空即为和.a文件在统计目录下。</p><p>在Products文件夹下，command + B编译之后，show in Finder即可找到生成的静态库。</p><h2 id="合并静态库"><a href="#合并静态库" class="headerlink" title="合并静态库"></a>合并静态库</h2><p>因为静态库针对模拟器和真机生成了不同的版本（支持不同架构），所以没发同时运行。</p><p>合并后的静态库既可以在真机上调试，也可以在模拟器上调试，省去了来回切换的麻烦。</p><p>但是合并以后的静态库大小是模拟器和真机的大小之和，如果静态库太大。合并打包后，会非常大。因此很多第三方的静态库的.a是区分版本的。</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下所有方式得到的静态库都可以通过lipo -info xx.a方式检测现有的架构, 注意要在xx.a所在的目录下</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 合并静态库</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">lipo -create 静态库<span class="number">1</span>路径 静态库<span class="number">2</span>路径 -output 合并后的静态库名称</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">lipo -create /Users/xxx/Debug-iphoneos/libStateLib.a /Users/xxx/Debug-iphonesimulator/libStateLib.a -output hahah.a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 移除某一个架构</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">lipo -remove 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">lipo -remove arm64 /Users/xxx/Build/Products/hahah.a -output ha_arm64.a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 拆分出一个单独架构的静态库</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">lipo -thin 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">lipo -thin arm64 /Users/xxx/Build/Products/hahah.a -output only_arm64.a</span></pre></td></tr></table></figure>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>发布博客流程说明</title>
+    <url>/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。</p>
+ <a id="more"></a>
+</blockquote>
+<h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p>
+<p><a href>cd /Users/lipixu/Desktop/个人博客</a> </p>
+<p>这个是本人电脑上安装hexo相关的文件夹路径。</p>
+<p><a href>hexo new “文章名”</a> </p>
+<p>然后你会在你的blog/souce/_post下回有你的新建的文件</p>
+<p><a href>hexo server</a>（简写: hexo s）</p>
+<p>可以在本地的localhost:4000上预览一下自己的文章</p>
+<p><a href>hexo generate</a> （简写: hexo g) </p>
+<p>生成网站静态文件到默认设置的public文件夹</p>
+<p><a href>hexo deploy</a> (简写:hexo d)</p>
+<p>自动生成网站静态文件，并部署到设定的仓库。</p>
+<p>这时候文章上传完成。</p>
+]]></content>
       <categories>
-          
-          <category> iOS组件化相关 </category>
-          
+        <category>发布文章操作说明</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>iOS组件化学习-01</title>
-      <link href="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/"/>
-      <url>/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/</url>
-      
-        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章开始学习如何进行工程的组件化，主要内容是本地私有库的制作和如何关联远程私有库。并将本地私有pod push 进本地私有库。</p> <a id="more"></a></blockquote><h1 id="组件化的方案："><a href="#组件化的方案：" class="headerlink" title="组件化的方案："></a>组件化的方案：</h1><p>1、蘑菇街的URL方案：</p><p>2、runtime + 命令模式的方案：</p><p>3、协议的方案</p><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><h2 id="什么是组件化："><a href="#什么是组件化：" class="headerlink" title="什么是组件化："></a>什么是组件化：</h2><p>将一个工程分解为各个组件，然后按照某种方式任意组织成为一个拥有完整业务逻辑的工程。</p><h2 id="组件化的优缺点"><a href="#组件化的优缺点" class="headerlink" title="组件化的优缺点"></a>组件化的优缺点</h2><p>优点：1、组件的独立性                     </p><p>​            2、资源重用</p><p>​            3、高效迭代性</p><p>​            4、配合二进制，加快项目的编译速度</p><p>缺点：1、组件的粒度大小</p><p>​            2、区分业务组件以及基础业务组件</p><h2 id="组件划分"><a href="#组件划分" class="headerlink" title="组件划分"></a>组件划分</h2><h3 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h3><p>基础配置（宏，常量），分类，网络（AFN，SDW二次封装），工具类（日期时间的处理，文件处理，设备处理）</p><h3 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h3><p>控件（弹幕，轮播图，选项卡）；功能（断点续传，音频处理）</p><h3 id="业务组件"><a href="#业务组件" class="headerlink" title="业务组件"></a>业务组件</h3><p>业务线一，业务线二….</p><h1 id="本地库"><a href="#本地库" class="headerlink" title="本地库"></a>本地库</h1><p>利用Cocoapods将我们抽取出的代码模块制作成pod集成到我们的工程。</p><h2 id="pod-引用"><a href="#pod-引用" class="headerlink" title="pod 引用"></a>pod 引用</h2><p>pod install命令引入pod：</p><p>每一个pod里面均有一个Spec文件（描述框架信息文件（框架名称，框架版本号，框架真实源码））。</p><h2 id="执行pod-install"><a href="#执行pod-install" class="headerlink" title="执行pod install"></a>执行pod install</h2><p>​    1、先去找本地的.Spec文件。</p><p>​    2、如果没有，再去远程仓库将.Spec文件拉到本地，在执行1.</p><h2 id="本地-Spec的文件："><a href="#本地-Spec的文件：" class="headerlink" title="本地.Spec的文件："></a>本地.Spec的文件：</h2><p>​    pod setup将远程仓库的Spec文件拉到本地。</p><h1 id="创建本地私有库"><a href="#创建本地私有库" class="headerlink" title="创建本地私有库"></a>创建本地私有库</h1><h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><blockquote><p>终端: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd &lt;想要创建位置的文件夹&gt;</span></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod spec create &lt;本地库名字&gt; </span></pre></td></tr></table></figure></blockquote><p>以上这种方式不推荐，因为部分s.source_files文件内容等需要自己填写，Classes，FILE_LICENSE等文件需要自己创建。太麻烦，弃用。</p><blockquote><p>终端:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod lib create &lt;本地库名字&gt;</span></pre></td></tr></table></figure></blockquote><p>回答相应的问题即可。生成的文件如下:</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163627@2x.png" alt="WX20191205-163627@2x"></p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163816@2x.png" alt="WX20191205-163627@2x"></p><p>至此：本地私有库搭建完成。</p><h1 id="创建并设置一个私有的Spec-Repo"><a href="#创建并设置一个私有的Spec-Repo" class="headerlink" title="创建并设置一个私有的Spec Repo"></a>创建并设置一个私有的Spec Repo</h1><h2 id="什么是Spec-Repo？"><a href="#什么是Spec-Repo？" class="headerlink" title="什么是Spec Repo？"></a>什么是Spec Repo？</h2><p>它是所有的Pods的一个索引，一个容器，所有的公开的Pods都在这个里面，它实际是一个Git仓库remote端在GitHub上，当你使用Cocoapods后它会被clone到本地的~/.cocoapods/repos目录下，可以进入这个目录看到master文件夹就试这个官方的Spec Repo了，这个master目录结构是这个样子的</p><blockquote><p>├── Specs<br>└── [SPEC_NAME]<br>└── [VERSION]<br>└── [SPEC_NAME].podspec</p></blockquote><h2 id="创建本地索引库并与远程库相关联"><a href="#创建本地索引库并与远程库相关联" class="headerlink" title="创建本地索引库并与远程库相关联"></a>创建本地索引库并与远程库相关联</h2><p>1、首先我们在GitHub上创建一个自己的仓库（repository Name）</p><p>2、在本地创建Spec Repo</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">#pod repo add [Private Repo Name] [对应的.git URL]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$pod repo add xlp_test https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;xlp_test.git</span></pre></td></tr></table></figure><p>进~/.cocoapods/repos目录就能看见我们自己的pod仓库了。至此第一步创建私有Spec Repo完成。</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110154@2x.png" alt="WX20191212-110154@2x"></p><p>执行 pod repo list查看repo列表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod repo list</span></pre></td></tr></table></figure><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110421@2x.png" alt="WX20191212-110421@2x"></p><p> PS:如果有其他合作人员共同使用这个私有Spec Repo的话在他有对应Git仓库的权限的前提执行相同的命令添加这个Spec Repo即可</p><h2 id="编辑Pod文件夹并与远程库相关联"><a href="#编辑Pod文件夹并与远程库相关联" class="headerlink" title="编辑Pod文件夹并与远程库相关联"></a>编辑Pod文件夹并与远程库相关联</h2><p>向Pod文件夹中添加库文件和资源，并配置podspec文件。</p><h3 id="添加代码和图片等资源文件"><a href="#添加代码和图片等资源文件" class="headerlink" title="添加代码和图片等资源文件"></a>添加代码和图片等资源文件</h3><p>在上面那张生成Lib的图里面可以看见放置代码和图片的位置，</p><p>在pod/Classes中添加代码，在pod/Assets里面添加图片。然后进入终端：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$cd Example</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$pod update</span></pre></td></tr></table></figure><p>再打开项目工程就可以看见刚添加的文件了。</p><p>注：这里需要注意是的每当你向Pod添加了新的文件或者以后更新了podspec的版本都需要重新执行pod update命令。</p><p>测试无误后将项目添加并推送到远端仓库，并编辑podspec文件</p><h3 id="编辑podspec文件并与远程库"><a href="#编辑podspec文件并与远程库" class="headerlink" title="编辑podspec文件并与远程库"></a>编辑podspec文件并与远程库</h3><p>首先通过Cocoapods创建出来的目录本身就在本地的Git管理下，我们需要做的就是将它添加到远端仓库。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd &lt;lib文件夹&gt;</span></pre></td></tr></table></figure><p>git提交相应的代码:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git add .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ git commit -s -m &quot;初始化library&quot;</span></pre></td></tr></table></figure><p>git 添加远端仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># git remote add origin &lt;.git URL&gt; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ git remote add origin https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tool_test.git</span></pre></td></tr></table></figure><p>git 推送到远程仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git push origin master</span></pre></td></tr></table></figure><p>因为podspec文件中获取git版本控制的项目需要tag号，所以需要打个tag</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git tag -m &quot;第一次提交&quot; &quot;0.1.0&quot;</span></pre></td></tr></table></figure><p>推送tag到远端仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git push --tags</span></pre></td></tr></table></figure><p>打开lib文件中的例子工程Example/tools_test.xworkspace，编辑tools_test.podspec文件</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-204611@2x.png" alt="WX20191212-204611@2x"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.name             &#x3D; &#39;tools_test &#39; ##名字必须与libname相同</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">s.summary          &#x3D; ’这是测试库‘ #关于库的一个简短的描述</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">s.description      &#x3D; &lt;&lt;-DESC</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">TODO: 备注文字(较长描述)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                            DESC</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">#是否支持arc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">s.requires_arc &#x3D; true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">#文件主页</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">#开源协议</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">s.license          &#x3D; &#123; :type &#x3D;&gt; &#39;MIT&#39;, :file &#x3D;&gt; &#39;LICENSE&#39; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">#作者信息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">s.author           &#x3D; &#123; &#39;Maoyis&#39; &#x3D;&gt; &#39;xxxxxx@qq.com&#39; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">#源文件所在网络路径</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">#支持版本</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">s.ios.deployment_target &#x3D; &#39;7.0&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">#公开头文件名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">s.public_header_files &#x3D; &#39;Pod&#x2F;Classes&#x2F;**&#x2F;*.h&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">#依赖的框架</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">s.frameworks &#x3D; &#39;UIKit&#39;, &#39;MapKit&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">#依赖库</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">s.dependency &#39;AFNetworking&#39;, &#39;~&gt; 2.3&#39;</span></pre></td></tr></table></figure><p>以上.podspec文件最重要的三个地方要填写正确</p><p>这个是资源地址：放置你的源码和资源文件的地方</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr></table></figure><p>这个是主页地址：如果是私有库的话可以填写自己的github主页地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr></table></figure><p>这个是tag值，在git里面打的tag值必须和podspec文件里面的一致，否则报错</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr></table></figure><p>到此检查一下你的本地和远程pod是否正确，在终端里面输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-214537@2x.png" alt="WX20191212-214537@2x"></p><p>这样表示验证通过。</p><p>ps：这里指令有两种</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod lib lint</span></pre></td></tr></table></figure><p>上面这种写法表示只验证本地库中的pod是否正确</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure><p>上面这种写法表示从本地库和远程库两个方面去验证pod是否正确。</p><h3 id="将lib-podsepc文件提交本地索引库"><a href="#将lib-podsepc文件提交本地索引库" class="headerlink" title="将lib.podsepc文件提交本地索引库"></a>将lib.podsepc文件提交本地索引库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名称&gt; &lt;本地pod名称&gt;.podspec</span></pre></td></tr></table></figure><h1 id="清坑"><a href="#清坑" class="headerlink" title="清坑"></a>清坑</h1><p>这里有些坑需要理一下。</p><p>首先在创建私有库，在终端pod repo add的时候创建远程仓库时候</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202203@2x.png" alt="WX20191212-202203@2x"></p><p>这个要点上，不然远程仓库没有master分支，导致后面</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名&gt; &lt;创建的pod名&gt;.podspec</span></pre></td></tr></table></figure><p>失败。原因就在于没有master分支。</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202911@2x.png" alt="WX20191212-202911@2x"></p><p>这样就导致push失败。如下图所示:</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-215048@2x.png" alt="WX20191212-215048@2x"></p><p>至此，本地库与远程库关联并且搭建完成。</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>iOS组件化学习-02</title>
+    <url>/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章主要内容是了解SDK，静态库.a文件和.framework文件的各种概念。因为根据需求制作以上的文件的目的是解耦，给别人用又不想别人看见我们的源码。做SDK都是做静态库也就是.a和.framework文件。为了准确区分各种概念问题，对所有的概念问题做一个汇总。</p>
+ <a id="more"></a>
+</blockquote>
+<h1 id="几个IT行业常用术语"><a href="#几个IT行业常用术语" class="headerlink" title="几个IT行业常用术语"></a>几个IT行业常用术语</h1><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><p>software Deveopment Kit：软件开发工具包</p>
+<p>一般都是一些软件工程师为特定的软件包、软件框架，硬件平台、操作系统等建立应用软件时的开发工具的集合。</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Application Programming Interface：应用编程接口。</p>
+<p>其实就是操作系统留给应用程序的一个调用接口，应用程序通过调用操作系统的API从而使操作系统去执行应用程序的命令。</p>
+<h2 id="DLL"><a href="#DLL" class="headerlink" title="DLL"></a>DLL</h2><p>Dynamic Link Library，动态链接库。</p>
+<p>在Windows环境下有大量的.dll格式的文件，这些文件就是动态链接库文件，其实也是一种可执行文件格式。跟.exe不同的是，.dll文件不能直接执行，他们通常由.exe在执行时装入，内容是一些资源以及可执行代码等。</p>
+<h1 id="o文件和-a文件和-so文件的区别"><a href="#o文件和-a文件和-so文件的区别" class="headerlink" title=".o文件和.a文件和.so文件的区别"></a>.o文件和.a文件和.so文件的区别</h1><h2 id="o文件"><a href="#o文件" class="headerlink" title=".o文件"></a>.o文件</h2><p>.o文件就是对象文件，包含编译好的可执行代码，当程序执行时，被链接库链接条用（相当于windows里面的obj文件）。</p>
+<h2 id="a文件"><a href="#a文件" class="headerlink" title=".a文件"></a>.a文件</h2><p>unix中的静态链接库，包含多个需要包含的.o文件，主要特点是在连接阶段即把库代码包含入可执行文件的方式（相当于windows操作系统的后缀名为.lib的静态库）。</p>
+<h2 id="so文件"><a href="#so文件" class="headerlink" title=".so文件"></a>.so文件</h2><p>unix中的动态链接库，主要特点是，在运行阶段，动态加载组件时，在将函数加载到程序中，耦合度低（相当于window里面的dll组件）。</p>
+<h1 id="什么是库"><a href="#什么是库" class="headerlink" title="什么是库"></a>什么是库</h1><p>库从本质上来说是一种可执行的二进制格式，可以被载入内存中执行。</p>
+<p>库就是程序代码的集合，是共享代码的一种方式。</p>
+<p>库从广义上可分为开源库和闭源库，而闭源库才分为静态库和动态库</p>
+<h2 id="开源库"><a href="#开源库" class="headerlink" title="开源库"></a>开源库</h2><p>对外公开源码，能看到具体的代码实现，例如github上的第三方开源库都称为开源库。</p>
+<h2 id="闭源库"><a href="#闭源库" class="headerlink" title="闭源库"></a>闭源库</h2><p>不公开源代码，文件是经过编译后的二进制文件，看不见具体实现，例如.a和.framework文件。</p>
+<h2 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h2><p>链接时完整地拷贝至可执行文件中，被多次使用就是有多份冗余拷贝。</p>
+<p>有两种存在形式：.a和.framework</p>
+<h2 id="动态库"><a href="#动态库" class="headerlink" title="动态库"></a>动态库</h2><p>动态库不会复制，只有一份，程序运行时动态加载到内存；系统只加载一次，多个程序共用，节省内存。</p>
+<p>有两种存在形式：.dylib和.framework</p>
+<p>注意的是：系统的.framework是动态库，我们自己建立的.framework是静态库</p>
+<p>但是项目中用到自己的动态库，苹果不允许上架！</p>
+<h2 id="a"><a href="#a" class="headerlink" title=".a"></a>.a</h2><p>.a文件是一个纯二进制文件不能直接使用，必须要有.h文件才能使用，.h文件对外提供接口，.a文件是代码的具体实现，即.m。</p>
+<h2 id="framework"><a href="#framework" class="headerlink" title=".framework"></a>.framework</h2><p>.framework中除了二进制文件之外还有资源文件，可以直接使用。</p>
+<p>所以开发中建议使用.framework</p>
+<h2 id="静态库的架构"><a href="#静态库的架构" class="headerlink" title="静态库的架构"></a>静态库的架构</h2><p>1、在不同的环境下静态库支持的架构也是不同的，模拟器下的静态库和真机下的静态库不能共用，不同型号编译的静态库也是不能共用的。</p>
+<p>2、不同设备使用的CPU不同，从而使用的CPU架构（指令集）也不同，静态库有其支持的CPU架构，如果静态库在不支持的CPU架构上运行程序机会崩溃。</p>
+<h3 id="模拟器使用的CPU架构"><a href="#模拟器使用的CPU架构" class="headerlink" title="模拟器使用的CPU架构"></a>模拟器使用的CPU架构</h3><p>iPhone4s - iPhone5: i386；</p>
+<p>iphone5s - iPhoneX：x86_64;</p>
+<h3 id="真机使用的CPU架构"><a href="#真机使用的CPU架构" class="headerlink" title="真机使用的CPU架构"></a>真机使用的CPU架构</h3><p>iPhone3gs - iPhone4s：armv7；</p>
+<p>iphone5 - iPhone5c：armv7s；</p>
+<p>iPhone5s - iPhoneX：armv64；</p>
+<h3 id="查看静态库所支持的架构"><a href="#查看静态库所支持的架构" class="headerlink" title="查看静态库所支持的架构"></a>查看静态库所支持的架构</h3><p>使用终端，cd到静态库所在的目录，在执行lipo -info 静态库名称即可。</p>
+<h3 id="如何编译多架构静态库"><a href="#如何编译多架构静态库" class="headerlink" title="如何编译多架构静态库"></a>如何编译多架构静态库</h3><p>怎样一次编译支持多个架构的静态库？</p>
+<p>去工程的Build Settings 里面去修改 Build Active Architecture Only,这个选项是默认的YES，意思是只编译当前活跃环境的架构，设置成NO即可。</p>
+<p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-134203@2x.png" alt="WX20200103-134203@2x">设置以后模拟器编译出来的就支持所有模拟器型号，真机亦是如此。</p>
+<h2 id="静态库的版本"><a href="#静态库的版本" class="headerlink" title="静态库的版本"></a>静态库的版本</h2><p>和iOS证书一样分调试版本（Debug）和发布版本（Release）</p>
+<p>真机 - Debug和Release；</p>
+<p>模拟器 - Debug和Release；</p>
+<h3 id="调试版本Debug"><a href="#调试版本Debug" class="headerlink" title="调试版本Debug"></a>调试版本Debug</h3><p>真机 - Debug版本和模拟器 - Debug版本</p>
+<p>调试版本的特点：</p>
+<p>调试版本会包含完整的符号信息，以方便调试。</p>
+<p>调试版本不会带代码进行优化。</p>
+<h3 id="发布版本Release"><a href="#发布版本Release" class="headerlink" title="发布版本Release"></a>发布版本Release</h3><p>发布版本的特点：</p>
+<p>发布版本不会包含完整的符号信息。</p>
+<p>发布版本的执行代码是进行过优化的。</p>
+<p>发布版本的小大会闭调试版本的略小。</p>
+<p>在执行速度方面，发布版本会更快些，但不意味着会有显著的提升。</p>
+<h2 id="生成不同版本的静态库"><a href="#生成不同版本的静态库" class="headerlink" title="生成不同版本的静态库"></a>生成不同版本的静态库</h2><p>选择项目 -&gt; Edit Scheme -&gt; Run -&gt; Release/Debug分别进行编译，即可得到不同版本的静态库。<img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-140029@2x.png" alt="WX20200103-140029@2x"></p>
+<h2 id="生成-a和-h文件"><a href="#生成-a和-h文件" class="headerlink" title="生成.a和.h文件"></a>生成.a和.h文件</h2><p>正常情况下，生成的.h文件是在<code>..//include/$(PRODUCT_NAME)</code>目录下的，<code>$(PRODUCT_NAME)</code>指的是项目名称。</p>
+<p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-142612@2x.png" alt="WX20200103-142612@2x"></p>
+<p>修改Subpath的路径地址，即可修改.h文件生成的路径，填空即为和.a文件在统计目录下。</p>
+<p>在Products文件夹下，command + B编译之后，show in Finder即可找到生成的静态库。</p>
+<h2 id="合并静态库"><a href="#合并静态库" class="headerlink" title="合并静态库"></a>合并静态库</h2><p>因为静态库针对模拟器和真机生成了不同的版本（支持不同架构），所以没发同时运行。</p>
+<p>合并后的静态库既可以在真机上调试，也可以在模拟器上调试，省去了来回切换的麻烦。</p>
+<p>但是合并以后的静态库大小是模拟器和真机的大小之和，如果静态库太大。合并打包后，会非常大。因此很多第三方的静态库的.a是区分版本的。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以下所有方式得到的静态库都可以通过lipo -info xx.a方式检测现有的架构, 注意要在xx.a所在的目录下</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 合并静态库</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -create 静态库<span class="number">1</span>路径 静态库<span class="number">2</span>路径 -output 合并后的静态库名称</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -create /Users/xxx/Debug-iphoneos/libStateLib.a /Users/xxx/Debug-iphonesimulator/libStateLib.a -output hahah.a</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 2. 移除某一个架构</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -remove 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -remove arm64 /Users/xxx/Build/Products/hahah.a -output ha_arm64.a</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 2. 拆分出一个单独架构的静态库</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -thin 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -thin arm64 /Users/xxx/Build/Products/hahah.a -output only_arm64.a</span></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
-          
-          <category> iOS组件化相关 </category>
-          
+        <category>iOS组件化相关</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人博客说明</title>
-      <link href="/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/"/>
-      <url>/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</url>
-      
-        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。</p> <a id="more"></a></blockquote><p>搭建的过程就不多说了，网上随便找个教程跟着搭建就完事了，主要是记录自己的技术等经历。</p>]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>iOS组件化学习-01</title>
+    <url>/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章开始学习如何进行工程的组件化，主要内容是本地私有库的制作和如何关联远程私有库。并将本地私有pod push 进本地私有库。</p>
+ <a id="more"></a>
+</blockquote>
+<h1 id="组件化的方案："><a href="#组件化的方案：" class="headerlink" title="组件化的方案："></a>组件化的方案：</h1><p>1、蘑菇街的URL方案：</p>
+<p>2、runtime + 命令模式的方案：</p>
+<p>3、协议的方案</p>
+<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><h2 id="什么是组件化："><a href="#什么是组件化：" class="headerlink" title="什么是组件化："></a>什么是组件化：</h2><p>将一个工程分解为各个组件，然后按照某种方式任意组织成为一个拥有完整业务逻辑的工程。</p>
+<h2 id="组件化的优缺点"><a href="#组件化的优缺点" class="headerlink" title="组件化的优缺点"></a>组件化的优缺点</h2><p>优点：1、组件的独立性                     </p>
+<p>​            2、资源重用</p>
+<p>​            3、高效迭代性</p>
+<p>​            4、配合二进制，加快项目的编译速度</p>
+<p>缺点：1、组件的粒度大小</p>
+<p>​            2、区分业务组件以及基础业务组件</p>
+<h2 id="组件划分"><a href="#组件划分" class="headerlink" title="组件划分"></a>组件划分</h2><h3 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h3><p>基础配置（宏，常量），分类，网络（AFN，SDW二次封装），工具类（日期时间的处理，文件处理，设备处理）</p>
+<h3 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h3><p>控件（弹幕，轮播图，选项卡）；功能（断点续传，音频处理）</p>
+<h3 id="业务组件"><a href="#业务组件" class="headerlink" title="业务组件"></a>业务组件</h3><p>业务线一，业务线二….</p>
+<h1 id="本地库"><a href="#本地库" class="headerlink" title="本地库"></a>本地库</h1><p>利用Cocoapods将我们抽取出的代码模块制作成pod集成到我们的工程。</p>
+<h2 id="pod-引用"><a href="#pod-引用" class="headerlink" title="pod 引用"></a>pod 引用</h2><p>pod install命令引入pod：</p>
+<p>每一个pod里面均有一个Spec文件（描述框架信息文件（框架名称，框架版本号，框架真实源码））。</p>
+<h2 id="执行pod-install"><a href="#执行pod-install" class="headerlink" title="执行pod install"></a>执行pod install</h2><p>​    1、先去找本地的.Spec文件。</p>
+<p>​    2、如果没有，再去远程仓库将.Spec文件拉到本地，在执行1.</p>
+<h2 id="本地-Spec的文件："><a href="#本地-Spec的文件：" class="headerlink" title="本地.Spec的文件："></a>本地.Spec的文件：</h2><p>​    pod setup将远程仓库的Spec文件拉到本地。</p>
+<h1 id="创建本地私有库"><a href="#创建本地私有库" class="headerlink" title="创建本地私有库"></a>创建本地私有库</h1><h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><blockquote>
+<p>终端: </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &lt;想要创建位置的文件夹&gt;</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pod spec create &lt;本地库名字&gt; </span></pre></td></tr></table></figure>
+</blockquote>
+<p>以上这种方式不推荐，因为部分s.source_files文件内容等需要自己填写，Classes，FILE_LICENSE等文件需要自己创建。太麻烦，弃用。</p>
+<blockquote>
+<p>终端:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pod lib create &lt;本地库名字&gt;</span></pre></td></tr></table></figure>
+</blockquote>
+<p>回答相应的问题即可。生成的文件如下:</p>
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163627@2x.png" alt="WX20191205-163627@2x"></p>
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163816@2x.png" alt="WX20191205-163627@2x"></p>
+<p>至此：本地私有库搭建完成。</p>
+<h1 id="创建并设置一个私有的Spec-Repo"><a href="#创建并设置一个私有的Spec-Repo" class="headerlink" title="创建并设置一个私有的Spec Repo"></a>创建并设置一个私有的Spec Repo</h1><h2 id="什么是Spec-Repo？"><a href="#什么是Spec-Repo？" class="headerlink" title="什么是Spec Repo？"></a>什么是Spec Repo？</h2><p>它是所有的Pods的一个索引，一个容器，所有的公开的Pods都在这个里面，它实际是一个Git仓库remote端在GitHub上，当你使用Cocoapods后它会被clone到本地的~/.cocoapods/repos目录下，可以进入这个目录看到master文件夹就试这个官方的Spec Repo了，这个master目录结构是这个样子的</p>
+<blockquote>
+<p>├── Specs<br>└── [SPEC_NAME]<br>└── [VERSION]<br>└── [SPEC_NAME].podspec</p>
+</blockquote>
+<h2 id="创建本地索引库并与远程库相关联"><a href="#创建本地索引库并与远程库相关联" class="headerlink" title="创建本地索引库并与远程库相关联"></a>创建本地索引库并与远程库相关联</h2><p>1、首先我们在GitHub上创建一个自己的仓库（repository Name）</p>
+<p>2、在本地创建Spec Repo</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#pod repo add [Private Repo Name] [对应的.git URL]</span></pre></td></tr><tr><td class="code"><pre><span class="line">$pod repo add xlp_test https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;xlp_test.git</span></pre></td></tr></table></figure>
+
+<p>进~/.cocoapods/repos目录就能看见我们自己的pod仓库了。至此第一步创建私有Spec Repo完成。</p>
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110154@2x.png" alt="WX20191212-110154@2x"></p>
+<p>执行 pod repo list查看repo列表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo list</span></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110421@2x.png" alt="WX20191212-110421@2x"></p>
+<p> PS:如果有其他合作人员共同使用这个私有Spec Repo的话在他有对应Git仓库的权限的前提执行相同的命令添加这个Spec Repo即可</p>
+<h2 id="编辑Pod文件夹并与远程库相关联"><a href="#编辑Pod文件夹并与远程库相关联" class="headerlink" title="编辑Pod文件夹并与远程库相关联"></a>编辑Pod文件夹并与远程库相关联</h2><p>向Pod文件夹中添加库文件和资源，并配置podspec文件。</p>
+<h3 id="添加代码和图片等资源文件"><a href="#添加代码和图片等资源文件" class="headerlink" title="添加代码和图片等资源文件"></a>添加代码和图片等资源文件</h3><p>在上面那张生成Lib的图里面可以看见放置代码和图片的位置，</p>
+<p>在pod/Classes中添加代码，在pod/Assets里面添加图片。然后进入终端：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$cd Example</span></pre></td></tr><tr><td class="code"><pre><span class="line">$pod update</span></pre></td></tr></table></figure>
+
+<p>再打开项目工程就可以看见刚添加的文件了。</p>
+<p>注：这里需要注意是的每当你向Pod添加了新的文件或者以后更新了podspec的版本都需要重新执行pod update命令。</p>
+<p>测试无误后将项目添加并推送到远端仓库，并编辑podspec文件</p>
+<h3 id="编辑podspec文件并与远程库"><a href="#编辑podspec文件并与远程库" class="headerlink" title="编辑podspec文件并与远程库"></a>编辑podspec文件并与远程库</h3><p>首先通过Cocoapods创建出来的目录本身就在本地的Git管理下，我们需要做的就是将它添加到远端仓库。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &lt;lib文件夹&gt;</span></pre></td></tr></table></figure>
+
+<p>git提交相应的代码:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git add .</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git commit -s -m &quot;初始化library&quot;</span></pre></td></tr></table></figure>
+
+<p>git 添加远端仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># git remote add origin &lt;.git URL&gt; </span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git remote add origin https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tool_test.git</span></pre></td></tr></table></figure>
+
+<p>git 推送到远程仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span></pre></td></tr></table></figure>
+
+<p>因为podspec文件中获取git版本控制的项目需要tag号，所以需要打个tag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git tag -m &quot;第一次提交&quot; &quot;0.1.0&quot;</span></pre></td></tr></table></figure>
+
+<p>推送tag到远端仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git push --tags</span></pre></td></tr></table></figure>
+
+<p>打开lib文件中的例子工程Example/tools_test.xworkspace，编辑tools_test.podspec文件</p>
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-204611@2x.png" alt="WX20191212-204611@2x"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.name             &#x3D; &#39;tools_test &#39; ##名字必须与libname相同</span></pre></td></tr><tr><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr><tr><td class="code"><pre><span class="line">s.summary          &#x3D; ’这是测试库‘ #关于库的一个简短的描述</span></pre></td></tr><tr><td class="code"><pre><span class="line">s.description      &#x3D; &lt;&lt;-DESC</span></pre></td></tr><tr><td class="code"><pre><span class="line">TODO: 备注文字(较长描述)</span></pre></td></tr><tr><td class="code"><pre><span class="line">                            DESC</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#是否支持arc</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.requires_arc &#x3D; true</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#文件主页</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#开源协议</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.license          &#x3D; &#123; :type &#x3D;&gt; &#39;MIT&#39;, :file &#x3D;&gt; &#39;LICENSE&#39; &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#作者信息</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.author           &#x3D; &#123; &#39;Maoyis&#39; &#x3D;&gt; &#39;xxxxxx@qq.com&#39; &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#源文件所在网络路径</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#支持版本</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.ios.deployment_target &#x3D; &#39;7.0&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#公开头文件名</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.public_header_files &#x3D; &#39;Pod&#x2F;Classes&#x2F;**&#x2F;*.h&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#依赖的框架</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.frameworks &#x3D; &#39;UIKit&#39;, &#39;MapKit&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#依赖库</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.dependency &#39;AFNetworking&#39;, &#39;~&gt; 2.3&#39;</span></pre></td></tr></table></figure>
+
+<p>以上.podspec文件最重要的三个地方要填写正确</p>
+<p>这个是资源地址：放置你的源码和资源文件的地方</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr></table></figure>
+
+<p>这个是主页地址：如果是私有库的话可以填写自己的github主页地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr></table></figure>
+
+<p>这个是tag值，在git里面打的tag值必须和podspec文件里面的一致，否则报错</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr></table></figure>
+
+<p>到此检查一下你的本地和远程pod是否正确，在终端里面输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-214537@2x.png" alt="WX20191212-214537@2x"></p>
+<p>这样表示验证通过。</p>
+<p>ps：这里指令有两种</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod lib lint</span></pre></td></tr></table></figure>
+
+<p>上面这种写法表示只验证本地库中的pod是否正确</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure>
+
+<p>上面这种写法表示从本地库和远程库两个方面去验证pod是否正确。</p>
+<h3 id="将lib-podsepc文件提交本地索引库"><a href="#将lib-podsepc文件提交本地索引库" class="headerlink" title="将lib.podsepc文件提交本地索引库"></a>将lib.podsepc文件提交本地索引库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名称&gt; &lt;本地pod名称&gt;.podspec</span></pre></td></tr></table></figure>
+
+
+
+<h1 id="清坑"><a href="#清坑" class="headerlink" title="清坑"></a>清坑</h1><p>这里有些坑需要理一下。</p>
+<p>首先在创建私有库，在终端pod repo add的时候创建远程仓库时候</p>
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202203@2x.png" alt="WX20191212-202203@2x"></p>
+<p>这个要点上，不然远程仓库没有master分支，导致后面</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名&gt; &lt;创建的pod名&gt;.podspec</span></pre></td></tr></table></figure>
+
+<p>失败。原因就在于没有master分支。</p>
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202911@2x.png" alt="WX20191212-202911@2x"></p>
+<p>这样就导致push失败。如下图所示:</p>
+<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-215048@2x.png" alt="WX20191212-215048@2x"></p>
+<p>至此，本地库与远程库关联并且搭建完成。</p>
+]]></content>
       <categories>
-          
-          <category> 个人博客搭建原因 </category>
-          
+        <category>iOS组件化相关</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-  
-  
+  </entry>
+  <entry>
+    <title>个人博客说明</title>
+    <url>/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。</p>
+ <a id="more"></a>
+</blockquote>
+<p>搭建的过程就不多说了，网上随便找个教程跟着搭建就完事了，主要是记录自己的技术等经历。</p>
+]]></content>
+      <categories>
+        <category>个人博客搭建原因</category>
+      </categories>
+  </entry>
 </search>
