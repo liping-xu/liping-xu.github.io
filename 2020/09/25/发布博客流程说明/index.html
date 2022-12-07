@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="知道你在改变">
 <meta property="og:description" content="前言: 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-09-25T07:58:42.995Z">
+<meta property="og:updated_time" content="2022-12-07T08:32:09.492Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  234
+                  350
                 </span>
               
 
@@ -415,16 +415,22 @@
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。</p>
  <a id="more"></a>
 </blockquote>
-<h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p>
+<h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>###（1）进入文件夹</p>
+<p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p>
 <p><a href>cd /Users/lipixu/Desktop/个人博客</a> </p>
 <p>这个是本人电脑上安装hexo相关的文件夹路径。</p>
+<p>###（2）创建blog相关文件</p>
 <p><a href>hexo new “文章名”</a> </p>
+<p>这里需要注意：（小问题花大时间去解决的一个坑）</p>
+<p>在编辑markdown文件的时候，我们事先编辑的markdown文件有文件头，我们需要去填充文字说</p>
+<p>这里每个title（例如tags: 、categories:等小标题后面的冒号跟要填充的内容都需要隔一个空格，不然就报错）。</p>
 <p>然后你会在你的blog/souce/_post下回有你的新建的文件</p>
-<p><a href>hexo server</a>（简写: hexo s）</p>
+<h3 id="（3）blog预览"><a href="#（3）blog预览" class="headerlink" title="（3）blog预览"></a>（3）blog预览</h3><p><a href>hexo server</a>（简写: hexo s）</p>
 <p>可以在本地的localhost:4000上预览一下自己的文章</p>
+<p>###（4）blog预提交</p>
 <p><a href>hexo generate</a> （简写: hexo g) </p>
 <p>生成网站静态文件到默认设置的public文件夹</p>
-<p><a href>hexo deploy</a> (简写:hexo d)</p>
+<h3 id="（5）blog上传"><a href="#（5）blog上传" class="headerlink" title="（5）blog上传"></a>（5）blog上传</h3><p><a href>hexo deploy</a> (简写:hexo d)</p>
 <p>自动生成网站静态文件，并部署到设定的仓库。</p>
 <p>这时候文章上传完成。</p>
 
@@ -553,7 +559,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,7 +570,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -599,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-开启-hexo-server"><span class="nav-number">2.</span> <span class="nav-text">一 开启 hexo server</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-开启-hexo-server"><span class="nav-number">2.</span> <span class="nav-text">一 开启 hexo server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）blog预览"><span class="nav-number">2.0.1.</span> <span class="nav-text">（3）blog预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（5）blog上传"><span class="nav-number">2.0.2.</span> <span class="nav-text">（5）blog上传</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -636,7 +642,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.9k</span>
+    <span title="Site words total count">6.8k</span>
   
 </div>
 
@@ -665,7 +671,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.9k字</span>
+  <span class="post-count">博客全站共6.8k字</span>
 </div>
 
         

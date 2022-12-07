@@ -1,6 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>”git使用-代码回滚“</title>
+    <url>/2022/12/07/%E2%80%9Dgit%E4%BD%BF%E7%94%A8-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%E2%80%9C/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> git使用中的一些常见操作，习惯性记录，方便以后寻找。</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="git-代码回滚"><a href="#git-代码回滚" class="headerlink" title="git 代码回滚"></a>git 代码回滚</h2><p>如果我们提交了（git commit）代码，并且已经推送（git push）到了远程分支，突然发现版本不对，我们想要撤回来，该怎么做？</p>
+<p>三种方式：</p>
+<p>a. git revert commit号；通过git revert来进行覆盖，也就是找到需要撤回的版本对应的版本号，通过git revert 加上提交的ID来进行线上覆盖。</p>
+<p>b. git reset –soft commit号 ；通过git reset –soft进行重置，这个方式也是我个人比较喜欢的方式，当你提交了4个文件到master以后，想要撤回来，这种方式会把提交的代码全部保留再本地，同时你执行git status，你会发现这些代码都变成了等待提交的状态，当你修改完以后，在通过git push origin master –force，切记一定要通过–force来强推，因为git reset 不会撤回线上的代码，只是撤回你本地仓库的代码，那么你要提交就会冲突，必须强推才能提交上去。</p>
+<p>c. git reset –hard commit号；这种方式慎用，这种方式和–soft类似，但是唯一的区别就是执行以后，本地仓库代码都会自动删除，当你不想要这次提交的代码的时候可以采用这种方式，最后也是通过git push origin master –force来强推。</p>
+]]></content>
+      <categories>
+        <category>git使用</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>一年后重新使用hexo遇见的问题的解决办法</title>
+    <url>/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 自从一年前搭建hexo到现在，只有刚开始使用hexo的时候零碎的上传过几篇文章，一年后又要重新写技术blog后发现各种零碎的小问题汇总</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="创建blog的步骤"><a href="#创建blog的步骤" class="headerlink" title="创建blog的步骤"></a>创建blog的步骤</h2><p>这个在一开始的时候就已经预料到长时间不使用hexo上传blog时会遗忘相关步骤，所以写了一篇简单的上传步骤解析（查看之前的文章）。这里不做详细说明了。主要记载重新上传的时候所遇见的坑</p>
+<h2 id="一、注意hexo-d发布的时候输入用户密码报错"><a href="#一、注意hexo-d发布的时候输入用户密码报错" class="headerlink" title="一、注意hexo d发布的时候输入用户密码报错"></a><strong>一、注意hexo d发布的时候输入用户密码报错</strong></h2><p>报错如下</p>
+<p>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: <a href="mailto:365278654@qq.com" target="_blank" rel="noopener">365278654@qq.com</a>    </p>
+<p>Password for ‘<a href="https://365278654@qq.com@github.com&#39;" target="_blank" rel="noopener">https://365278654@qq.com@github.com&#39;</a>: </p>
+<p>remote: Support for password authentication was removed on August 13, 2021.</p>
+<p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p>
+<p>这是因为github为什么要把密码换成token，把密码换成token就可以了。</p>
+<h3 id="1、创建个人token的步骤"><a href="#1、创建个人token的步骤" class="headerlink" title="1、创建个人token的步骤"></a>1、创建个人token的步骤</h3><p>1.在GitHub创建自己的Personal access tokens；点击右上角头像选择Settings；</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-1.png" alt="hexo-blog-1"></p>
+<p>2.选择Settings -&gt; 左侧栏Developer Settings -&gt; Personal access tokens，然后点击Generate new token创建你的一个你的个人token；</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-2.png" alt="hexo-blog-2"></p>
+<p>3.然后填写你的相关信息；</p>
+<p>Note填写你的token名字，用于区分其他你创建的token；</p>
+<p>Expiration则是选择你的token的过期时间；</p>
+<p>Select scopes选择你的token的权限，每个权限后面都有对应的功能解释；</p>
+<p>我这里选择了admin:repo_hook, delete_repo, repo；</p>
+<p>然后点击最下面的按钮生成你的personal access token；</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-3.png" alt="hexo-blog-3"></p>
+<p>5.Generate token点击后会生成你的token，需要进行复制并保存，后续不可见，否则需要重新生成token；</p>
+<p>（注意这里token这辈子只能看一次，所以需要复制好位置）</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-4.png" alt="hexo-blog-4"></p>
+<h3 id="2、更改hexo配置文件中的git镜像映射地址"><a href="#2、更改hexo配置文件中的git镜像映射地址" class="headerlink" title="2、更改hexo配置文件中的git镜像映射地址"></a>2、更改hexo配置文件中的git镜像映射地址</h3><p>这是解决如下错误：</p>
+<p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ vim _config.yml   #将https的地址更改为git开头的地址</span></pre></td></tr></table></figure>
+
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-5.png" alt="hexo-blog-5"></p>
+<h2 id="二-重新配置本地公钥以及更新github上的公钥"><a href="#二-重新配置本地公钥以及更新github上的公钥" class="headerlink" title="二 重新配置本地公钥以及更新github上的公钥"></a>二 重新配置本地公钥以及更新github上的公钥</h2><p>报错如下：</p>
+<p>Warning: Permanently added ‘github.com,20.205.243.166’ (ECDSA) to the list of known hosts.</p>
+<p><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).</p>
+<p>fatal: Could not read from remote repository.</p>
+<p>mac未绑定Gitlab或者Github账号，需要重新生成公钥</p>
+<h3 id="1、SSH是什么？"><a href="#1、SSH是什么？" class="headerlink" title="1、SSH是什么？"></a>1、SSH是什么？</h3><p>SSH（Secure Shell）是一种安全协议。在你的电脑与Gitlab服务器进行通信时，我们使用SSH密钥（SSH key）认证的方式来保证通信安全。</p>
+<h3 id="2、创建SSH密钥"><a href="#2、创建SSH密钥" class="headerlink" title="2、创建SSH密钥"></a>2、创建SSH密钥</h3><p>创建SSH密钥，并将密钥中的公钥添加到Gitlab，以便我们通过SSH协议来访问Git仓库。</p>
+<p>SSH密钥的创建需要在终端（命令行）环境下进行，我们首先进入命令行环境。</p>
+<p>· 在OS X和Linux平台下我们使用终端工具（Terminal）。</p>
+<p>· 在Windows平台下，可以使用Git Bash工具，git客户端安装目录下git-bash.exe文件</p>
+<p>####A、进入SSH目录</p>
+<p>在终端中输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure>
+
+<p>(1)、如果还没有~/.ssh目录，可以先手工创建一个</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir ~&#x2F;.ssh</span></pre></td></tr></table></figure>
+
+<p>之后再通过cd ~/.ssh进入SSH目录</p>
+<p>（2）可以通过</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-l</span></pre></td></tr></table></figure>
+
+<p>命令查看SSH目录下面的文件，来确认你是否已经生成SSH密钥，如果SSH目录为空，我们开始第二步B，生成SSH密钥；如果存在id_rsa.pub这个文件，说明你之前生成过SSH密钥，如何添加多个SSHkey也不难，这里不介绍了。</p>
+<h4 id="B、生成SSH密钥"><a href="#B、生成SSH密钥" class="headerlink" title="B、生成SSH密钥"></a>B、生成SSH密钥</h4><p>我们通过下面的命令生成密钥，将命令中的YOUR_EMAIL.COM替换为你注册Gitlab时用的Email地址（这里很容易想到如果有多个github账号怎么办，这个在另外一篇blog里面会有概述）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot;</span></pre></td></tr></table></figure>
+
+<p>在SSH生成过程中会出现以下信息，按屏幕的提示操作即可：</p>
+<p>　　</p>
+<p>Note：Enter passphrase (empty for no passphrase) :时，可以直接按两次回车键输入一个空的 passphrase；也可以选择输入一个 passphrase 口令，如果此时你输入了一个passphrase，请牢记，之后每次提交时都需要输入这个口令来确认。</p>
+<p>实践过程中建议不要密码。</p>
+<h3 id="3、获取SSH公钥信息"><a href="#3、获取SSH公钥信息" class="headerlink" title="3、获取SSH公钥信息"></a>3、获取SSH公钥信息</h3><p>SSH密钥生成结束后，根据提示信息找到SSH目录，会看到私钥id_rsa和公钥id_rsa.pub这两个文件，不要把私钥文件id_rsa的信息透露给任何人。我们可以通过cat命令或文本编辑器来查看id_rsa.pub公钥信息。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat id_rsa.pub</span></pre></td></tr></table></figure>
+
+<p>复制id_rsa.pub文件里的内容复制到剪切板中。</p>
+<h3 id="4、添加SSH公钥到Gitlab"><a href="#4、添加SSH公钥到Gitlab" class="headerlink" title="4、添加SSH公钥到Gitlab"></a>4、添加SSH公钥到Gitlab</h3><p>1.打开gitlab的Profile配置页面，选择SSH Keys.</p>
+<p>2.添加SSH公钥。填写Title和Key，其中Title是Key的描述信息，Key是上面复制的SSH公钥的内容，直接粘贴到输入框中保存即可。</p>
+<h3 id="5、导入项目"><a href="#5、导入项目" class="headerlink" title="5、导入项目"></a>5、导入项目</h3><h4 id="1-设置下git的用户名和邮箱"><a href="#1-设置下git的用户名和邮箱" class="headerlink" title="1.设置下git的用户名和邮箱"></a>1.设置下git的用户名和邮箱</h4><p>在提交代码前，还需要设置下git的用户名和邮箱（最好用英文，不要出现中文），这样提交记录才会在gitlab上显示带有你名字的记录。</p>
+<p>在命令行窗口输入（windows需要安装打开<a href="http://download.csdn.net/detail/sun_2134/9279961" target="_blank" rel="noopener">Git Bash</a>工具才行）：</p>
+<p>git config –global user.name “your_name”<br>git config –global user.email “your_email”</p>
+<h4 id="2-导新项目到gitlab上"><a href="#2-导新项目到gitlab上" class="headerlink" title="2.导新项目到gitlab上"></a>2.导新项目到gitlab上</h4><p>如果项目存在，需要导入到gitlab，可以通过命令行直接将项目导入上去。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &quot;本地存在项目的路径&quot;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git init  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git remote add origin git@gitlab.com:USERNAME&#x2F;PROJECTNAME.git  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git add .  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git commit -m &#39;first git demo&#39;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git push -u origin master</span></pre></td></tr></table></figure>
+
+<h4 id="3-导入项目到本地"><a href="#3-导入项目到本地" class="headerlink" title="3.导入项目到本地"></a>3.导入项目到本地</h4><p>git clone”你的项目地址”</p>
+]]></content>
+      <categories>
+        <category>hexo使用中的零碎问题汇总</category>
+      </categories>
+  </entry>
+  <entry>
     <title>markDown介绍与基本语法</title>
     <url>/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<blockquote>
@@ -46,16 +149,22 @@
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。</p>
  <a id="more"></a>
 </blockquote>
-<h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p>
+<h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>###（1）进入文件夹</p>
+<p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p>
 <p><a href>cd /Users/lipixu/Desktop/个人博客</a> </p>
 <p>这个是本人电脑上安装hexo相关的文件夹路径。</p>
+<p>###（2）创建blog相关文件</p>
 <p><a href>hexo new “文章名”</a> </p>
+<p>这里需要注意：（小问题花大时间去解决的一个坑）</p>
+<p>在编辑markdown文件的时候，我们事先编辑的markdown文件有文件头，我们需要去填充文字说</p>
+<p>这里每个title（例如tags: 、categories:等小标题后面的冒号跟要填充的内容都需要隔一个空格，不然就报错）。</p>
 <p>然后你会在你的blog/souce/_post下回有你的新建的文件</p>
-<p><a href>hexo server</a>（简写: hexo s）</p>
+<h3 id="（3）blog预览"><a href="#（3）blog预览" class="headerlink" title="（3）blog预览"></a>（3）blog预览</h3><p><a href>hexo server</a>（简写: hexo s）</p>
 <p>可以在本地的localhost:4000上预览一下自己的文章</p>
+<p>###（4）blog预提交</p>
 <p><a href>hexo generate</a> （简写: hexo g) </p>
 <p>生成网站静态文件到默认设置的public文件夹</p>
-<p><a href>hexo deploy</a> (简写:hexo d)</p>
+<h3 id="（5）blog上传"><a href="#（5）blog上传" class="headerlink" title="（5）blog上传"></a>（5）blog上传</h3><p><a href>hexo deploy</a> (简写:hexo d)</p>
 <p>自动生成网站静态文件，并部署到设定的仓库。</p>
 <p>这时候文章上传完成。</p>
 ]]></content>

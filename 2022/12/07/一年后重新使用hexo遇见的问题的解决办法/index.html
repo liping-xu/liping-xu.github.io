@@ -86,15 +86,21 @@
 
 
 
-<meta name="description" content="前言: 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。">
+<meta name="description" content="前言: 自从一年前搭建hexo到现在，只有刚开始使用hexo的时候零碎的上传过几篇文章，一年后又要重新写技术blog后发现各种零碎的小问题汇总">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人博客说明">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E&#x2F;index.html">
+<meta property="og:title" content="一年后重新使用hexo遇见的问题的解决办法">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="知道你在改变">
-<meta property="og:description" content="前言: 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。">
+<meta property="og:description" content="前言: 自从一年前搭建hexo到现在，只有刚开始使用hexo的时候零碎的上传过几篇文章，一年后又要重新写技术blog后发现各种零碎的小问题汇总">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-05T08:51:45.359Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;hexo-blog-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;hexo-blog-2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;hexo-blog-3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;hexo-blog-4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;hexo-blog-5.png">
+<meta property="og:updated_time" content="2022-12-07T08:20:51.287Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;hexo-blog-1.png">
 
 
 
@@ -124,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/05/个人博客说明/"/>
+  <link rel="canonical" href="http://yoursite.com/2022/12/07/一年后重新使用hexo遇见的问题的解决办法/"/>
 
 
 
 
 
-  <title>个人博客说明 | 知道你在改变</title>
+  <title>一年后重新使用hexo遇见的问题的解决办法 | 知道你在改变</title>
   
 
 
@@ -291,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="族战">
@@ -308,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">个人博客说明</h1>
+          <h1 class="post-title" itemprop="name headline">一年后重新使用hexo遇见的问题的解决办法</h1>
         
 
         <div class="post-meta">
@@ -320,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T13:30:32+08:00">
-                2019-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-12-07T14:35:58+08:00">
+                2022-12-07
               </time>
             
 
@@ -343,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%9F%E5%9B%A0/" itemprop="url" rel="index">
-                    <span itemprop="name">个人博客搭建原因</span>
+                  <a href="/categories/hexo%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%9B%B6%E7%A2%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo使用中的零碎问题汇总</span>
                   </a>
                 </span>
 
@@ -374,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  188
+                  1.4k
                 </span>
               
 
@@ -390,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -412,10 +418,83 @@
 
       
         <blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 自从一年前搭建hexo到现在，只有刚开始使用hexo的时候零碎的上传过几篇文章，一年后又要重新写技术blog后发现各种零碎的小问题汇总</p>
  <a id="more"></a>
 </blockquote>
-<p>搭建的过程就不多说了，网上随便找个教程跟着搭建就完事了，主要是记录自己的技术等经历。</p>
+<h2 id="创建blog的步骤"><a href="#创建blog的步骤" class="headerlink" title="创建blog的步骤"></a>创建blog的步骤</h2><p>这个在一开始的时候就已经预料到长时间不使用hexo上传blog时会遗忘相关步骤，所以写了一篇简单的上传步骤解析（查看之前的文章）。这里不做详细说明了。主要记载重新上传的时候所遇见的坑</p>
+<h2 id="一、注意hexo-d发布的时候输入用户密码报错"><a href="#一、注意hexo-d发布的时候输入用户密码报错" class="headerlink" title="一、注意hexo d发布的时候输入用户密码报错"></a><strong>一、注意hexo d发布的时候输入用户密码报错</strong></h2><p>报错如下</p>
+<p>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: <a href="mailto:365278654@qq.com" target="_blank" rel="noopener">365278654@qq.com</a>    </p>
+<p>Password for ‘<a href="https://365278654@qq.com@github.com&#39;" target="_blank" rel="noopener">https://365278654@qq.com@github.com&#39;</a>: </p>
+<p>remote: Support for password authentication was removed on August 13, 2021.</p>
+<p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p>
+<p>这是因为github为什么要把密码换成token，把密码换成token就可以了。</p>
+<h3 id="1、创建个人token的步骤"><a href="#1、创建个人token的步骤" class="headerlink" title="1、创建个人token的步骤"></a>1、创建个人token的步骤</h3><p>1.在GitHub创建自己的Personal access tokens；点击右上角头像选择Settings；</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-1.png" alt="hexo-blog-1"></p>
+<p>2.选择Settings -&gt; 左侧栏Developer Settings -&gt; Personal access tokens，然后点击Generate new token创建你的一个你的个人token；</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-2.png" alt="hexo-blog-2"></p>
+<p>3.然后填写你的相关信息；</p>
+<p>Note填写你的token名字，用于区分其他你创建的token；</p>
+<p>Expiration则是选择你的token的过期时间；</p>
+<p>Select scopes选择你的token的权限，每个权限后面都有对应的功能解释；</p>
+<p>我这里选择了admin:repo_hook, delete_repo, repo；</p>
+<p>然后点击最下面的按钮生成你的personal access token；</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-3.png" alt="hexo-blog-3"></p>
+<p>5.Generate token点击后会生成你的token，需要进行复制并保存，后续不可见，否则需要重新生成token；</p>
+<p>（注意这里token这辈子只能看一次，所以需要复制好位置）</p>
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-4.png" alt="hexo-blog-4"></p>
+<h3 id="2、更改hexo配置文件中的git镜像映射地址"><a href="#2、更改hexo配置文件中的git镜像映射地址" class="headerlink" title="2、更改hexo配置文件中的git镜像映射地址"></a>2、更改hexo配置文件中的git镜像映射地址</h3><p>这是解决如下错误：</p>
+<p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ vim _config.yml   #将https的地址更改为git开头的地址</span></pre></td></tr></table></figure>
+
+<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-5.png" alt="hexo-blog-5"></p>
+<h2 id="二-重新配置本地公钥以及更新github上的公钥"><a href="#二-重新配置本地公钥以及更新github上的公钥" class="headerlink" title="二 重新配置本地公钥以及更新github上的公钥"></a>二 重新配置本地公钥以及更新github上的公钥</h2><p>报错如下：</p>
+<p>Warning: Permanently added ‘github.com,20.205.243.166’ (ECDSA) to the list of known hosts.</p>
+<p><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).</p>
+<p>fatal: Could not read from remote repository.</p>
+<p>mac未绑定Gitlab或者Github账号，需要重新生成公钥</p>
+<h3 id="1、SSH是什么？"><a href="#1、SSH是什么？" class="headerlink" title="1、SSH是什么？"></a>1、SSH是什么？</h3><p>SSH（Secure Shell）是一种安全协议。在你的电脑与Gitlab服务器进行通信时，我们使用SSH密钥（SSH key）认证的方式来保证通信安全。</p>
+<h3 id="2、创建SSH密钥"><a href="#2、创建SSH密钥" class="headerlink" title="2、创建SSH密钥"></a>2、创建SSH密钥</h3><p>创建SSH密钥，并将密钥中的公钥添加到Gitlab，以便我们通过SSH协议来访问Git仓库。</p>
+<p>SSH密钥的创建需要在终端（命令行）环境下进行，我们首先进入命令行环境。</p>
+<p>· 在OS X和Linux平台下我们使用终端工具（Terminal）。</p>
+<p>· 在Windows平台下，可以使用Git Bash工具，git客户端安装目录下git-bash.exe文件</p>
+<p>####A、进入SSH目录</p>
+<p>在终端中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure>
+
+<p>(1)、如果还没有~/.ssh目录，可以先手工创建一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mkdir ~&#x2F;.ssh</span></pre></td></tr></table></figure>
+
+<p>之后再通过cd ~/.ssh进入SSH目录</p>
+<p>（2）可以通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">-l</span></pre></td></tr></table></figure>
+
+<p>命令查看SSH目录下面的文件，来确认你是否已经生成SSH密钥，如果SSH目录为空，我们开始第二步B，生成SSH密钥；如果存在id_rsa.pub这个文件，说明你之前生成过SSH密钥，如何添加多个SSHkey也不难，这里不介绍了。</p>
+<h4 id="B、生成SSH密钥"><a href="#B、生成SSH密钥" class="headerlink" title="B、生成SSH密钥"></a>B、生成SSH密钥</h4><p>我们通过下面的命令生成密钥，将命令中的YOUR_EMAIL.COM替换为你注册Gitlab时用的Email地址（这里很容易想到如果有多个github账号怎么办，这个在另外一篇blog里面会有概述）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot;</span></pre></td></tr></table></figure>
+
+<p>在SSH生成过程中会出现以下信息，按屏幕的提示操作即可：</p>
+<p>　　</p>
+<p>Note：Enter passphrase (empty for no passphrase) :时，可以直接按两次回车键输入一个空的 passphrase；也可以选择输入一个 passphrase 口令，如果此时你输入了一个passphrase，请牢记，之后每次提交时都需要输入这个口令来确认。</p>
+<p>实践过程中建议不要密码。</p>
+<h3 id="3、获取SSH公钥信息"><a href="#3、获取SSH公钥信息" class="headerlink" title="3、获取SSH公钥信息"></a>3、获取SSH公钥信息</h3><p>SSH密钥生成结束后，根据提示信息找到SSH目录，会看到私钥id_rsa和公钥id_rsa.pub这两个文件，不要把私钥文件id_rsa的信息透露给任何人。我们可以通过cat命令或文本编辑器来查看id_rsa.pub公钥信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub</span></pre></td></tr></table></figure>
+
+<p>复制id_rsa.pub文件里的内容复制到剪切板中。</p>
+<h3 id="4、添加SSH公钥到Gitlab"><a href="#4、添加SSH公钥到Gitlab" class="headerlink" title="4、添加SSH公钥到Gitlab"></a>4、添加SSH公钥到Gitlab</h3><p>1.打开gitlab的Profile配置页面，选择SSH Keys.</p>
+<p>2.添加SSH公钥。填写Title和Key，其中Title是Key的描述信息，Key是上面复制的SSH公钥的内容，直接粘贴到输入框中保存即可。</p>
+<h3 id="5、导入项目"><a href="#5、导入项目" class="headerlink" title="5、导入项目"></a>5、导入项目</h3><h4 id="1-设置下git的用户名和邮箱"><a href="#1-设置下git的用户名和邮箱" class="headerlink" title="1.设置下git的用户名和邮箱"></a>1.设置下git的用户名和邮箱</h4><p>在提交代码前，还需要设置下git的用户名和邮箱（最好用英文，不要出现中文），这样提交记录才会在gitlab上显示带有你名字的记录。</p>
+<p>在命令行窗口输入（windows需要安装打开<a href="http://download.csdn.net/detail/sun_2134/9279961" target="_blank" rel="noopener">Git Bash</a>工具才行）：</p>
+<p>git config –global user.name “your_name”<br>git config –global user.email “your_email”</p>
+<h4 id="2-导新项目到gitlab上"><a href="#2-导新项目到gitlab上" class="headerlink" title="2.导新项目到gitlab上"></a>2.导新项目到gitlab上</h4><p>如果项目存在，需要导入到gitlab，可以通过命令行直接将项目导入上去。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd &quot;本地存在项目的路径&quot;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git init  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git remote add origin git@gitlab.com:USERNAME&#x2F;PROJECTNAME.git  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">git add .  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git commit -m &#39;first git demo&#39;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">git push -u origin master</span></pre></td></tr></table></figure>
+
+<h4 id="3-导入项目到本地"><a href="#3-导入项目到本地" class="headerlink" title="3.导入项目到本地"></a>3.导入项目到本地</h4><p>git clone”你的项目地址”</p>
 
       
     </div>
@@ -449,14 +528,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" rel="next" title="markDown介绍与基本语法">
+                <i class="fa fa-chevron-left"></i> markDown介绍与基本语法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/" rel="prev" title="iOS组件化学习-01">
-                iOS组件化学习-01 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/12/07/%E2%80%9Dgit%E4%BD%BF%E7%94%A8-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%E2%80%9C/" rel="prev" title="”git使用-代码回滚“">
+                ”git使用-代码回滚“ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -584,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建blog的步骤"><span class="nav-number">1.1.</span> <span class="nav-text">创建blog的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、注意hexo-d发布的时候输入用户密码报错"><span class="nav-number">1.2.</span> <span class="nav-text">一、注意hexo d发布的时候输入用户密码报错</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、创建个人token的步骤"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、创建个人token的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、更改hexo配置文件中的git镜像映射地址"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、更改hexo配置文件中的git镜像映射地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-重新配置本地公钥以及更新github上的公钥"><span class="nav-number">1.3.</span> <span class="nav-text">二 重新配置本地公钥以及更新github上的公钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、SSH是什么？"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、SSH是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、创建SSH密钥"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、创建SSH密钥</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#B、生成SSH密钥"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">B、生成SSH密钥</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、获取SSH公钥信息"><span class="nav-number">1.3.3.</span> <span class="nav-text">3、获取SSH公钥信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、添加SSH公钥到Gitlab"><span class="nav-number">1.3.4.</span> <span class="nav-text">4、添加SSH公钥到Gitlab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、导入项目"><span class="nav-number">1.3.5.</span> <span class="nav-text">5、导入项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-设置下git的用户名和邮箱"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">1.设置下git的用户名和邮箱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-导新项目到gitlab上"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">2.导新项目到gitlab上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-导入项目到本地"><span class="nav-number">1.3.5.3.</span> <span class="nav-text">3.导入项目到本地</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
