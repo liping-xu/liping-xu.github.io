@@ -86,14 +86,14 @@
 
 
 
-<meta name="description" content="前言: 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。">
+<meta name="description" content="前言: 主要是创建SSH公钥以后设置github的问题两种方式SSH与Https两种方式，还有如何避免每一次都需要输出公钥密码这个问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="发布博客流程说明">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;09&#x2F;25&#x2F;%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E&#x2F;index.html">
+<meta property="og:title" content="Github设置相关问题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2022&#x2F;12&#x2F;07&#x2F;Github%E8%AE%BE%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="知道你在改变">
-<meta property="og:description" content="前言: 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。">
+<meta property="og:description" content="前言: 主要是创建SSH公钥以后设置github的问题两种方式SSH与Https两种方式，还有如何避免每一次都需要输出公钥密码这个问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-12-07T08:32:09.492Z">
+<meta property="og:updated_time" content="2022-12-07T09:06:55.966Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/09/25/发布博客流程说明/"/>
+  <link rel="canonical" href="http://yoursite.com/2022/12/07/Github设置相关问题/"/>
 
 
 
 
 
-  <title>发布博客流程说明 | 知道你在改变</title>
+  <title>Github设置相关问题 | 知道你在改变</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/12/07/Github%E8%AE%BE%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="族战">
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">发布博客流程说明</h1>
+          <h1 class="post-title" itemprop="name headline">Github设置相关问题</h1>
         
 
         <div class="post-meta">
@@ -320,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-25T15:16:09+08:00">
-                2020-09-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-12-07T16:48:23+08:00">
+                2022-12-07
               </time>
             
 
@@ -343,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/" itemprop="url" rel="index">
-                    <span itemprop="name">发布文章操作说明</span>
+                  <a href="/categories/git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">git相关操作</span>
                   </a>
                 </span>
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  350
+                  548
                 </span>
               
 
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -412,27 +412,40 @@
 
       
         <blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 主要是创建SSH公钥以后设置github的问题两种方式SSH与Https两种方式，还有如何避免每一次都需要输出公钥密码这个问题。</p>
  <a id="more"></a>
 </blockquote>
-<h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>###（1）进入文件夹</p>
-<p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p>
-<p><a href>cd /Users/lipixu/Desktop/个人博客</a> </p>
-<p>这个是本人电脑上安装hexo相关的文件夹路径。</p>
-<p>###（2）创建blog相关文件</p>
-<p><a href>hexo new “文章名”</a> </p>
-<p>这里需要注意：（小问题花大时间去解决的一个坑）</p>
-<p>在编辑markdown文件的时候，我们事先编辑的markdown文件有文件头，我们需要去填充文字说</p>
-<p>这里每个title（例如tags: 、categories:等小标题后面的冒号跟要填充的内容都需要隔一个空格，不然就报错）。</p>
-<p>然后你会在你的blog/souce/_post下回有你的新建的文件</p>
-<h3 id="（3）blog预览"><a href="#（3）blog预览" class="headerlink" title="（3）blog预览"></a>（3）blog预览</h3><p><a href>hexo server</a>（简写: hexo s）</p>
-<p>可以在本地的localhost:4000上预览一下自己的文章</p>
-<p>###（4）blog预提交</p>
-<p><a href>hexo generate</a> （简写: hexo g) </p>
-<p>生成网站静态文件到默认设置的public文件夹</p>
-<h3 id="（5）blog上传"><a href="#（5）blog上传" class="headerlink" title="（5）blog上传"></a>（5）blog上传</h3><p><a href>hexo deploy</a> (简写:hexo d)</p>
-<p>自动生成网站静态文件，并部署到设定的仓库。</p>
-<p>这时候文章上传完成。</p>
+<p>#一、生成SSH公钥</p>
+<h3 id="1、在git中用命令行创建公钥"><a href="#1、在git中用命令行创建公钥" class="headerlink" title="1、在git中用命令行创建公钥"></a>1、在git中用命令行创建公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &#39;your email address&#39;</span></pre></td></tr></table></figure>
+
+<ol>
+<li>文件名称及位置选择默认，enter即可。</li>
+<li>passphrase一定要写，其实可以跳过，但是有密码更安全不是，但就是这个密码，又给自己埋下了坑。</li>
+</ol>
+<p>（如何copy公钥在零碎汇总中这篇文章中有写，这里不多说了）</p>
+<h3 id="2、拷贝上面的-ssh-id-rsa-pub到GitHub上"><a href="#2、拷贝上面的-ssh-id-rsa-pub到GitHub上" class="headerlink" title="2、拷贝上面的/.ssh/id_rsa.pub到GitHub上"></a>2、拷贝上面的/.ssh/id_rsa.pub到GitHub上</h3><p>这个直接在profile中直接复制就行。</p>
+<h1 id="二、设置remote-Github（有坑注意）"><a href="#二、设置remote-Github（有坑注意）" class="headerlink" title="二、设置remote Github（有坑注意）"></a>二、设置remote Github（有坑注意）</h1><p>需要在git上面设置remote地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">SSH :</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git remote add orgin ssh:&#x2F;&#x2F;github.com:your github account&#x2F;your repository</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">HTTPS:  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git remote add orgin https:&#x2F;&#x2F;github.com&#x2F;your github account&#x2F;your repository</span></pre></td></tr></table></figure>
+
+<h3 id="1、坑一"><a href="#1、坑一" class="headerlink" title="1、坑一"></a>1、坑一</h3><p>区分了添加https和ssh两种方式，区别就在于：</p>
+<p>· ssh:不需要每次提交的时候都输入username和passphrase </p>
+<p>· https:每次都需要输入一遍username和passphrase。</p>
+<p>而我一开始手滑选择了https，导致每次提交都要重新输入密码和用户名，所以后来就切换到了ssh模式下。具体怎么切网上有很多教程，不再赘述。</p>
+<p>然后，push想要push的东西即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git push -u origin master</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"># -u 只有首次提交的时候需要，后续再次push可以省略</span></pre></td></tr></table></figure>
+
+
+
+<h3 id="2、坑二"><a href="#2、坑二" class="headerlink" title="2、坑二"></a>2、坑二</h3><p>仍然每次都需要填写密码</p>
+<p>每次提交代码或者上传blog都需要填写密码</p>
+<p>Enter passphrase for key ‘/Users/MYNAME/.ssh/id_rsa’</p>
+<p>说好的ssh不需要密码呢？？ 翻了一些教程，有的说干脆重新设置为无密码，这样就不需要每次都输入了，个人觉得这是个办法，不是最优解。下面把我最后的解法贴下来，这个方法的原理就是托管一个代理替你保存密码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># 1、先打开代理，如果你已经打开，那么直接运行命令2即可：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">eval $(ssh-agent)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">#2、输入下面命令，然后再次输入密码即可，大功告成</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">ssh-add ~&#x2F;.ssh&#x2F;id_rsa</span></pre></td></tr></table></figure>
+
+
+
+
+
 
       
     </div>
@@ -466,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/" rel="next" title="iOS组件化学习-02">
-                <i class="fa fa-chevron-left"></i> iOS组件化学习-02
+              <a href="/2022/12/07/%E2%80%9Dgit%E4%BD%BF%E7%94%A8-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%E2%80%9C/" rel="next" title="”git使用-代码回滚“">
+                <i class="fa fa-chevron-left"></i> ”git使用-代码回滚“
               </a>
             
           </div>
@@ -475,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/" rel="prev" title="@git之清除本地存在而远程仓库已删除的分支">
-                @git之清除本地存在而远程仓库已删除的分支 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -605,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-开启-hexo-server"><span class="nav-number">2.</span> <span class="nav-text">一 开启 hexo server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）blog预览"><span class="nav-number">2.0.1.</span> <span class="nav-text">（3）blog预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（5）blog上传"><span class="nav-number">2.0.2.</span> <span class="nav-text">（5）blog上传</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、在git中用命令行创建公钥"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、在git中用命令行创建公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、拷贝上面的-ssh-id-rsa-pub到GitHub上"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、拷贝上面的/.ssh/id_rsa.pub到GitHub上</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、设置remote-Github（有坑注意）"><span class="nav-number">2.</span> <span class="nav-text">二、设置remote Github（有坑注意）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、坑一"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、坑一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、坑二"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、坑二</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
