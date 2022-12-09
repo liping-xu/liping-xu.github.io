@@ -1,565 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Java语言概述</title>
-    <url>/2022/12/09/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> Java基础知识入门</p>
- <a id="more"></a>
-</blockquote>
-<h2 id="1、软件开发介绍"><a href="#1、软件开发介绍" class="headerlink" title="1、软件开发介绍"></a>1、软件开发介绍</h2><p>软件开发：一系列按照特定顺序组织的计算机数据和指令的集合。有系统软件和应用软件之分。</p>
-<p>人机交互方式：</p>
-<p>· 图形化界面：（Graphical User Interface GUI）施乐-苹果-微软</p>
-<p>·命令行方式：（Command Line Interface CLI）</p>
-<p>常用的DOS命令：</p>
-<p>·D：进入某个盘：直接盘符：D:即可</p>
-<p>· dir   ：-列出当前目录下的文件以及文件夹。</p>
-<p>· md ：（make directory） A:创建文件夹，创建路径。B:创建目录   </p>
-<p>· cd  ：（）A：进入某个目录。B：进入指定目录</p>
-<p>· cd.. ：（）A:返回该路径下的上一层目录  。B:退回到上一级目录</p>
-<p>· cd/  ： （）A:返回该路径下的最上层目录。B:退回根目录</p>
-<p>· echo name:Tom age =12 &gt;1.doc  ：A: 创建1.doc文件，内容为name:Tom age = 12。</p>
-<p>· del <em>.txt :  A： * :表示未知的或者是所有的。删除所有的后缀名为txt的文件。B：删除所有的（</em>）文件</p>
-<p>· rd : (remove directory)  ：A： 删除文件夹 删除路径的节点（保证该文件夹为空）。B：删除目录</p>
-<p>exit：退出DOS命令。</p>
-<h2 id="2、计算机编程语言介绍"><a href="#2、计算机编程语言介绍" class="headerlink" title="2、计算机编程语言介绍"></a>2、计算机编程语言介绍</h2><p>###语言升级</p>
-<p>第一代</p>
-<p>·机器语言。二进制</p>
-<p>第二代</p>
-<p>·汇编语言。使用助记符表示一条机器指令。</p>
-<p>第三代</p>
-<p>·高级语言</p>
-<p>C，pascal，Fortran面向过程的语言。</p>
-<p>C++面向过程/面向对象</p>
-<p>Java跨平台的纯面向对面的言语</p>
-<h3 id="why-is-Java"><a href="#why-is-Java" class="headerlink" title="why is Java"></a>why is Java</h3><p>使用程度最高，均衡性最好</p>
-<h2 id="3、Java语言概述"><a href="#3、Java语言概述" class="headerlink" title="3、Java语言概述"></a>3、Java语言概述</h2><p>·是SUN（Stanford University Network ）1995年推出的一门高级语言</p>
-<p>·是一种面向Internet的编程语言。</p>
-<p>后台开发：Java 、PHP、Python、Go、Node.js（这些都可以开发后台）</p>
-<p>从技术角度来分</p>
-<h4 id="Java技术平台体系"><a href="#Java技术平台体系" class="headerlink" title="Java技术平台体系"></a>Java技术平台体系</h4><h5 id="A-Java-SE（Java-standard-Edition）标准版"><a href="#A-Java-SE（Java-standard-Edition）标准版" class="headerlink" title="A:Java SE（Java standard Edition）标准版"></a>A:Java SE（Java standard Edition）标准版</h5><p>支持面向桌面级应用（如Windows下的应用）的Java平台，提供了完整的Java核心API，此版本以前称为J2SE。</p>
-<h5 id="B-Java-EE（Java-Enterprise-Edition）企业版"><a href="#B-Java-EE（Java-Enterprise-Edition）企业版" class="headerlink" title="B:Java EE（Java Enterprise Edition）企业版"></a>B:Java EE（Java Enterprise Edition）企业版</h5><p>是为开发企业环境下的应用程序提供的一套解决方案。该技术体系中包含的技术如：Servlet，Jsp等，主要针对于Web应用开发，版本以前称为J2EE。</p>
-<h5 id="C-Java-ME-（Java-Micro-Edition）小型版"><a href="#C-Java-ME-（Java-Micro-Edition）小型版" class="headerlink" title="C:Java ME （Java Micro Edition）小型版"></a>C:Java ME （Java Micro Edition）小型版</h5><p>支持Java程序运行在移动端（手机、PDA）上的平台，对Java API有所精简，并加入了针对移动端的支持，此版本以前称为J2ME。</p>
-<h5 id="D-Java-Card"><a href="#D-Java-Card" class="headerlink" title="D:Java Card"></a>D:Java Card</h5><p>支持一些Java小程序（APPlets）运行在小内存设备（如智能卡）上的平台。</p>
-<p>从Java的应用领域来分</p>
-<p>· 企业级应用</p>
-<p>·Android平台应用</p>
-<p>·大数据平台开发</p>
-<h2 id="4、运行机制及运行过程"><a href="#4、运行机制及运行过程" class="headerlink" title="4、运行机制及运行过程"></a>4、运行机制及运行过程</h2><h3 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h3><h4 id="特点一：面向对面"><a href="#特点一：面向对面" class="headerlink" title="特点一：面向对面"></a>特点一：面向对面</h4><p>两个基本概念：类，对象</p>
-<p>三大特性：封装，继承，多态</p>
-<h4 id="特点二：健壮性"><a href="#特点二：健壮性" class="headerlink" title="特点二：健壮性"></a>特点二：健壮性</h4><p>吸收了C/C++语言的优点，但去掉了其影响程序健壮性的部分（如指针，内存的申请与释放），提供了一个相对安全的内存管理和访问机制。</p>
-<h4 id="特点三：跨平台性"><a href="#特点三：跨平台性" class="headerlink" title="特点三：跨平台性"></a>特点三：跨平台性</h4><p>跨平台性：通过Java语言编写的应用程序在不同的系统平台上都可以运行。“write once，Run Anywhere”</p>
-<p>原理：只要在需要运行Java应用程序的操作系统上，先安装一个Java虚拟机（JVM Java Virtual Machine）即可。由JVM来负责Java程序在该系统中的运行。</p>
-<h4 id="核心机制："><a href="#核心机制：" class="headerlink" title="核心机制："></a>核心机制：</h4><h6 id="1、垃圾回收"><a href="#1、垃圾回收" class="headerlink" title="1、垃圾回收"></a>1、垃圾回收</h6><p>·不再使用的内存空间应回收–垃圾回收。</p>
-<p>·垃圾回收在Java程序运行中自动进行，程序员无法精确控制和干扰。</p>
-<p>注：Java程序依然会出现内存泄露和内存溢出的问题。</p>
-<h6 id="2、Java虚拟机（JVM，Java-Virtual-Machine）"><a href="#2、Java虚拟机（JVM，Java-Virtual-Machine）" class="headerlink" title="2、Java虚拟机（JVM，Java Virtual Machine）"></a>2、Java虚拟机（JVM，Java Virtual Machine）</h6><p>不同操作系统中的JVM是不一样的（如Windows，mac OS，Linux等）</p>
-<p>##5、Java的环境搭建</p>
-<h3 id="1、什么是JDK，JRE"><a href="#1、什么是JDK，JRE" class="headerlink" title="1、什么是JDK，JRE"></a>1、什么是JDK，JRE</h3><p>JDK：(Java Development Kit)  Java开发工具包</p>
-<p>JDK是提供给Java开发人员使用的，其中包含了Java开发工具，也包括了JRE。所以安装了JDK，就不用在单独安装JRE了</p>
-<p>其中的开发工具：编译工具（Java.exe）打包工具（Jar.exe）等</p>
-<p>JRE：（Java Runtime Environmenr) Java运行环境</p>
-<p>包括Java虚拟机（JVM）和Java程序所需的核心内库等。如果想运行一个开发好的Java程序，计算机中只需要安装JRE即可。</p>
-<p>总结：简单而言，使用JDK的开发工具完成的Java程序，交给JRE去运行。</p>
-<h2 id="6、开发体验-HelloWorld"><a href="#6、开发体验-HelloWorld" class="headerlink" title="6、开发体验-HelloWorld"></a>6、开发体验-HelloWorld</h2><h2 id="7、常见问题及解决办法"><a href="#7、常见问题及解决办法" class="headerlink" title="7、常见问题及解决办法"></a>7、常见问题及解决办法</h2><h2 id="8、注释"><a href="#8、注释" class="headerlink" title="8、注释"></a>8、注释</h2><h2 id="9、Java-API文档"><a href="#9、Java-API文档" class="headerlink" title="9、Java API文档"></a>9、Java API文档</h2><h2 id="10、良好的编程习惯"><a href="#10、良好的编程习惯" class="headerlink" title="10、良好的编程习惯"></a>10、良好的编程习惯</h2><p>##11、常用的Java开发工具</p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Java语言概述</title>
+      <link href="/2022/12/09/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/"/>
+      <url>/2022/12/09/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> Java基础知识入门</p> <a id="more"></a></blockquote><h1 id="软件开发介绍"><a href="#软件开发介绍" class="headerlink" title="软件开发介绍"></a>软件开发介绍</h1><p>软件开发：一系列按照特定顺序组织的计算机数据和指令的集合。有系统软件和应用软件之分。</p><p>人机交互方式：</p><p>· 图形化界面：（Graphical User Interface GUI）施乐-苹果-微软</p><p>·命令行方式：（Command Line Interface CLI）</p><p>常用的DOS命令：</p><p>·D：进入某个盘：直接盘符：D:即可</p><p>· dir   ：-列出当前目录下的文件以及文件夹。</p><p>· md ：（make directory） A:创建文件夹，创建路径。B:创建目录   </p><p>· cd  ：（）A：进入某个目录。B：进入指定目录</p><p>· cd.. ：（）A:返回该路径下的上一层目录  。B:退回到上一级目录</p><p>· cd/  ： （）A:返回该路径下的最上层目录。B:退回根目录</p><p>· echo name:Tom age =12 &gt;1.doc  ：A: 创建1.doc文件，内容为name:Tom age = 12。</p><p>· del <em>.txt :  A： * :表示未知的或者是所有的。删除所有的后缀名为txt的文件。B：删除所有的（</em>）文件</p><p>· rd : (remove directory)  ：A： 删除文件夹 删除路径的节点（保证该文件夹为空）。B：删除目录</p><p>exit：退出DOS命令。</p><h1 id="计算机编程语言介绍"><a href="#计算机编程语言介绍" class="headerlink" title="计算机编程语言介绍"></a>计算机编程语言介绍</h1><h2 id="语言升级"><a href="#语言升级" class="headerlink" title="语言升级"></a>语言升级</h2><p>第一代</p><p>·机器语言。二进制</p><p>第二代</p><p>·汇编语言。使用助记符表示一条机器指令。</p><p>第三代</p><p>·高级语言</p><p>C，pascal，Fortran面向过程的语言。</p><p>C++面向过程/面向对象</p><p>Java跨平台的纯面向对面的言语</p><h2 id="why-is-Java"><a href="#why-is-Java" class="headerlink" title="why is Java"></a>why is Java</h2><p>使用程度最高，均衡性最好</p><h1 id="Java语言概述"><a href="#Java语言概述" class="headerlink" title="Java语言概述"></a>Java语言概述</h1><p>·是SUN（Stanford University Network ）1995年推出的一门高级语言</p><p>·是一种面向Internet的编程语言。</p><p>后台开发：Java 、PHP、Python、Go、Node.js（这些都可以开发后台）</p><p>从技术角度来分</p><h2 id="Java技术平台体系"><a href="#Java技术平台体系" class="headerlink" title="Java技术平台体系"></a>Java技术平台体系</h2><h3 id="A-Java-SE（Java-standard-Edition）标准版"><a href="#A-Java-SE（Java-standard-Edition）标准版" class="headerlink" title="A:Java SE（Java standard Edition）标准版"></a>A:Java SE（Java standard Edition）标准版</h3><p>支持面向桌面级应用（如Windows下的应用）的Java平台，提供了完整的Java核心API，此版本以前称为J2SE。</p><h3 id="B-Java-EE（Java-Enterprise-Edition）企业版"><a href="#B-Java-EE（Java-Enterprise-Edition）企业版" class="headerlink" title="B:Java EE（Java Enterprise Edition）企业版"></a>B:Java EE（Java Enterprise Edition）企业版</h3><p>是为开发企业环境下的应用程序提供的一套解决方案。该技术体系中包含的技术如：Servlet，Jsp等，主要针对于Web应用开发，版本以前称为J2EE。</p><h3 id="C-Java-ME-（Java-Micro-Edition）小型版"><a href="#C-Java-ME-（Java-Micro-Edition）小型版" class="headerlink" title="C:Java ME （Java Micro Edition）小型版"></a>C:Java ME （Java Micro Edition）小型版</h3><p>支持Java程序运行在移动端（手机、PDA）上的平台，对Java API有所精简，并加入了针对移动端的支持，此版本以前称为J2ME。</p><h3 id="D-Java-Card"><a href="#D-Java-Card" class="headerlink" title="D:Java Card"></a>D:Java Card</h3><p>支持一些Java小程序（APPlets）运行在小内存设备（如智能卡）上的平台。</p><p>从Java的应用领域来分</p><p>· 企业级应用</p><p>·Android平台应用</p><p>·大数据平台开发</p><h1 id="运行机制及运行过程"><a href="#运行机制及运行过程" class="headerlink" title="运行机制及运行过程"></a>运行机制及运行过程</h1><h2 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h2><h3 id="特点一：面向对面"><a href="#特点一：面向对面" class="headerlink" title="特点一：面向对面"></a>特点一：面向对面</h3><p>两个基本概念：类，对象</p><p>三大特性：封装，继承，多态</p><h3 id="特点二：健壮性"><a href="#特点二：健壮性" class="headerlink" title="特点二：健壮性"></a>特点二：健壮性</h3><p>吸收了C/C++语言的优点，但去掉了其影响程序健壮性的部分（如指针，内存的申请与释放），提供了一个相对安全的内存管理和访问机制。</p><h3 id="特点三：跨平台性"><a href="#特点三：跨平台性" class="headerlink" title="特点三：跨平台性"></a>特点三：跨平台性</h3><p>跨平台性：通过Java语言编写的应用程序在不同的系统平台上都可以运行。“write once，Run Anywhere”</p><p>原理：只要在需要运行Java应用程序的操作系统上，先安装一个Java虚拟机（JVM Java Virtual Machine）即可。由JVM来负责Java程序在该系统中的运行。</p><h3 id="核心机制"><a href="#核心机制" class="headerlink" title="核心机制"></a>核心机制</h3><h4 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h4><p>·不再使用的内存空间应回收–垃圾回收。</p><p>·垃圾回收在Java程序运行中自动进行，程序员无法精确控制和干扰。</p><p>注：Java程序依然会出现内存泄露和内存溢出的问题。</p><h4 id="Java虚拟机（JVM，Java-Virtual-Machine）"><a href="#Java虚拟机（JVM，Java-Virtual-Machine）" class="headerlink" title="Java虚拟机（JVM，Java Virtual Machine）"></a>Java虚拟机（JVM，Java Virtual Machine）</h4><p>不同操作系统中的JVM是不一样的（如Windows，mac OS，Linux等）</p><h1 id="Java的环境搭建"><a href="#Java的环境搭建" class="headerlink" title="Java的环境搭建"></a>Java的环境搭建</h1><h2 id="什么是JDK，JRE"><a href="#什么是JDK，JRE" class="headerlink" title="什么是JDK，JRE"></a>什么是JDK，JRE</h2><p>JDK：(Java Development Kit)  Java开发工具包</p><p>JDK是提供给Java开发人员使用的，其中包含了Java开发工具，也包括了JRE。所以安装了JDK，就不用在单独安装JRE了</p><p>其中的开发工具：编译工具（Java.exe）打包工具（Jar.exe）等</p><p>JRE：（Java Runtime Environmenr) Java运行环境</p><p>包括Java虚拟机（JVM）和Java程序所需的核心内库等。如果想运行一个开发好的Java程序，计算机中只需要安装JRE即可。</p><p>总结：简单而言，使用JDK的开发工具完成的Java程序，交给JRE去运行。</p><h1 id="开发体验-HelloWorld"><a href="#开发体验-HelloWorld" class="headerlink" title="开发体验-HelloWorld"></a>开发体验-HelloWorld</h1><h1 id="常见问题及解决办法"><a href="#常见问题及解决办法" class="headerlink" title="常见问题及解决办法"></a>常见问题及解决办法</h1><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><h1 id="Java-API文档"><a href="#Java-API文档" class="headerlink" title="Java API文档"></a>Java API文档</h1><h1 id="良好的编程习惯"><a href="#良好的编程习惯" class="headerlink" title="良好的编程习惯"></a>良好的编程习惯</h1><h1 id="常用的Java开发工具"><a href="#常用的Java开发工具" class="headerlink" title="常用的Java开发工具"></a>常用的Java开发工具</h1>]]></content>
+      
+      
       <categories>
-        <category>Java入门</category>
+          
+          <category> Java入门 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>java基础目录概述</title>
-    <url>/2022/12/09/java%E5%9F%BA%E7%A1%80%E7%9B%AE%E5%BD%95%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> java入门基础知识</p>
- <a id="more"></a>
-</blockquote>
-<p>##JavaEE学习路径（大纲）</p>
-<h3 id="第一阶段：JavaSE"><a href="#第一阶段：JavaSE" class="headerlink" title="第一阶段：JavaSE"></a>第一阶段：JavaSE</h3><p>Java基础</p>
-<p>java新特性</p>
-<p>数据库MySQL与SQL语言</p>
-<p>JDBC</p>
-<h3 id="第二阶段：JavaWeb"><a href="#第二阶段：JavaWeb" class="headerlink" title="第二阶段：JavaWeb"></a>第二阶段：JavaWeb</h3><p>HTML基础与CSS</p>
-<p>JavaScript DOM与jQuery</p>
-<p>XML与Tomcat</p>
-<p>HTTP协议</p>
-<p>服务器端组件Servlet</p>
-<p>JSP</p>
-<p>EL表达式</p>
-<p>会话控制Cookie和Session</p>
-<p>服务器端组件Filter</p>
-<p>服务器端组件Listener</p>
-<p>国际化</p>
-<p>异步数据传输框架Ajax</p>
-<p>文件的上传下载</p>
-<h3 id="第三阶段：JavaEE框架"><a href="#第三阶段：JavaEE框架" class="headerlink" title="第三阶段：JavaEE框架"></a>第三阶段：JavaEE框架</h3><p>系统整体分层解耦框架spring</p>
-<p>轻量级Web框架springMVC</p>
-<p>轻量级持久框架mybatis</p>
-<p>服务器操作系统Linus</p>
-<p>内存数据库Redis</p>
-<p>项目架构、jar包管理工具Maven</p>
-<h3 id="第四阶段：JavaEE高级"><a href="#第四阶段：JavaEE高级" class="headerlink" title="第四阶段：JavaEE高级"></a>第四阶段：JavaEE高级</h3><p>svn/IDEA开发工具</p>
-<p>分布式版本管理工具Git与GitHub</p>
-<p>Mysql高级</p>
-<p>Mycat实现MySQL的分布式，分库分表，读写分离</p>
-<p>Nginx反向代理，负载均衡，动静分离</p>
-<p>JVM内存模型，参数调优</p>
-<p>JUC线程高级</p>
-<p>分布式架构注册中心Zookeeper</p>
-<p>虚拟化应用容器Docker</p>
-<p>全文检索引擎ElasticSearch</p>
-<p>消息队列RabbitMQ</p>
-<p>前端VUE/ES6</p>
-<h2 id="Java应用场景"><a href="#Java应用场景" class="headerlink" title="Java应用场景"></a>Java应用场景</h2><p>Java基础是学习JavaEE，大数据，Android开发的基石。</p>
-<p>JavaEE：spring—Rest（spring MVC）</p>
-<p>大数据：Spark-Spark Streaming</p>
-<p>Android：商城页面</p>
-<p>都需要使用Java语言。</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java基础目录概述</title>
+      <link href="/2022/12/09/java%E5%9F%BA%E7%A1%80%E7%9B%AE%E5%BD%95%E6%A6%82%E8%BF%B0/"/>
+      <url>/2022/12/09/java%E5%9F%BA%E7%A1%80%E7%9B%AE%E5%BD%95%E6%A6%82%E8%BF%B0/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> java入门基础知识</p> <a id="more"></a></blockquote><p>#JavaEE学习路径（大纲）</p><h2 id="第一阶段：JavaSE"><a href="#第一阶段：JavaSE" class="headerlink" title="第一阶段：JavaSE"></a>第一阶段：JavaSE</h2><p>Java基础</p><p>java新特性</p><p>数据库MySQL与SQL语言</p><p>JDBC</p><h2 id="第二阶段：JavaWeb"><a href="#第二阶段：JavaWeb" class="headerlink" title="第二阶段：JavaWeb"></a>第二阶段：JavaWeb</h2><p>HTML基础与CSS</p><p>JavaScript DOM与jQuery</p><p>XML与Tomcat</p><p>HTTP协议</p><p>服务器端组件Servlet</p><p>JSP</p><p>EL表达式</p><p>会话控制Cookie和Session</p><p>服务器端组件Filter</p><p>服务器端组件Listener</p><p>国际化</p><p>异步数据传输框架Ajax</p><p>文件的上传下载</p><h2 id="第三阶段：JavaEE框架"><a href="#第三阶段：JavaEE框架" class="headerlink" title="第三阶段：JavaEE框架"></a>第三阶段：JavaEE框架</h2><p>系统整体分层解耦框架spring</p><p>轻量级Web框架springMVC</p><p>轻量级持久框架mybatis</p><p>服务器操作系统Linus</p><p>内存数据库Redis</p><p>项目架构、jar包管理工具Maven</p><h2 id="第四阶段：JavaEE高级"><a href="#第四阶段：JavaEE高级" class="headerlink" title="第四阶段：JavaEE高级"></a>第四阶段：JavaEE高级</h2><p>svn/IDEA开发工具</p><p>分布式版本管理工具Git与GitHub</p><p>Mysql高级</p><p>Mycat实现MySQL的分布式，分库分表，读写分离</p><p>Nginx反向代理，负载均衡，动静分离</p><p>JVM内存模型，参数调优</p><p>JUC线程高级</p><p>分布式架构注册中心Zookeeper</p><p>虚拟化应用容器Docker</p><p>全文检索引擎ElasticSearch</p><p>消息队列RabbitMQ</p><p>前端VUE/ES6</p><h1 id="Java应用场景"><a href="#Java应用场景" class="headerlink" title="Java应用场景"></a>Java应用场景</h1><p>Java基础是学习JavaEE，大数据，Android开发的基石。</p><p>JavaEE：spring—Rest（spring MVC）</p><p>大数据：Spark-Spark Streaming</p><p>Android：商城页面</p><p>都需要使用Java语言。</p>]]></content>
+      
+      
       <categories>
-        <category>java入门</category>
+          
+          <category> Java入门 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>每日零碎汇总</title>
-    <url>/2022/12/07/%E6%AF%8F%E6%97%A5%E9%9B%B6%E7%A2%8E%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 主要记载在过程没时间弄清楚但是自己觉得很重要的相关内容。</p>
- <a id="more"></a>
-</blockquote>
-<h1 id="2022年12月07日"><a href="#2022年12月07日" class="headerlink" title="2022年12月07日"></a>2022年12月07日</h1><p>1、git在有多个（两个）github账号（环境）中如何避免命令混乱的问题。</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>每日零碎汇总</title>
+      <link href="/2022/12/07/%E6%AF%8F%E6%97%A5%E9%9B%B6%E7%A2%8E%E6%B1%87%E6%80%BB/"/>
+      <url>/2022/12/07/%E6%AF%8F%E6%97%A5%E9%9B%B6%E7%A2%8E%E6%B1%87%E6%80%BB/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 主要记载在过程没时间弄清楚但是自己觉得很重要的相关内容。</p> <a id="more"></a></blockquote><h1 id="2022年12月07日"><a href="#2022年12月07日" class="headerlink" title="2022年12月07日"></a>2022年12月07日</h1><p>1、git在有多个（两个）github账号（环境）中如何避免命令混乱的问题。</p>]]></content>
+      
+      
       <categories>
-        <category>每天遗漏</category>
+          
+          <category> 每天遗漏 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>Github设置相关问题</title>
-    <url>/2022/12/07/Github%E8%AE%BE%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 主要是创建SSH公钥以后设置github的问题两种方式SSH与Https两种方式，还有如何避免每一次都需要输出公钥密码这个问题。</p>
- <a id="more"></a>
-</blockquote>
-<p>#一、生成SSH公钥</p>
-<h3 id="1、在git中用命令行创建公钥"><a href="#1、在git中用命令行创建公钥" class="headerlink" title="1、在git中用命令行创建公钥"></a>1、在git中用命令行创建公钥</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &#39;your email address&#39;</span></pre></td></tr></table></figure>
-
-<ol>
-<li>文件名称及位置选择默认，enter即可。</li>
-<li>passphrase一定要写，其实可以跳过，但是有密码更安全不是，但就是这个密码，又给自己埋下了坑。</li>
-</ol>
-<p>（如何copy公钥在零碎汇总中这篇文章中有写，这里不多说了）</p>
-<h3 id="2、拷贝上面的-ssh-id-rsa-pub到GitHub上"><a href="#2、拷贝上面的-ssh-id-rsa-pub到GitHub上" class="headerlink" title="2、拷贝上面的/.ssh/id_rsa.pub到GitHub上"></a>2、拷贝上面的/.ssh/id_rsa.pub到GitHub上</h3><p>这个直接在profile中直接复制就行。</p>
-<h1 id="二、设置remote-Github（有坑注意）"><a href="#二、设置remote-Github（有坑注意）" class="headerlink" title="二、设置remote Github（有坑注意）"></a>二、设置remote Github（有坑注意）</h1><p>需要在git上面设置remote地址：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SSH :</span></pre></td></tr><tr><td class="code"><pre><span class="line">git remote add orgin ssh:&#x2F;&#x2F;github.com:your github account&#x2F;your repository</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">HTTPS:  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git remote add orgin https:&#x2F;&#x2F;github.com&#x2F;your github account&#x2F;your repository</span></pre></td></tr></table></figure>
-
-<h3 id="1、坑一"><a href="#1、坑一" class="headerlink" title="1、坑一"></a>1、坑一</h3><p>区分了添加https和ssh两种方式，区别就在于：</p>
-<p>· ssh:不需要每次提交的时候都输入username和passphrase </p>
-<p>· https:每次都需要输入一遍username和passphrase。</p>
-<p>而我一开始手滑选择了https，导致每次提交都要重新输入密码和用户名，所以后来就切换到了ssh模式下。具体怎么切网上有很多教程，不再赘述。</p>
-<p>然后，push想要push的东西即可：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span></pre></td></tr><tr><td class="code"><pre><span class="line"># -u 只有首次提交的时候需要，后续再次push可以省略</span></pre></td></tr></table></figure>
-
-
-
-<h3 id="2、坑二"><a href="#2、坑二" class="headerlink" title="2、坑二"></a>2、坑二</h3><p>仍然每次都需要填写密码</p>
-<p>每次提交代码或者上传blog都需要填写密码</p>
-<p>Enter passphrase for key ‘/Users/MYNAME/.ssh/id_rsa’</p>
-<p>说好的ssh不需要密码呢？？ 翻了一些教程，有的说干脆重新设置为无密码，这样就不需要每次都输入了，个人觉得这是个办法，不是最优解。下面把我最后的解法贴下来，这个方法的原理就是托管一个代理替你保存密码。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 1、先打开代理，如果你已经打开，那么直接运行命令2即可：</span></pre></td></tr><tr><td class="code"><pre><span class="line">eval $(ssh-agent)</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#2、输入下面命令，然后再次输入密码即可，大功告成</span></pre></td></tr><tr><td class="code"><pre><span class="line">ssh-add ~&#x2F;.ssh&#x2F;id_rsa</span></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Github设置相关问题</title>
+      <link href="/2022/12/07/Github%E8%AE%BE%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+      <url>/2022/12/07/Github%E8%AE%BE%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 主要是创建SSH公钥以后设置github的问题两种方式SSH与Https两种方式，还有如何避免每一次都需要输出公钥密码这个问题。</p> <a id="more"></a></blockquote><p>#一、生成SSH公钥</p><h3 id="1、在git中用命令行创建公钥"><a href="#1、在git中用命令行创建公钥" class="headerlink" title="1、在git中用命令行创建公钥"></a>1、在git中用命令行创建公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &#39;your email address&#39;</span></pre></td></tr></table></figure><ol><li>文件名称及位置选择默认，enter即可。</li><li>passphrase一定要写，其实可以跳过，但是有密码更安全不是，但就是这个密码，又给自己埋下了坑。</li></ol><p>（如何copy公钥在零碎汇总中这篇文章中有写，这里不多说了）</p><h3 id="2、拷贝上面的-ssh-id-rsa-pub到GitHub上"><a href="#2、拷贝上面的-ssh-id-rsa-pub到GitHub上" class="headerlink" title="2、拷贝上面的/.ssh/id_rsa.pub到GitHub上"></a>2、拷贝上面的/.ssh/id_rsa.pub到GitHub上</h3><p>这个直接在profile中直接复制就行。</p><h1 id="二、设置remote-Github（有坑注意）"><a href="#二、设置remote-Github（有坑注意）" class="headerlink" title="二、设置remote Github（有坑注意）"></a>二、设置remote Github（有坑注意）</h1><p>需要在git上面设置remote地址：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">SSH :</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git remote add orgin ssh:&#x2F;&#x2F;github.com:your github account&#x2F;your repository</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">HTTPS:  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git remote add orgin https:&#x2F;&#x2F;github.com&#x2F;your github account&#x2F;your repository</span></pre></td></tr></table></figure><h3 id="1、坑一"><a href="#1、坑一" class="headerlink" title="1、坑一"></a>1、坑一</h3><p>区分了添加https和ssh两种方式，区别就在于：</p><p>· ssh:不需要每次提交的时候都输入username和passphrase </p><p>· https:每次都需要输入一遍username和passphrase。</p><p>而我一开始手滑选择了https，导致每次提交都要重新输入密码和用户名，所以后来就切换到了ssh模式下。具体怎么切网上有很多教程，不再赘述。</p><p>然后，push想要push的东西即可：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git push -u origin master</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"># -u 只有首次提交的时候需要，后续再次push可以省略</span></pre></td></tr></table></figure><h3 id="2、坑二"><a href="#2、坑二" class="headerlink" title="2、坑二"></a>2、坑二</h3><p>仍然每次都需要填写密码</p><p>每次提交代码或者上传blog都需要填写密码</p><p>Enter passphrase for key ‘/Users/MYNAME/.ssh/id_rsa’</p><p>说好的ssh不需要密码呢？？ 翻了一些教程，有的说干脆重新设置为无密码，这样就不需要每次都输入了，个人觉得这是个办法，不是最优解。下面把我最后的解法贴下来，这个方法的原理就是托管一个代理替你保存密码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># 1、先打开代理，如果你已经打开，那么直接运行命令2即可：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">eval $(ssh-agent)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">#2、输入下面命令，然后再次输入密码即可，大功告成</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">ssh-add ~&#x2F;.ssh&#x2F;id_rsa</span></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>git相关操作</category>
+          
+          <category> git相关操作 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>”git使用-代码回滚“</title>
-    <url>/2022/12/07/%E2%80%9Dgit%E4%BD%BF%E7%94%A8-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%E2%80%9C/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> git使用中的一些常见操作，习惯性记录，方便以后寻找。</p>
- <a id="more"></a>
-</blockquote>
-<h2 id="git-代码回滚"><a href="#git-代码回滚" class="headerlink" title="git 代码回滚"></a>git 代码回滚</h2><p>如果我们提交了（git commit）代码，并且已经推送（git push）到了远程分支，突然发现版本不对，我们想要撤回来，该怎么做？</p>
-<p>三种方式：</p>
-<p>a. git revert commit号；通过git revert来进行覆盖，也就是找到需要撤回的版本对应的版本号，通过git revert 加上提交的ID来进行线上覆盖。</p>
-<p>b. git reset –soft commit号 ；通过git reset –soft进行重置，这个方式也是我个人比较喜欢的方式，当你提交了4个文件到master以后，想要撤回来，这种方式会把提交的代码全部保留再本地，同时你执行git status，你会发现这些代码都变成了等待提交的状态，当你修改完以后，在通过git push origin master –force，切记一定要通过–force来强推，因为git reset 不会撤回线上的代码，只是撤回你本地仓库的代码，那么你要提交就会冲突，必须强推才能提交上去。</p>
-<p>c. git reset –hard commit号；这种方式慎用，这种方式和–soft类似，但是唯一的区别就是执行以后，本地仓库代码都会自动删除，当你不想要这次提交的代码的时候可以采用这种方式，最后也是通过git push origin master –force来强推。</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>”git使用-代码回滚“</title>
+      <link href="/2022/12/07/%E2%80%9Dgit%E4%BD%BF%E7%94%A8-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%E2%80%9C/"/>
+      <url>/2022/12/07/%E2%80%9Dgit%E4%BD%BF%E7%94%A8-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%E2%80%9C/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> git使用中的一些常见操作，习惯性记录，方便以后寻找。</p> <a id="more"></a></blockquote><h2 id="git-代码回滚"><a href="#git-代码回滚" class="headerlink" title="git 代码回滚"></a>git 代码回滚</h2><p>如果我们提交了（git commit）代码，并且已经推送（git push）到了远程分支，突然发现版本不对，我们想要撤回来，该怎么做？</p><p>三种方式：</p><p>a. git revert commit号；通过git revert来进行覆盖，也就是找到需要撤回的版本对应的版本号，通过git revert 加上提交的ID来进行线上覆盖。</p><p>b. git reset –soft commit号 ；通过git reset –soft进行重置，这个方式也是我个人比较喜欢的方式，当你提交了4个文件到master以后，想要撤回来，这种方式会把提交的代码全部保留再本地，同时你执行git status，你会发现这些代码都变成了等待提交的状态，当你修改完以后，在通过git push origin master –force，切记一定要通过–force来强推，因为git reset 不会撤回线上的代码，只是撤回你本地仓库的代码，那么你要提交就会冲突，必须强推才能提交上去。</p><p>c. git reset –hard commit号；这种方式慎用，这种方式和–soft类似，但是唯一的区别就是执行以后，本地仓库代码都会自动删除，当你不想要这次提交的代码的时候可以采用这种方式，最后也是通过git push origin master –force来强推。</p>]]></content>
+      
+      
       <categories>
-        <category>git相关操作</category>
+          
+          <category> git相关操作 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>一年后重新使用hexo遇见的问题的解决办法</title>
-    <url>/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 自从一年前搭建hexo到现在，只有刚开始使用hexo的时候零碎的上传过几篇文章，一年后又要重新写技术blog后发现各种零碎的小问题汇总</p>
- <a id="more"></a>
-</blockquote>
-<h3 id="创建blog的步骤"><a href="#创建blog的步骤" class="headerlink" title="创建blog的步骤"></a>创建blog的步骤</h3><p>这个在一开始的时候就已经预料到长时间不使用hexo上传blog时会遗忘相关步骤，所以写了一篇简单的上传步骤解析（查看之前的文章）。这里不做详细说明了。主要记载重新上传的时候所遇见的坑</p>
-<h2 id="一、注意hexo-d发布的时候输入用户密码报错"><a href="#一、注意hexo-d发布的时候输入用户密码报错" class="headerlink" title="一、注意hexo d发布的时候输入用户密码报错"></a><strong>一、注意hexo d发布的时候输入用户密码报错</strong></h2><p>报错如下</p>
-<p>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: <a href="mailto:365278654@qq.com" target="_blank" rel="noopener">365278654@qq.com</a>    </p>
-<p>Password for ‘<a href="https://365278654@qq.com@github.com&#39;" target="_blank" rel="noopener">https://365278654@qq.com@github.com&#39;</a>: </p>
-<p>remote: Support for password authentication was removed on August 13, 2021.</p>
-<p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p>
-<p>这是因为github为什么要把密码换成token，把密码换成token就可以了。</p>
-<h3 id="1、创建个人token的步骤"><a href="#1、创建个人token的步骤" class="headerlink" title="1、创建个人token的步骤"></a>1、创建个人token的步骤</h3><p>1.在GitHub创建自己的Personal access tokens；点击右上角头像选择Settings；</p>
-<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-1.png" alt="hexo-blog-1"></p>
-<p>2.选择Settings -&gt; 左侧栏Developer Settings -&gt; Personal access tokens，然后点击Generate new token创建你的一个你的个人token；</p>
-<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-2.png" alt="hexo-blog-2"></p>
-<p>3.然后填写你的相关信息；</p>
-<p>Note填写你的token名字，用于区分其他你创建的token；</p>
-<p>Expiration则是选择你的token的过期时间；</p>
-<p>Select scopes选择你的token的权限，每个权限后面都有对应的功能解释；</p>
-<p>我这里选择了admin:repo_hook, delete_repo, repo；</p>
-<p>然后点击最下面的按钮生成你的personal access token；</p>
-<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-3.png" alt="hexo-blog-3"></p>
-<p>5.Generate token点击后会生成你的token，需要进行复制并保存，后续不可见，否则需要重新生成token；</p>
-<p>（注意这里token这辈子只能看一次，所以需要复制好位置）</p>
-<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-4.png" alt="hexo-blog-4"></p>
-<h3 id="2、更改hexo配置文件中的git镜像映射地址"><a href="#2、更改hexo配置文件中的git镜像映射地址" class="headerlink" title="2、更改hexo配置文件中的git镜像映射地址"></a>2、更改hexo配置文件中的git镜像映射地址</h3><p>这是解决如下错误：</p>
-<p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ vim _config.yml   #将https的地址更改为git开头的地址</span></pre></td></tr></table></figure>
-
-<p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-5.png" alt="hexo-blog-5"></p>
-<h2 id="二-重新配置本地公钥以及更新github上的公钥"><a href="#二-重新配置本地公钥以及更新github上的公钥" class="headerlink" title="二 重新配置本地公钥以及更新github上的公钥"></a>二 重新配置本地公钥以及更新github上的公钥</h2><p>报错如下：</p>
-<p>Warning: Permanently added ‘github.com,20.205.243.166’ (ECDSA) to the list of known hosts.</p>
-<p><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).</p>
-<p>fatal: Could not read from remote repository.</p>
-<p>mac未绑定Gitlab或者Github账号，需要重新生成公钥</p>
-<h3 id="1、SSH是什么？"><a href="#1、SSH是什么？" class="headerlink" title="1、SSH是什么？"></a>1、SSH是什么？</h3><p>SSH（Secure Shell）是一种安全协议。在你的电脑与Gitlab服务器进行通信时，我们使用SSH密钥（SSH key）认证的方式来保证通信安全。</p>
-<h3 id="2、创建SSH密钥"><a href="#2、创建SSH密钥" class="headerlink" title="2、创建SSH密钥"></a>2、创建SSH密钥</h3><p>创建SSH密钥，并将密钥中的公钥添加到Gitlab，以便我们通过SSH协议来访问Git仓库。</p>
-<p>SSH密钥的创建需要在终端（命令行）环境下进行，我们首先进入命令行环境。</p>
-<p>· 在OS X和Linux平台下我们使用终端工具（Terminal）。</p>
-<p>· 在Windows平台下，可以使用Git Bash工具，git客户端安装目录下git-bash.exe文件</p>
-<p>####A、进入SSH目录</p>
-<p>在终端中输入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure>
-
-<p>(1)、如果还没有~/.ssh目录，可以先手工创建一个</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir ~&#x2F;.ssh</span></pre></td></tr></table></figure>
-
-<p>之后再通过cd ~/.ssh进入SSH目录</p>
-<p>（2）可以通过</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-l</span></pre></td></tr></table></figure>
-
-<p>命令查看SSH目录下面的文件，来确认你是否已经生成SSH密钥，如果SSH目录为空，我们开始第二步B，生成SSH密钥；如果存在id_rsa.pub这个文件，说明你之前生成过SSH密钥，如何添加多个SSHkey也不难，这里不介绍了。</p>
-<h4 id="B、生成SSH密钥"><a href="#B、生成SSH密钥" class="headerlink" title="B、生成SSH密钥"></a>B、生成SSH密钥</h4><p>我们通过下面的命令生成密钥，将命令中的YOUR_EMAIL.COM替换为你注册Gitlab时用的Email地址（这里很容易想到如果有多个github账号怎么办，这个在另外一篇blog里面会有概述）。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot;</span></pre></td></tr></table></figure>
-
-<p>在SSH生成过程中会出现以下信息，按屏幕的提示操作即可：</p>
-<p>　　</p>
-<p>Note：Enter passphrase (empty for no passphrase) :时，可以直接按两次回车键输入一个空的 passphrase；也可以选择输入一个 passphrase 口令，如果此时你输入了一个passphrase，请牢记，之后每次提交时都需要输入这个口令来确认。</p>
-<p>实践过程中建议不要密码。</p>
-<h3 id="3、获取SSH公钥信息"><a href="#3、获取SSH公钥信息" class="headerlink" title="3、获取SSH公钥信息"></a>3、获取SSH公钥信息</h3><p>SSH密钥生成结束后，根据提示信息找到SSH目录，会看到私钥id_rsa和公钥id_rsa.pub这两个文件，不要把私钥文件id_rsa的信息透露给任何人。我们可以通过cat命令或文本编辑器来查看id_rsa.pub公钥信息。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat id_rsa.pub</span></pre></td></tr></table></figure>
-
-<p>复制id_rsa.pub文件里的内容复制到剪切板中。</p>
-<h3 id="4、添加SSH公钥到Gitlab"><a href="#4、添加SSH公钥到Gitlab" class="headerlink" title="4、添加SSH公钥到Gitlab"></a>4、添加SSH公钥到Gitlab</h3><p>1.打开gitlab的Profile配置页面，选择SSH Keys.</p>
-<p>2.添加SSH公钥。填写Title和Key，其中Title是Key的描述信息，Key是上面复制的SSH公钥的内容，直接粘贴到输入框中保存即可。</p>
-<h3 id="5、导入项目"><a href="#5、导入项目" class="headerlink" title="5、导入项目"></a>5、导入项目</h3><h4 id="1-设置下git的用户名和邮箱"><a href="#1-设置下git的用户名和邮箱" class="headerlink" title="1.设置下git的用户名和邮箱"></a>1.设置下git的用户名和邮箱</h4><p>在提交代码前，还需要设置下git的用户名和邮箱（最好用英文，不要出现中文），这样提交记录才会在gitlab上显示带有你名字的记录。</p>
-<p>在命令行窗口输入（windows需要安装打开<a href="http://download.csdn.net/detail/sun_2134/9279961" target="_blank" rel="noopener">Git Bash</a>工具才行）：</p>
-<p>git config –global user.name “your_name”<br>git config –global user.email “your_email”</p>
-<h4 id="2-导新项目到gitlab上"><a href="#2-导新项目到gitlab上" class="headerlink" title="2.导新项目到gitlab上"></a>2.导新项目到gitlab上</h4><p>如果项目存在，需要导入到gitlab，可以通过命令行直接将项目导入上去。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &quot;本地存在项目的路径&quot;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git init  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git remote add origin git@gitlab.com:USERNAME&#x2F;PROJECTNAME.git  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git add .  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git commit -m &#39;first git demo&#39;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">git push -u origin master</span></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一年后重新使用hexo遇见的问题的解决办法</title>
+      <link href="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+      <url>/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 自从一年前搭建hexo到现在，只有刚开始使用hexo的时候零碎的上传过几篇文章，一年后又要重新写技术blog后发现各种零碎的小问题汇总</p> <a id="more"></a></blockquote><h3 id="创建blog的步骤"><a href="#创建blog的步骤" class="headerlink" title="创建blog的步骤"></a>创建blog的步骤</h3><p>这个在一开始的时候就已经预料到长时间不使用hexo上传blog时会遗忘相关步骤，所以写了一篇简单的上传步骤解析（查看之前的文章）。这里不做详细说明了。主要记载重新上传的时候所遇见的坑</p><h2 id="一、注意hexo-d发布的时候输入用户密码报错"><a href="#一、注意hexo-d发布的时候输入用户密码报错" class="headerlink" title="一、注意hexo d发布的时候输入用户密码报错"></a><strong>一、注意hexo d发布的时候输入用户密码报错</strong></h2><p>报错如下</p><p>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: <a href="mailto:365278654@qq.com" target="_blank" rel="noopener">365278654@qq.com</a>    </p><p>Password for ‘<a href="https://365278654@qq.com@github.com&#39;" target="_blank" rel="noopener">https://365278654@qq.com@github.com&#39;</a>: </p><p>remote: Support for password authentication was removed on August 13, 2021.</p><p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p><p>这是因为github为什么要把密码换成token，把密码换成token就可以了。</p><h3 id="1、创建个人token的步骤"><a href="#1、创建个人token的步骤" class="headerlink" title="1、创建个人token的步骤"></a>1、创建个人token的步骤</h3><p>1.在GitHub创建自己的Personal access tokens；点击右上角头像选择Settings；</p><p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-1.png" alt="hexo-blog-1"></p><p>2.选择Settings -&gt; 左侧栏Developer Settings -&gt; Personal access tokens，然后点击Generate new token创建你的一个你的个人token；</p><p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-2.png" alt="hexo-blog-2"></p><p>3.然后填写你的相关信息；</p><p>Note填写你的token名字，用于区分其他你创建的token；</p><p>Expiration则是选择你的token的过期时间；</p><p>Select scopes选择你的token的权限，每个权限后面都有对应的功能解释；</p><p>我这里选择了admin:repo_hook, delete_repo, repo；</p><p>然后点击最下面的按钮生成你的personal access token；</p><p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-3.png" alt="hexo-blog-3"></p><p>5.Generate token点击后会生成你的token，需要进行复制并保存，后续不可见，否则需要重新生成token；</p><p>（注意这里token这辈子只能看一次，所以需要复制好位置）</p><p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-4.png" alt="hexo-blog-4"></p><h3 id="2、更改hexo配置文件中的git镜像映射地址"><a href="#2、更改hexo配置文件中的git镜像映射地址" class="headerlink" title="2、更改hexo配置文件中的git镜像映射地址"></a>2、更改hexo配置文件中的git镜像映射地址</h3><p>这是解决如下错误：</p><p>fatal: unable to access ‘<a href="https://github.com/liping-xu/liping-xu.github.io.git/&#39;" target="_blank" rel="noopener">https://github.com/liping-xu/liping-xu.github.io.git/&#39;</a>: The requested URL returned error: 403</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ vim _config.yml   #将https的地址更改为git开头的地址</span></pre></td></tr></table></figure><p><img src="/2022/12/07/%E4%B8%80%E5%B9%B4%E5%90%8E%E9%87%8D%E6%96%B0%E4%BD%BF%E7%94%A8hexo%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/hexo-blog-5.png" alt="hexo-blog-5"></p><h2 id="二-重新配置本地公钥以及更新github上的公钥"><a href="#二-重新配置本地公钥以及更新github上的公钥" class="headerlink" title="二 重新配置本地公钥以及更新github上的公钥"></a>二 重新配置本地公钥以及更新github上的公钥</h2><p>报错如下：</p><p>Warning: Permanently added ‘github.com,20.205.243.166’ (ECDSA) to the list of known hosts.</p><p><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: Permission denied (publickey).</p><p>fatal: Could not read from remote repository.</p><p>mac未绑定Gitlab或者Github账号，需要重新生成公钥</p><h3 id="1、SSH是什么？"><a href="#1、SSH是什么？" class="headerlink" title="1、SSH是什么？"></a>1、SSH是什么？</h3><p>SSH（Secure Shell）是一种安全协议。在你的电脑与Gitlab服务器进行通信时，我们使用SSH密钥（SSH key）认证的方式来保证通信安全。</p><h3 id="2、创建SSH密钥"><a href="#2、创建SSH密钥" class="headerlink" title="2、创建SSH密钥"></a>2、创建SSH密钥</h3><p>创建SSH密钥，并将密钥中的公钥添加到Gitlab，以便我们通过SSH协议来访问Git仓库。</p><p>SSH密钥的创建需要在终端（命令行）环境下进行，我们首先进入命令行环境。</p><p>· 在OS X和Linux平台下我们使用终端工具（Terminal）。</p><p>· 在Windows平台下，可以使用Git Bash工具，git客户端安装目录下git-bash.exe文件</p><p>####A、进入SSH目录</p><p>在终端中输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure><p>(1)、如果还没有~/.ssh目录，可以先手工创建一个</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mkdir ~&#x2F;.ssh</span></pre></td></tr></table></figure><p>之后再通过cd ~/.ssh进入SSH目录</p><p>（2）可以通过</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">-l</span></pre></td></tr></table></figure><p>命令查看SSH目录下面的文件，来确认你是否已经生成SSH密钥，如果SSH目录为空，我们开始第二步B，生成SSH密钥；如果存在id_rsa.pub这个文件，说明你之前生成过SSH密钥，如何添加多个SSHkey也不难，这里不介绍了。</p><h4 id="B、生成SSH密钥"><a href="#B、生成SSH密钥" class="headerlink" title="B、生成SSH密钥"></a>B、生成SSH密钥</h4><p>我们通过下面的命令生成密钥，将命令中的YOUR_EMAIL.COM替换为你注册Gitlab时用的Email地址（这里很容易想到如果有多个github账号怎么办，这个在另外一篇blog里面会有概述）。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot;</span></pre></td></tr></table></figure><p>在SSH生成过程中会出现以下信息，按屏幕的提示操作即可：</p><p>　　</p><p>Note：Enter passphrase (empty for no passphrase) :时，可以直接按两次回车键输入一个空的 passphrase；也可以选择输入一个 passphrase 口令，如果此时你输入了一个passphrase，请牢记，之后每次提交时都需要输入这个口令来确认。</p><p>实践过程中建议不要密码。</p><h3 id="3、获取SSH公钥信息"><a href="#3、获取SSH公钥信息" class="headerlink" title="3、获取SSH公钥信息"></a>3、获取SSH公钥信息</h3><p>SSH密钥生成结束后，根据提示信息找到SSH目录，会看到私钥id_rsa和公钥id_rsa.pub这两个文件，不要把私钥文件id_rsa的信息透露给任何人。我们可以通过cat命令或文本编辑器来查看id_rsa.pub公钥信息。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.ssh</span></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ls</span></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub</span></pre></td></tr></table></figure><p>复制id_rsa.pub文件里的内容复制到剪切板中。</p><h3 id="4、添加SSH公钥到Gitlab"><a href="#4、添加SSH公钥到Gitlab" class="headerlink" title="4、添加SSH公钥到Gitlab"></a>4、添加SSH公钥到Gitlab</h3><p>1.打开gitlab的Profile配置页面，选择SSH Keys.</p><p>2.添加SSH公钥。填写Title和Key，其中Title是Key的描述信息，Key是上面复制的SSH公钥的内容，直接粘贴到输入框中保存即可。</p><h3 id="5、导入项目"><a href="#5、导入项目" class="headerlink" title="5、导入项目"></a>5、导入项目</h3><h4 id="1-设置下git的用户名和邮箱"><a href="#1-设置下git的用户名和邮箱" class="headerlink" title="1.设置下git的用户名和邮箱"></a>1.设置下git的用户名和邮箱</h4><p>在提交代码前，还需要设置下git的用户名和邮箱（最好用英文，不要出现中文），这样提交记录才会在gitlab上显示带有你名字的记录。</p><p>在命令行窗口输入（windows需要安装打开<a href="http://download.csdn.net/detail/sun_2134/9279961" target="_blank" rel="noopener">Git Bash</a>工具才行）：</p><p>git config –global user.name “your_name”<br>git config –global user.email “your_email”</p><h4 id="2-导新项目到gitlab上"><a href="#2-导新项目到gitlab上" class="headerlink" title="2.导新项目到gitlab上"></a>2.导新项目到gitlab上</h4><p>如果项目存在，需要导入到gitlab，可以通过命令行直接将项目导入上去。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd &quot;本地存在项目的路径&quot;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git init  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git remote add origin git@gitlab.com:USERNAME&#x2F;PROJECTNAME.git  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">git add .  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git commit -m &#39;first git demo&#39;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">git push -u origin master</span></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>hexo使用中的零碎问题汇总</category>
+          
+          <category> hexo使用中的零碎问题汇总 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>markDown介绍与基本语法</title>
-    <url>/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 为了防止长时间不使用markdown然后遗忘常见用法所做的一篇记录</p>
- <a id="more"></a>
-</blockquote>
-<h1 id="为什么会有markdown？"><a href="#为什么会有markdown？" class="headerlink" title="为什么会有markdown？"></a>为什么会有markdown？</h1><p>要理解 Markdown 的流行，有必要先了解「标记语言」的概念。</p>
-<p>维基百科对标记语言的定义是「将文本（Text）以及文本相关的其他信息结合起来，展现出关于文档结构和数据处理细节的计算机文字编码」。简单来说，就是用一系列约定俗成的标记，规定文本的格式、结构等，如加粗、分段、字体颜色等，我们熟悉的 HTML 就是一种标记语言。</p>
-<p><img src="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/markdown-image-1@2x.png" alt="markdown-image-1@2x"></p>
-<p>▲同样的文字格式用 HTML 表达出来显然不如 Markdown 直观，</p>
-<p>但像 HTML、RTF 等标记言语因为支持丰富的格式，语法非常复杂，可读性也很差，且不同的语言之间还有格式壁垒，难以打通。</p>
-<p>而早期一些显示器无法显示加粗、斜体等文本格式，于是人们想出了用文本标记格式的方法，也就是轻量级标记语言，特点与前面提到的 HTML 等相反，纯文本记录，不受编辑器限制，简单易懂，维基百科就有自己一套标记语言，Markdown 则发展成了轻量标记语言中最有名的一种。</p>
-<h1 id="markDown怎么使用？"><a href="#markDown怎么使用？" class="headerlink" title="markDown怎么使用？"></a>markDown怎么使用？</h1><p>不要被「语言」、「标记」等字样吓住，Markdown 不是 PHP 或 Python，它的语法十分简单，也不涉及任何数学或编程知识，几乎可以称得上零门槛。</p>
-<p>前面一直提到，Markdown 一大优点是「易用易读」，几分钟即可掌握其语法，以下是几个常用的代码：</p>
-<p>文字前加 # 号设置标题，一级标题对应 1 个 # 号，二级对应 2 个，依此类推，共可设置 6 级标题；<strong>文字</strong> 表示加粗；<em>文字</em> 表示斜体；文字前加 &gt; 表示引用；空白行输入 * * * 生成分割线；文字前加 *（或 +、-）生成无序列表，数字加英文句号生成有序列表；插入超链接：<a href="链接地址">显示文本</a>插入图片：<img src="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" alt>效果如下：</p>
-<p><img src="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/markDown-Image-2@2x.png" alt="markDown-Image-2@2x"></p>
-<p>此外，Markdown 也支持制表、引用代码等，但既然是轻量级的标记语言，注定 Markdown 无法满足复杂的排版需求，如居中、左/右对齐、设置字体或颜色等，就不在其能力范围内了，毕竟专注于写作才是它的目的所在。好在由于 Markdown 本身支持转换为 HTML，所以熟悉 HTML 的用户也可以在 Markdown 的编辑器中使用 HTML 语法实现更丰富的页面效果。</p>
-<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>排版大概是我们日常与工作或学习打交道时都免不了的过程，追求效率的你可能厌倦了在键盘和鼠标之间频繁切换，所以，人生苦短，你需要 Markdown。</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markDown介绍与基本语法</title>
+      <link href="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+      <url>/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 为了防止长时间不使用markdown然后遗忘常见用法所做的一篇记录</p> <a id="more"></a></blockquote><h1 id="为什么会有markdown？"><a href="#为什么会有markdown？" class="headerlink" title="为什么会有markdown？"></a>为什么会有markdown？</h1><p>要理解 Markdown 的流行，有必要先了解「标记语言」的概念。</p><p>维基百科对标记语言的定义是「将文本（Text）以及文本相关的其他信息结合起来，展现出关于文档结构和数据处理细节的计算机文字编码」。简单来说，就是用一系列约定俗成的标记，规定文本的格式、结构等，如加粗、分段、字体颜色等，我们熟悉的 HTML 就是一种标记语言。</p><p><img src="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/markdown-image-1@2x.png" alt="markdown-image-1@2x"></p><p>▲同样的文字格式用 HTML 表达出来显然不如 Markdown 直观，</p><p>但像 HTML、RTF 等标记言语因为支持丰富的格式，语法非常复杂，可读性也很差，且不同的语言之间还有格式壁垒，难以打通。</p><p>而早期一些显示器无法显示加粗、斜体等文本格式，于是人们想出了用文本标记格式的方法，也就是轻量级标记语言，特点与前面提到的 HTML 等相反，纯文本记录，不受编辑器限制，简单易懂，维基百科就有自己一套标记语言，Markdown 则发展成了轻量标记语言中最有名的一种。</p><h1 id="markDown怎么使用？"><a href="#markDown怎么使用？" class="headerlink" title="markDown怎么使用？"></a>markDown怎么使用？</h1><p>不要被「语言」、「标记」等字样吓住，Markdown 不是 PHP 或 Python，它的语法十分简单，也不涉及任何数学或编程知识，几乎可以称得上零门槛。</p><p>前面一直提到，Markdown 一大优点是「易用易读」，几分钟即可掌握其语法，以下是几个常用的代码：</p><p>文字前加 # 号设置标题，一级标题对应 1 个 # 号，二级对应 2 个，依此类推，共可设置 6 级标题；<strong>文字</strong> 表示加粗；<em>文字</em> 表示斜体；文字前加 &gt; 表示引用；空白行输入 * * * 生成分割线；文字前加 *（或 +、-）生成无序列表，数字加英文句号生成有序列表；插入超链接：<a href="链接地址">显示文本</a>插入图片：<img src="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" alt>效果如下：</p><p><img src="/2022/12/06/markDown%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/markDown-Image-2@2x.png" alt="markDown-Image-2@2x"></p><p>此外，Markdown 也支持制表、引用代码等，但既然是轻量级的标记语言，注定 Markdown 无法满足复杂的排版需求，如居中、左/右对齐、设置字体或颜色等，就不在其能力范围内了，毕竟专注于写作才是它的目的所在。好在由于 Markdown 本身支持转换为 HTML，所以熟悉 HTML 的用户也可以在 Markdown 的编辑器中使用 HTML 语法实现更丰富的页面效果。</p><h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>排版大概是我们日常与工作或学习打交道时都免不了的过程，追求效率的你可能厌倦了在键盘和鼠标之间频繁切换，所以，人生苦短，你需要 Markdown。</p>]]></content>
+      
+      
       <categories>
-        <category>markDown基本用法</category>
+          
+          <category> markDown基本用法 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>@git之清除本地存在而远程仓库已删除的分支</title>
-    <url>/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> Gitlab服务器上已经合并了分支并且删除了，但是在我本地的sourcetree中的远端分支还存在着，长期会造成大量的分支挂在soureTree上面让人极度不舒服！</p>
- <a id="more"></a>
-</blockquote>
-<h1 id="1、使用命令行执行命令"><a href="#1、使用命令行执行命令" class="headerlink" title="1、使用命令行执行命令"></a>1、使用命令行执行命令</h1><p>1、cd 进入git拉取的本地文件当中。</p>
-<p>2、命令行输入：git remote prune origin；这样本地的远程分支就同步gitlab服务器的了。</p>
-<p><img src="/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/1.png" alt="1"></p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>@git之清除本地存在而远程仓库已删除的分支</title>
+      <link href="/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/"/>
+      <url>/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> Gitlab服务器上已经合并了分支并且删除了，但是在我本地的sourcetree中的远端分支还存在着，长期会造成大量的分支挂在soureTree上面让人极度不舒服！</p> <a id="more"></a></blockquote><h1 id="1、使用命令行执行命令"><a href="#1、使用命令行执行命令" class="headerlink" title="1、使用命令行执行命令"></a>1、使用命令行执行命令</h1><p>1、cd 进入git拉取的本地文件当中。</p><p>2、命令行输入：git remote prune origin；这样本地的远程分支就同步gitlab服务器的了。</p><p><img src="/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%9C%A8%E8%80%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84%E5%88%86%E6%94%AF/1.png" alt="1"></p>]]></content>
+      
+      
       <categories>
-        <category>git相关操作</category>
+          
+          <category> git相关操作 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>发布博客流程说明</title>
-    <url>/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。</p>
- <a id="more"></a>
-</blockquote>
-<h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>###（1）进入文件夹</p>
-<p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p>
-<p><a href>cd /Users/lipixu/Desktop/个人博客</a> </p>
-<p>这个是本人电脑上安装hexo相关的文件夹路径。</p>
-<p>###（2）创建blog相关文件</p>
-<p><a href>hexo new “文章名”</a> </p>
-<p>这里需要注意：（小问题花大时间去解决的一个坑）</p>
-<p>在编辑markdown文件的时候，我们事先编辑的markdown文件有文件头，我们需要去填充文字说</p>
-<p>这里每个title（例如tags: 、categories:等小标题后面的冒号跟要填充的内容都需要隔一个空格，不然就报错）。</p>
-<p>然后你会在你的blog/souce/_post下回有你的新建的文件</p>
-<h3 id="（3）blog预览"><a href="#（3）blog预览" class="headerlink" title="（3）blog预览"></a>（3）blog预览</h3><p><a href>hexo server</a>（简写: hexo s）</p>
-<p>可以在本地的localhost:4000上预览一下自己的文章</p>
-<p>###（4）blog预提交</p>
-<p><a href>hexo generate</a> （简写: hexo g) </p>
-<p>生成网站静态文件到默认设置的public文件夹</p>
-<h3 id="（5）blog上传"><a href="#（5）blog上传" class="headerlink" title="（5）blog上传"></a>（5）blog上传</h3><p><a href>hexo deploy</a> (简写:hexo d)</p>
-<p>自动生成网站静态文件，并部署到设定的仓库。</p>
-<p>这时候文章上传完成。</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>发布博客流程说明</title>
+      <link href="/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/"/>
+      <url>/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇文章主要是说明在个人博客上发布文章的具体流程，因为穷，无法购买服务器等设备，只能手动发布了，在此记录下发布流程。以免长期不上传文章导致遗忘相关步骤。</p> <a id="more"></a></blockquote><h1 id="一-开启-hexo-server"><a href="#一-开启-hexo-server" class="headerlink" title="一 开启 hexo server"></a>一 开启 hexo server</h1><p>###（1）进入文件夹</p><p>首先，进入本机已经搭建好的hexo文件夹,打开命令行界面：</p><p><a href>cd /Users/lipixu/Desktop/个人博客</a> </p><p>这个是本人电脑上安装hexo相关的文件夹路径。</p><p>###（2）创建blog相关文件</p><p><a href>hexo new “文章名”</a> </p><p>这里需要注意：（小问题花大时间去解决的一个坑）</p><p>在编辑markdown文件的时候，我们事先编辑的markdown文件有文件头，我们需要去填充文字说</p><p>这里每个title（例如tags: 、categories:等小标题后面的冒号跟要填充的内容都需要隔一个空格，不然就报错）。</p><p>然后你会在你的blog/souce/_post下回有你的新建的文件</p><h3 id="（3）blog预览"><a href="#（3）blog预览" class="headerlink" title="（3）blog预览"></a>（3）blog预览</h3><p><a href>hexo server</a>（简写: hexo s）</p><p>可以在本地的localhost:4000上预览一下自己的文章</p><p>###（4）blog预提交</p><p><a href>hexo generate</a> （简写: hexo g) </p><p>生成网站静态文件到默认设置的public文件夹</p><h3 id="（5）blog上传"><a href="#（5）blog上传" class="headerlink" title="（5）blog上传"></a>（5）blog上传</h3><p><a href>hexo deploy</a> (简写:hexo d)</p><p>自动生成网站静态文件，并部署到设定的仓库。</p><p>这时候文章上传完成。</p>]]></content>
+      
+      
       <categories>
-        <category>发布文章操作说明</category>
+          
+          <category> 发布文章操作说明 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>iOS组件化学习-02</title>
-    <url>/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章主要内容是了解SDK，静态库.a文件和.framework文件的各种概念。因为根据需求制作以上的文件的目的是解耦，给别人用又不想别人看见我们的源码。做SDK都是做静态库也就是.a和.framework文件。为了准确区分各种概念问题，对所有的概念问题做一个汇总。</p>
- <a id="more"></a>
-</blockquote>
-<h1 id="几个IT行业常用术语"><a href="#几个IT行业常用术语" class="headerlink" title="几个IT行业常用术语"></a>几个IT行业常用术语</h1><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><p>software Deveopment Kit：软件开发工具包</p>
-<p>一般都是一些软件工程师为特定的软件包、软件框架，硬件平台、操作系统等建立应用软件时的开发工具的集合。</p>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Application Programming Interface：应用编程接口。</p>
-<p>其实就是操作系统留给应用程序的一个调用接口，应用程序通过调用操作系统的API从而使操作系统去执行应用程序的命令。</p>
-<h2 id="DLL"><a href="#DLL" class="headerlink" title="DLL"></a>DLL</h2><p>Dynamic Link Library，动态链接库。</p>
-<p>在Windows环境下有大量的.dll格式的文件，这些文件就是动态链接库文件，其实也是一种可执行文件格式。跟.exe不同的是，.dll文件不能直接执行，他们通常由.exe在执行时装入，内容是一些资源以及可执行代码等。</p>
-<h1 id="o文件和-a文件和-so文件的区别"><a href="#o文件和-a文件和-so文件的区别" class="headerlink" title=".o文件和.a文件和.so文件的区别"></a>.o文件和.a文件和.so文件的区别</h1><h2 id="o文件"><a href="#o文件" class="headerlink" title=".o文件"></a>.o文件</h2><p>.o文件就是对象文件，包含编译好的可执行代码，当程序执行时，被链接库链接条用（相当于windows里面的obj文件）。</p>
-<h2 id="a文件"><a href="#a文件" class="headerlink" title=".a文件"></a>.a文件</h2><p>unix中的静态链接库，包含多个需要包含的.o文件，主要特点是在连接阶段即把库代码包含入可执行文件的方式（相当于windows操作系统的后缀名为.lib的静态库）。</p>
-<h2 id="so文件"><a href="#so文件" class="headerlink" title=".so文件"></a>.so文件</h2><p>unix中的动态链接库，主要特点是，在运行阶段，动态加载组件时，在将函数加载到程序中，耦合度低（相当于window里面的dll组件）。</p>
-<h1 id="什么是库"><a href="#什么是库" class="headerlink" title="什么是库"></a>什么是库</h1><p>库从本质上来说是一种可执行的二进制格式，可以被载入内存中执行。</p>
-<p>库就是程序代码的集合，是共享代码的一种方式。</p>
-<p>库从广义上可分为开源库和闭源库，而闭源库才分为静态库和动态库</p>
-<h2 id="开源库"><a href="#开源库" class="headerlink" title="开源库"></a>开源库</h2><p>对外公开源码，能看到具体的代码实现，例如github上的第三方开源库都称为开源库。</p>
-<h2 id="闭源库"><a href="#闭源库" class="headerlink" title="闭源库"></a>闭源库</h2><p>不公开源代码，文件是经过编译后的二进制文件，看不见具体实现，例如.a和.framework文件。</p>
-<h2 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h2><p>链接时完整地拷贝至可执行文件中，被多次使用就是有多份冗余拷贝。</p>
-<p>有两种存在形式：.a和.framework</p>
-<h2 id="动态库"><a href="#动态库" class="headerlink" title="动态库"></a>动态库</h2><p>动态库不会复制，只有一份，程序运行时动态加载到内存；系统只加载一次，多个程序共用，节省内存。</p>
-<p>有两种存在形式：.dylib和.framework</p>
-<p>注意的是：系统的.framework是动态库，我们自己建立的.framework是静态库</p>
-<p>但是项目中用到自己的动态库，苹果不允许上架！</p>
-<h2 id="a"><a href="#a" class="headerlink" title=".a"></a>.a</h2><p>.a文件是一个纯二进制文件不能直接使用，必须要有.h文件才能使用，.h文件对外提供接口，.a文件是代码的具体实现，即.m。</p>
-<h2 id="framework"><a href="#framework" class="headerlink" title=".framework"></a>.framework</h2><p>.framework中除了二进制文件之外还有资源文件，可以直接使用。</p>
-<p>所以开发中建议使用.framework</p>
-<h2 id="静态库的架构"><a href="#静态库的架构" class="headerlink" title="静态库的架构"></a>静态库的架构</h2><p>1、在不同的环境下静态库支持的架构也是不同的，模拟器下的静态库和真机下的静态库不能共用，不同型号编译的静态库也是不能共用的。</p>
-<p>2、不同设备使用的CPU不同，从而使用的CPU架构（指令集）也不同，静态库有其支持的CPU架构，如果静态库在不支持的CPU架构上运行程序机会崩溃。</p>
-<h3 id="模拟器使用的CPU架构"><a href="#模拟器使用的CPU架构" class="headerlink" title="模拟器使用的CPU架构"></a>模拟器使用的CPU架构</h3><p>iPhone4s - iPhone5: i386；</p>
-<p>iphone5s - iPhoneX：x86_64;</p>
-<h3 id="真机使用的CPU架构"><a href="#真机使用的CPU架构" class="headerlink" title="真机使用的CPU架构"></a>真机使用的CPU架构</h3><p>iPhone3gs - iPhone4s：armv7；</p>
-<p>iphone5 - iPhone5c：armv7s；</p>
-<p>iPhone5s - iPhoneX：armv64；</p>
-<h3 id="查看静态库所支持的架构"><a href="#查看静态库所支持的架构" class="headerlink" title="查看静态库所支持的架构"></a>查看静态库所支持的架构</h3><p>使用终端，cd到静态库所在的目录，在执行lipo -info 静态库名称即可。</p>
-<h3 id="如何编译多架构静态库"><a href="#如何编译多架构静态库" class="headerlink" title="如何编译多架构静态库"></a>如何编译多架构静态库</h3><p>怎样一次编译支持多个架构的静态库？</p>
-<p>去工程的Build Settings 里面去修改 Build Active Architecture Only,这个选项是默认的YES，意思是只编译当前活跃环境的架构，设置成NO即可。</p>
-<p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-134203@2x.png" alt="WX20200103-134203@2x">设置以后模拟器编译出来的就支持所有模拟器型号，真机亦是如此。</p>
-<h2 id="静态库的版本"><a href="#静态库的版本" class="headerlink" title="静态库的版本"></a>静态库的版本</h2><p>和iOS证书一样分调试版本（Debug）和发布版本（Release）</p>
-<p>真机 - Debug和Release；</p>
-<p>模拟器 - Debug和Release；</p>
-<h3 id="调试版本Debug"><a href="#调试版本Debug" class="headerlink" title="调试版本Debug"></a>调试版本Debug</h3><p>真机 - Debug版本和模拟器 - Debug版本</p>
-<p>调试版本的特点：</p>
-<p>调试版本会包含完整的符号信息，以方便调试。</p>
-<p>调试版本不会带代码进行优化。</p>
-<h3 id="发布版本Release"><a href="#发布版本Release" class="headerlink" title="发布版本Release"></a>发布版本Release</h3><p>发布版本的特点：</p>
-<p>发布版本不会包含完整的符号信息。</p>
-<p>发布版本的执行代码是进行过优化的。</p>
-<p>发布版本的小大会闭调试版本的略小。</p>
-<p>在执行速度方面，发布版本会更快些，但不意味着会有显著的提升。</p>
-<h2 id="生成不同版本的静态库"><a href="#生成不同版本的静态库" class="headerlink" title="生成不同版本的静态库"></a>生成不同版本的静态库</h2><p>选择项目 -&gt; Edit Scheme -&gt; Run -&gt; Release/Debug分别进行编译，即可得到不同版本的静态库。<img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-140029@2x.png" alt="WX20200103-140029@2x"></p>
-<h2 id="生成-a和-h文件"><a href="#生成-a和-h文件" class="headerlink" title="生成.a和.h文件"></a>生成.a和.h文件</h2><p>正常情况下，生成的.h文件是在<code>..//include/$(PRODUCT_NAME)</code>目录下的，<code>$(PRODUCT_NAME)</code>指的是项目名称。</p>
-<p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-142612@2x.png" alt="WX20200103-142612@2x"></p>
-<p>修改Subpath的路径地址，即可修改.h文件生成的路径，填空即为和.a文件在统计目录下。</p>
-<p>在Products文件夹下，command + B编译之后，show in Finder即可找到生成的静态库。</p>
-<h2 id="合并静态库"><a href="#合并静态库" class="headerlink" title="合并静态库"></a>合并静态库</h2><p>因为静态库针对模拟器和真机生成了不同的版本（支持不同架构），所以没发同时运行。</p>
-<p>合并后的静态库既可以在真机上调试，也可以在模拟器上调试，省去了来回切换的麻烦。</p>
-<p>但是合并以后的静态库大小是模拟器和真机的大小之和，如果静态库太大。合并打包后，会非常大。因此很多第三方的静态库的.a是区分版本的。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以下所有方式得到的静态库都可以通过lipo -info xx.a方式检测现有的架构, 注意要在xx.a所在的目录下</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 合并静态库</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -create 静态库<span class="number">1</span>路径 静态库<span class="number">2</span>路径 -output 合并后的静态库名称</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -create /Users/xxx/Debug-iphoneos/libStateLib.a /Users/xxx/Debug-iphonesimulator/libStateLib.a -output hahah.a</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 2. 移除某一个架构</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -remove 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -remove arm64 /Users/xxx/Build/Products/hahah.a -output ha_arm64.a</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 2. 拆分出一个单独架构的静态库</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -thin 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="code"><pre><span class="line">lipo -thin arm64 /Users/xxx/Build/Products/hahah.a -output only_arm64.a</span></pre></td></tr></table></figure>
-
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>iOS组件化学习-02</title>
+      <link href="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/"/>
+      <url>/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章主要内容是了解SDK，静态库.a文件和.framework文件的各种概念。因为根据需求制作以上的文件的目的是解耦，给别人用又不想别人看见我们的源码。做SDK都是做静态库也就是.a和.framework文件。为了准确区分各种概念问题，对所有的概念问题做一个汇总。</p> <a id="more"></a></blockquote><h1 id="几个IT行业常用术语"><a href="#几个IT行业常用术语" class="headerlink" title="几个IT行业常用术语"></a>几个IT行业常用术语</h1><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><p>software Deveopment Kit：软件开发工具包</p><p>一般都是一些软件工程师为特定的软件包、软件框架，硬件平台、操作系统等建立应用软件时的开发工具的集合。</p><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Application Programming Interface：应用编程接口。</p><p>其实就是操作系统留给应用程序的一个调用接口，应用程序通过调用操作系统的API从而使操作系统去执行应用程序的命令。</p><h2 id="DLL"><a href="#DLL" class="headerlink" title="DLL"></a>DLL</h2><p>Dynamic Link Library，动态链接库。</p><p>在Windows环境下有大量的.dll格式的文件，这些文件就是动态链接库文件，其实也是一种可执行文件格式。跟.exe不同的是，.dll文件不能直接执行，他们通常由.exe在执行时装入，内容是一些资源以及可执行代码等。</p><h1 id="o文件和-a文件和-so文件的区别"><a href="#o文件和-a文件和-so文件的区别" class="headerlink" title=".o文件和.a文件和.so文件的区别"></a>.o文件和.a文件和.so文件的区别</h1><h2 id="o文件"><a href="#o文件" class="headerlink" title=".o文件"></a>.o文件</h2><p>.o文件就是对象文件，包含编译好的可执行代码，当程序执行时，被链接库链接条用（相当于windows里面的obj文件）。</p><h2 id="a文件"><a href="#a文件" class="headerlink" title=".a文件"></a>.a文件</h2><p>unix中的静态链接库，包含多个需要包含的.o文件，主要特点是在连接阶段即把库代码包含入可执行文件的方式（相当于windows操作系统的后缀名为.lib的静态库）。</p><h2 id="so文件"><a href="#so文件" class="headerlink" title=".so文件"></a>.so文件</h2><p>unix中的动态链接库，主要特点是，在运行阶段，动态加载组件时，在将函数加载到程序中，耦合度低（相当于window里面的dll组件）。</p><h1 id="什么是库"><a href="#什么是库" class="headerlink" title="什么是库"></a>什么是库</h1><p>库从本质上来说是一种可执行的二进制格式，可以被载入内存中执行。</p><p>库就是程序代码的集合，是共享代码的一种方式。</p><p>库从广义上可分为开源库和闭源库，而闭源库才分为静态库和动态库</p><h2 id="开源库"><a href="#开源库" class="headerlink" title="开源库"></a>开源库</h2><p>对外公开源码，能看到具体的代码实现，例如github上的第三方开源库都称为开源库。</p><h2 id="闭源库"><a href="#闭源库" class="headerlink" title="闭源库"></a>闭源库</h2><p>不公开源代码，文件是经过编译后的二进制文件，看不见具体实现，例如.a和.framework文件。</p><h2 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h2><p>链接时完整地拷贝至可执行文件中，被多次使用就是有多份冗余拷贝。</p><p>有两种存在形式：.a和.framework</p><h2 id="动态库"><a href="#动态库" class="headerlink" title="动态库"></a>动态库</h2><p>动态库不会复制，只有一份，程序运行时动态加载到内存；系统只加载一次，多个程序共用，节省内存。</p><p>有两种存在形式：.dylib和.framework</p><p>注意的是：系统的.framework是动态库，我们自己建立的.framework是静态库</p><p>但是项目中用到自己的动态库，苹果不允许上架！</p><h2 id="a"><a href="#a" class="headerlink" title=".a"></a>.a</h2><p>.a文件是一个纯二进制文件不能直接使用，必须要有.h文件才能使用，.h文件对外提供接口，.a文件是代码的具体实现，即.m。</p><h2 id="framework"><a href="#framework" class="headerlink" title=".framework"></a>.framework</h2><p>.framework中除了二进制文件之外还有资源文件，可以直接使用。</p><p>所以开发中建议使用.framework</p><h2 id="静态库的架构"><a href="#静态库的架构" class="headerlink" title="静态库的架构"></a>静态库的架构</h2><p>1、在不同的环境下静态库支持的架构也是不同的，模拟器下的静态库和真机下的静态库不能共用，不同型号编译的静态库也是不能共用的。</p><p>2、不同设备使用的CPU不同，从而使用的CPU架构（指令集）也不同，静态库有其支持的CPU架构，如果静态库在不支持的CPU架构上运行程序机会崩溃。</p><h3 id="模拟器使用的CPU架构"><a href="#模拟器使用的CPU架构" class="headerlink" title="模拟器使用的CPU架构"></a>模拟器使用的CPU架构</h3><p>iPhone4s - iPhone5: i386；</p><p>iphone5s - iPhoneX：x86_64;</p><h3 id="真机使用的CPU架构"><a href="#真机使用的CPU架构" class="headerlink" title="真机使用的CPU架构"></a>真机使用的CPU架构</h3><p>iPhone3gs - iPhone4s：armv7；</p><p>iphone5 - iPhone5c：armv7s；</p><p>iPhone5s - iPhoneX：armv64；</p><h3 id="查看静态库所支持的架构"><a href="#查看静态库所支持的架构" class="headerlink" title="查看静态库所支持的架构"></a>查看静态库所支持的架构</h3><p>使用终端，cd到静态库所在的目录，在执行lipo -info 静态库名称即可。</p><h3 id="如何编译多架构静态库"><a href="#如何编译多架构静态库" class="headerlink" title="如何编译多架构静态库"></a>如何编译多架构静态库</h3><p>怎样一次编译支持多个架构的静态库？</p><p>去工程的Build Settings 里面去修改 Build Active Architecture Only,这个选项是默认的YES，意思是只编译当前活跃环境的架构，设置成NO即可。</p><p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-134203@2x.png" alt="WX20200103-134203@2x">设置以后模拟器编译出来的就支持所有模拟器型号，真机亦是如此。</p><h2 id="静态库的版本"><a href="#静态库的版本" class="headerlink" title="静态库的版本"></a>静态库的版本</h2><p>和iOS证书一样分调试版本（Debug）和发布版本（Release）</p><p>真机 - Debug和Release；</p><p>模拟器 - Debug和Release；</p><h3 id="调试版本Debug"><a href="#调试版本Debug" class="headerlink" title="调试版本Debug"></a>调试版本Debug</h3><p>真机 - Debug版本和模拟器 - Debug版本</p><p>调试版本的特点：</p><p>调试版本会包含完整的符号信息，以方便调试。</p><p>调试版本不会带代码进行优化。</p><h3 id="发布版本Release"><a href="#发布版本Release" class="headerlink" title="发布版本Release"></a>发布版本Release</h3><p>发布版本的特点：</p><p>发布版本不会包含完整的符号信息。</p><p>发布版本的执行代码是进行过优化的。</p><p>发布版本的小大会闭调试版本的略小。</p><p>在执行速度方面，发布版本会更快些，但不意味着会有显著的提升。</p><h2 id="生成不同版本的静态库"><a href="#生成不同版本的静态库" class="headerlink" title="生成不同版本的静态库"></a>生成不同版本的静态库</h2><p>选择项目 -&gt; Edit Scheme -&gt; Run -&gt; Release/Debug分别进行编译，即可得到不同版本的静态库。<img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-140029@2x.png" alt="WX20200103-140029@2x"></p><h2 id="生成-a和-h文件"><a href="#生成-a和-h文件" class="headerlink" title="生成.a和.h文件"></a>生成.a和.h文件</h2><p>正常情况下，生成的.h文件是在<code>..//include/$(PRODUCT_NAME)</code>目录下的，<code>$(PRODUCT_NAME)</code>指的是项目名称。</p><p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-142612@2x.png" alt="WX20200103-142612@2x"></p><p>修改Subpath的路径地址，即可修改.h文件生成的路径，填空即为和.a文件在统计目录下。</p><p>在Products文件夹下，command + B编译之后，show in Finder即可找到生成的静态库。</p><h2 id="合并静态库"><a href="#合并静态库" class="headerlink" title="合并静态库"></a>合并静态库</h2><p>因为静态库针对模拟器和真机生成了不同的版本（支持不同架构），所以没发同时运行。</p><p>合并后的静态库既可以在真机上调试，也可以在模拟器上调试，省去了来回切换的麻烦。</p><p>但是合并以后的静态库大小是模拟器和真机的大小之和，如果静态库太大。合并打包后，会非常大。因此很多第三方的静态库的.a是区分版本的。</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下所有方式得到的静态库都可以通过lipo -info xx.a方式检测现有的架构, 注意要在xx.a所在的目录下</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 合并静态库</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">lipo -create 静态库<span class="number">1</span>路径 静态库<span class="number">2</span>路径 -output 合并后的静态库名称</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">lipo -create /Users/xxx/Debug-iphoneos/libStateLib.a /Users/xxx/Debug-iphonesimulator/libStateLib.a -output hahah.a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 移除某一个架构</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">lipo -remove 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">lipo -remove arm64 /Users/xxx/Build/Products/hahah.a -output ha_arm64.a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 拆分出一个单独架构的静态库</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">lipo -thin 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">lipo -thin arm64 /Users/xxx/Build/Products/hahah.a -output only_arm64.a</span></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>iOS组件化相关</category>
+          
+          <category> iOS组件化相关 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>iOS组件化学习-01</title>
-    <url>/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章开始学习如何进行工程的组件化，主要内容是本地私有库的制作和如何关联远程私有库。并将本地私有pod push 进本地私有库。</p>
- <a id="more"></a>
-</blockquote>
-<h1 id="组件化的方案："><a href="#组件化的方案：" class="headerlink" title="组件化的方案："></a>组件化的方案：</h1><p>1、蘑菇街的URL方案：</p>
-<p>2、runtime + 命令模式的方案：</p>
-<p>3、协议的方案</p>
-<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><h2 id="什么是组件化："><a href="#什么是组件化：" class="headerlink" title="什么是组件化："></a>什么是组件化：</h2><p>将一个工程分解为各个组件，然后按照某种方式任意组织成为一个拥有完整业务逻辑的工程。</p>
-<h2 id="组件化的优缺点"><a href="#组件化的优缺点" class="headerlink" title="组件化的优缺点"></a>组件化的优缺点</h2><p>优点：1、组件的独立性                     </p>
-<p>​            2、资源重用</p>
-<p>​            3、高效迭代性</p>
-<p>​            4、配合二进制，加快项目的编译速度</p>
-<p>缺点：1、组件的粒度大小</p>
-<p>​            2、区分业务组件以及基础业务组件</p>
-<h2 id="组件划分"><a href="#组件划分" class="headerlink" title="组件划分"></a>组件划分</h2><h3 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h3><p>基础配置（宏，常量），分类，网络（AFN，SDW二次封装），工具类（日期时间的处理，文件处理，设备处理）</p>
-<h3 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h3><p>控件（弹幕，轮播图，选项卡）；功能（断点续传，音频处理）</p>
-<h3 id="业务组件"><a href="#业务组件" class="headerlink" title="业务组件"></a>业务组件</h3><p>业务线一，业务线二….</p>
-<h1 id="本地库"><a href="#本地库" class="headerlink" title="本地库"></a>本地库</h1><p>利用Cocoapods将我们抽取出的代码模块制作成pod集成到我们的工程。</p>
-<h2 id="pod-引用"><a href="#pod-引用" class="headerlink" title="pod 引用"></a>pod 引用</h2><p>pod install命令引入pod：</p>
-<p>每一个pod里面均有一个Spec文件（描述框架信息文件（框架名称，框架版本号，框架真实源码））。</p>
-<h2 id="执行pod-install"><a href="#执行pod-install" class="headerlink" title="执行pod install"></a>执行pod install</h2><p>​    1、先去找本地的.Spec文件。</p>
-<p>​    2、如果没有，再去远程仓库将.Spec文件拉到本地，在执行1.</p>
-<h2 id="本地-Spec的文件："><a href="#本地-Spec的文件：" class="headerlink" title="本地.Spec的文件："></a>本地.Spec的文件：</h2><p>​    pod setup将远程仓库的Spec文件拉到本地。</p>
-<h1 id="创建本地私有库"><a href="#创建本地私有库" class="headerlink" title="创建本地私有库"></a>创建本地私有库</h1><h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><blockquote>
-<p>终端: </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &lt;想要创建位置的文件夹&gt;</span></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pod spec create &lt;本地库名字&gt; </span></pre></td></tr></table></figure>
-</blockquote>
-<p>以上这种方式不推荐，因为部分s.source_files文件内容等需要自己填写，Classes，FILE_LICENSE等文件需要自己创建。太麻烦，弃用。</p>
-<blockquote>
-<p>终端:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pod lib create &lt;本地库名字&gt;</span></pre></td></tr></table></figure>
-</blockquote>
-<p>回答相应的问题即可。生成的文件如下:</p>
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163627@2x.png" alt="WX20191205-163627@2x"></p>
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163816@2x.png" alt="WX20191205-163627@2x"></p>
-<p>至此：本地私有库搭建完成。</p>
-<h1 id="创建并设置一个私有的Spec-Repo"><a href="#创建并设置一个私有的Spec-Repo" class="headerlink" title="创建并设置一个私有的Spec Repo"></a>创建并设置一个私有的Spec Repo</h1><h2 id="什么是Spec-Repo？"><a href="#什么是Spec-Repo？" class="headerlink" title="什么是Spec Repo？"></a>什么是Spec Repo？</h2><p>它是所有的Pods的一个索引，一个容器，所有的公开的Pods都在这个里面，它实际是一个Git仓库remote端在GitHub上，当你使用Cocoapods后它会被clone到本地的~/.cocoapods/repos目录下，可以进入这个目录看到master文件夹就试这个官方的Spec Repo了，这个master目录结构是这个样子的</p>
-<blockquote>
-<p>├── Specs<br>└── [SPEC_NAME]<br>└── [VERSION]<br>└── [SPEC_NAME].podspec</p>
-</blockquote>
-<h2 id="创建本地索引库并与远程库相关联"><a href="#创建本地索引库并与远程库相关联" class="headerlink" title="创建本地索引库并与远程库相关联"></a>创建本地索引库并与远程库相关联</h2><p>1、首先我们在GitHub上创建一个自己的仓库（repository Name）</p>
-<p>2、在本地创建Spec Repo</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#pod repo add [Private Repo Name] [对应的.git URL]</span></pre></td></tr><tr><td class="code"><pre><span class="line">$pod repo add xlp_test https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;xlp_test.git</span></pre></td></tr></table></figure>
-
-<p>进~/.cocoapods/repos目录就能看见我们自己的pod仓库了。至此第一步创建私有Spec Repo完成。</p>
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110154@2x.png" alt="WX20191212-110154@2x"></p>
-<p>执行 pod repo list查看repo列表</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo list</span></pre></td></tr></table></figure>
-
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110421@2x.png" alt="WX20191212-110421@2x"></p>
-<p> PS:如果有其他合作人员共同使用这个私有Spec Repo的话在他有对应Git仓库的权限的前提执行相同的命令添加这个Spec Repo即可</p>
-<h2 id="编辑Pod文件夹并与远程库相关联"><a href="#编辑Pod文件夹并与远程库相关联" class="headerlink" title="编辑Pod文件夹并与远程库相关联"></a>编辑Pod文件夹并与远程库相关联</h2><p>向Pod文件夹中添加库文件和资源，并配置podspec文件。</p>
-<h3 id="添加代码和图片等资源文件"><a href="#添加代码和图片等资源文件" class="headerlink" title="添加代码和图片等资源文件"></a>添加代码和图片等资源文件</h3><p>在上面那张生成Lib的图里面可以看见放置代码和图片的位置，</p>
-<p>在pod/Classes中添加代码，在pod/Assets里面添加图片。然后进入终端：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$cd Example</span></pre></td></tr><tr><td class="code"><pre><span class="line">$pod update</span></pre></td></tr></table></figure>
-
-<p>再打开项目工程就可以看见刚添加的文件了。</p>
-<p>注：这里需要注意是的每当你向Pod添加了新的文件或者以后更新了podspec的版本都需要重新执行pod update命令。</p>
-<p>测试无误后将项目添加并推送到远端仓库，并编辑podspec文件</p>
-<h3 id="编辑podspec文件并与远程库"><a href="#编辑podspec文件并与远程库" class="headerlink" title="编辑podspec文件并与远程库"></a>编辑podspec文件并与远程库</h3><p>首先通过Cocoapods创建出来的目录本身就在本地的Git管理下，我们需要做的就是将它添加到远端仓库。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &lt;lib文件夹&gt;</span></pre></td></tr></table></figure>
-
-<p>git提交相应的代码:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git add .</span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git commit -s -m &quot;初始化library&quot;</span></pre></td></tr></table></figure>
-
-<p>git 添加远端仓库</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># git remote add origin &lt;.git URL&gt; </span></pre></td></tr><tr><td class="code"><pre><span class="line">$ git remote add origin https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tool_test.git</span></pre></td></tr></table></figure>
-
-<p>git 推送到远程仓库</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git push origin master</span></pre></td></tr></table></figure>
-
-<p>因为podspec文件中获取git版本控制的项目需要tag号，所以需要打个tag</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git tag -m &quot;第一次提交&quot; &quot;0.1.0&quot;</span></pre></td></tr></table></figure>
-
-<p>推送tag到远端仓库</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git push --tags</span></pre></td></tr></table></figure>
-
-<p>打开lib文件中的例子工程Example/tools_test.xworkspace，编辑tools_test.podspec文件</p>
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-204611@2x.png" alt="WX20191212-204611@2x"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.name             &#x3D; &#39;tools_test &#39; ##名字必须与libname相同</span></pre></td></tr><tr><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr><tr><td class="code"><pre><span class="line">s.summary          &#x3D; ’这是测试库‘ #关于库的一个简短的描述</span></pre></td></tr><tr><td class="code"><pre><span class="line">s.description      &#x3D; &lt;&lt;-DESC</span></pre></td></tr><tr><td class="code"><pre><span class="line">TODO: 备注文字(较长描述)</span></pre></td></tr><tr><td class="code"><pre><span class="line">                            DESC</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#是否支持arc</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.requires_arc &#x3D; true</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#文件主页</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#开源协议</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.license          &#x3D; &#123; :type &#x3D;&gt; &#39;MIT&#39;, :file &#x3D;&gt; &#39;LICENSE&#39; &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#作者信息</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.author           &#x3D; &#123; &#39;Maoyis&#39; &#x3D;&gt; &#39;xxxxxx@qq.com&#39; &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#源文件所在网络路径</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#支持版本</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.ios.deployment_target &#x3D; &#39;7.0&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#公开头文件名</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.public_header_files &#x3D; &#39;Pod&#x2F;Classes&#x2F;**&#x2F;*.h&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#依赖的框架</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.frameworks &#x3D; &#39;UIKit&#39;, &#39;MapKit&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">#依赖库</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">s.dependency &#39;AFNetworking&#39;, &#39;~&gt; 2.3&#39;</span></pre></td></tr></table></figure>
-
-<p>以上.podspec文件最重要的三个地方要填写正确</p>
-<p>这个是资源地址：放置你的源码和资源文件的地方</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr></table></figure>
-
-<p>这个是主页地址：如果是私有库的话可以填写自己的github主页地址</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr></table></figure>
-
-<p>这个是tag值，在git里面打的tag值必须和podspec文件里面的一致，否则报错</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr></table></figure>
-
-<p>到此检查一下你的本地和远程pod是否正确，在终端里面输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure>
-
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-214537@2x.png" alt="WX20191212-214537@2x"></p>
-<p>这样表示验证通过。</p>
-<p>ps：这里指令有两种</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod lib lint</span></pre></td></tr></table></figure>
-
-<p>上面这种写法表示只验证本地库中的pod是否正确</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure>
-
-<p>上面这种写法表示从本地库和远程库两个方面去验证pod是否正确。</p>
-<h3 id="将lib-podsepc文件提交本地索引库"><a href="#将lib-podsepc文件提交本地索引库" class="headerlink" title="将lib.podsepc文件提交本地索引库"></a>将lib.podsepc文件提交本地索引库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名称&gt; &lt;本地pod名称&gt;.podspec</span></pre></td></tr></table></figure>
-
-
-
-<h1 id="清坑"><a href="#清坑" class="headerlink" title="清坑"></a>清坑</h1><p>这里有些坑需要理一下。</p>
-<p>首先在创建私有库，在终端pod repo add的时候创建远程仓库时候</p>
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202203@2x.png" alt="WX20191212-202203@2x"></p>
-<p>这个要点上，不然远程仓库没有master分支，导致后面</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名&gt; &lt;创建的pod名&gt;.podspec</span></pre></td></tr></table></figure>
-
-<p>失败。原因就在于没有master分支。</p>
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202911@2x.png" alt="WX20191212-202911@2x"></p>
-<p>这样就导致push失败。如下图所示:</p>
-<p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-215048@2x.png" alt="WX20191212-215048@2x"></p>
-<p>至此，本地库与远程库关联并且搭建完成。</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>iOS组件化学习-01</title>
+      <link href="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/"/>
+      <url>/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章开始学习如何进行工程的组件化，主要内容是本地私有库的制作和如何关联远程私有库。并将本地私有pod push 进本地私有库。</p> <a id="more"></a></blockquote><h1 id="组件化的方案："><a href="#组件化的方案：" class="headerlink" title="组件化的方案："></a>组件化的方案：</h1><p>1、蘑菇街的URL方案：</p><p>2、runtime + 命令模式的方案：</p><p>3、协议的方案</p><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><h2 id="什么是组件化："><a href="#什么是组件化：" class="headerlink" title="什么是组件化："></a>什么是组件化：</h2><p>将一个工程分解为各个组件，然后按照某种方式任意组织成为一个拥有完整业务逻辑的工程。</p><h2 id="组件化的优缺点"><a href="#组件化的优缺点" class="headerlink" title="组件化的优缺点"></a>组件化的优缺点</h2><p>优点：1、组件的独立性                     </p><p>​            2、资源重用</p><p>​            3、高效迭代性</p><p>​            4、配合二进制，加快项目的编译速度</p><p>缺点：1、组件的粒度大小</p><p>​            2、区分业务组件以及基础业务组件</p><h2 id="组件划分"><a href="#组件划分" class="headerlink" title="组件划分"></a>组件划分</h2><h3 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h3><p>基础配置（宏，常量），分类，网络（AFN，SDW二次封装），工具类（日期时间的处理，文件处理，设备处理）</p><h3 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h3><p>控件（弹幕，轮播图，选项卡）；功能（断点续传，音频处理）</p><h3 id="业务组件"><a href="#业务组件" class="headerlink" title="业务组件"></a>业务组件</h3><p>业务线一，业务线二….</p><h1 id="本地库"><a href="#本地库" class="headerlink" title="本地库"></a>本地库</h1><p>利用Cocoapods将我们抽取出的代码模块制作成pod集成到我们的工程。</p><h2 id="pod-引用"><a href="#pod-引用" class="headerlink" title="pod 引用"></a>pod 引用</h2><p>pod install命令引入pod：</p><p>每一个pod里面均有一个Spec文件（描述框架信息文件（框架名称，框架版本号，框架真实源码））。</p><h2 id="执行pod-install"><a href="#执行pod-install" class="headerlink" title="执行pod install"></a>执行pod install</h2><p>​    1、先去找本地的.Spec文件。</p><p>​    2、如果没有，再去远程仓库将.Spec文件拉到本地，在执行1.</p><h2 id="本地-Spec的文件："><a href="#本地-Spec的文件：" class="headerlink" title="本地.Spec的文件："></a>本地.Spec的文件：</h2><p>​    pod setup将远程仓库的Spec文件拉到本地。</p><h1 id="创建本地私有库"><a href="#创建本地私有库" class="headerlink" title="创建本地私有库"></a>创建本地私有库</h1><h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><blockquote><p>终端: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd &lt;想要创建位置的文件夹&gt;</span></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod spec create &lt;本地库名字&gt; </span></pre></td></tr></table></figure></blockquote><p>以上这种方式不推荐，因为部分s.source_files文件内容等需要自己填写，Classes，FILE_LICENSE等文件需要自己创建。太麻烦，弃用。</p><blockquote><p>终端:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod lib create &lt;本地库名字&gt;</span></pre></td></tr></table></figure></blockquote><p>回答相应的问题即可。生成的文件如下:</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163627@2x.png" alt="WX20191205-163627@2x"></p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191205-163816@2x.png" alt="WX20191205-163627@2x"></p><p>至此：本地私有库搭建完成。</p><h1 id="创建并设置一个私有的Spec-Repo"><a href="#创建并设置一个私有的Spec-Repo" class="headerlink" title="创建并设置一个私有的Spec Repo"></a>创建并设置一个私有的Spec Repo</h1><h2 id="什么是Spec-Repo？"><a href="#什么是Spec-Repo？" class="headerlink" title="什么是Spec Repo？"></a>什么是Spec Repo？</h2><p>它是所有的Pods的一个索引，一个容器，所有的公开的Pods都在这个里面，它实际是一个Git仓库remote端在GitHub上，当你使用Cocoapods后它会被clone到本地的~/.cocoapods/repos目录下，可以进入这个目录看到master文件夹就试这个官方的Spec Repo了，这个master目录结构是这个样子的</p><blockquote><p>├── Specs<br>└── [SPEC_NAME]<br>└── [VERSION]<br>└── [SPEC_NAME].podspec</p></blockquote><h2 id="创建本地索引库并与远程库相关联"><a href="#创建本地索引库并与远程库相关联" class="headerlink" title="创建本地索引库并与远程库相关联"></a>创建本地索引库并与远程库相关联</h2><p>1、首先我们在GitHub上创建一个自己的仓库（repository Name）</p><p>2、在本地创建Spec Repo</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">#pod repo add [Private Repo Name] [对应的.git URL]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$pod repo add xlp_test https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;xlp_test.git</span></pre></td></tr></table></figure><p>进~/.cocoapods/repos目录就能看见我们自己的pod仓库了。至此第一步创建私有Spec Repo完成。</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110154@2x.png" alt="WX20191212-110154@2x"></p><p>执行 pod repo list查看repo列表</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod repo list</span></pre></td></tr></table></figure><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-110421@2x.png" alt="WX20191212-110421@2x"></p><p> PS:如果有其他合作人员共同使用这个私有Spec Repo的话在他有对应Git仓库的权限的前提执行相同的命令添加这个Spec Repo即可</p><h2 id="编辑Pod文件夹并与远程库相关联"><a href="#编辑Pod文件夹并与远程库相关联" class="headerlink" title="编辑Pod文件夹并与远程库相关联"></a>编辑Pod文件夹并与远程库相关联</h2><p>向Pod文件夹中添加库文件和资源，并配置podspec文件。</p><h3 id="添加代码和图片等资源文件"><a href="#添加代码和图片等资源文件" class="headerlink" title="添加代码和图片等资源文件"></a>添加代码和图片等资源文件</h3><p>在上面那张生成Lib的图里面可以看见放置代码和图片的位置，</p><p>在pod/Classes中添加代码，在pod/Assets里面添加图片。然后进入终端：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$cd Example</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$pod update</span></pre></td></tr></table></figure><p>再打开项目工程就可以看见刚添加的文件了。</p><p>注：这里需要注意是的每当你向Pod添加了新的文件或者以后更新了podspec的版本都需要重新执行pod update命令。</p><p>测试无误后将项目添加并推送到远端仓库，并编辑podspec文件</p><h3 id="编辑podspec文件并与远程库"><a href="#编辑podspec文件并与远程库" class="headerlink" title="编辑podspec文件并与远程库"></a>编辑podspec文件并与远程库</h3><p>首先通过Cocoapods创建出来的目录本身就在本地的Git管理下，我们需要做的就是将它添加到远端仓库。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd &lt;lib文件夹&gt;</span></pre></td></tr></table></figure><p>git提交相应的代码:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git add .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ git commit -s -m &quot;初始化library&quot;</span></pre></td></tr></table></figure><p>git 添加远端仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># git remote add origin &lt;.git URL&gt; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ git remote add origin https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tool_test.git</span></pre></td></tr></table></figure><p>git 推送到远程仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git push origin master</span></pre></td></tr></table></figure><p>因为podspec文件中获取git版本控制的项目需要tag号，所以需要打个tag</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git tag -m &quot;第一次提交&quot; &quot;0.1.0&quot;</span></pre></td></tr></table></figure><p>推送tag到远端仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ git push --tags</span></pre></td></tr></table></figure><p>打开lib文件中的例子工程Example/tools_test.xworkspace，编辑tools_test.podspec文件</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-204611@2x.png" alt="WX20191212-204611@2x"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.name             &#x3D; &#39;tools_test &#39; ##名字必须与libname相同</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">s.summary          &#x3D; ’这是测试库‘ #关于库的一个简短的描述</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">s.description      &#x3D; &lt;&lt;-DESC</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">TODO: 备注文字(较长描述)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                            DESC</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">#是否支持arc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">s.requires_arc &#x3D; true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">#文件主页</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">#开源协议</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">s.license          &#x3D; &#123; :type &#x3D;&gt; &#39;MIT&#39;, :file &#x3D;&gt; &#39;LICENSE&#39; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">#作者信息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">s.author           &#x3D; &#123; &#39;Maoyis&#39; &#x3D;&gt; &#39;xxxxxx@qq.com&#39; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">#源文件所在网络路径</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">#支持版本</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">s.ios.deployment_target &#x3D; &#39;7.0&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">#公开头文件名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">s.public_header_files &#x3D; &#39;Pod&#x2F;Classes&#x2F;**&#x2F;*.h&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">#依赖的框架</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">s.frameworks &#x3D; &#39;UIKit&#39;, &#39;MapKit&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">#依赖库</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">s.dependency &#39;AFNetworking&#39;, &#39;~&gt; 2.3&#39;</span></pre></td></tr></table></figure><p>以上.podspec文件最重要的三个地方要填写正确</p><p>这个是资源地址：放置你的源码和资源文件的地方</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.source           &#x3D; &#123; :git &#x3D;&gt; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#x2F;tools_test.git&#39;, :tag &#x3D;&gt; s.version.to_s &#125;</span></pre></td></tr></table></figure><p>这个是主页地址：如果是私有库的话可以填写自己的github主页地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.homepage         &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;liping-xu&#39;</span></pre></td></tr></table></figure><p>这个是tag值，在git里面打的tag值必须和podspec文件里面的一致，否则报错</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">s.version          &#x3D; &#39;0.1.0&#39;     #版本必须为0.0.0格式</span></pre></td></tr></table></figure><p>到此检查一下你的本地和远程pod是否正确，在终端里面输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-214537@2x.png" alt="WX20191212-214537@2x"></p><p>这样表示验证通过。</p><p>ps：这里指令有两种</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod lib lint</span></pre></td></tr></table></figure><p>上面这种写法表示只验证本地库中的pod是否正确</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod spec lint</span></pre></td></tr></table></figure><p>上面这种写法表示从本地库和远程库两个方面去验证pod是否正确。</p><h3 id="将lib-podsepc文件提交本地索引库"><a href="#将lib-podsepc文件提交本地索引库" class="headerlink" title="将lib.podsepc文件提交本地索引库"></a>将lib.podsepc文件提交本地索引库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名称&gt; &lt;本地pod名称&gt;.podspec</span></pre></td></tr></table></figure><h1 id="清坑"><a href="#清坑" class="headerlink" title="清坑"></a>清坑</h1><p>这里有些坑需要理一下。</p><p>首先在创建私有库，在终端pod repo add的时候创建远程仓库时候</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202203@2x.png" alt="WX20191212-202203@2x"></p><p>这个要点上，不然远程仓库没有master分支，导致后面</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ pod repo push &lt;本地仓库名&gt; &lt;创建的pod名&gt;.podspec</span></pre></td></tr></table></figure><p>失败。原因就在于没有master分支。</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-202911@2x.png" alt="WX20191212-202911@2x"></p><p>这样就导致push失败。如下图所示:</p><p><img src="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/WX20191212-215048@2x.png" alt="WX20191212-215048@2x"></p><p>至此，本地库与远程库关联并且搭建完成。</p>]]></content>
+      
+      
       <categories>
-        <category>iOS组件化相关</category>
+          
+          <category> iOS组件化相关 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>个人博客说明</title>
-    <url>/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[<blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。</p>
- <a id="more"></a>
-</blockquote>
-<p>搭建的过程就不多说了，网上随便找个教程跟着搭建就完事了，主要是记录自己的技术等经历。</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>个人博客说明</title>
+      <link href="/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/"/>
+      <url>/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。</p> <a id="more"></a></blockquote><p>搭建的过程就不多说了，网上随便找个教程跟着搭建就完事了，主要是记录自己的技术等经历。</p>]]></content>
+      
+      
       <categories>
-        <category>个人博客搭建原因</category>
+          
+          <category> 个人博客搭建原因 </category>
+          
       </categories>
-  </entry>
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
