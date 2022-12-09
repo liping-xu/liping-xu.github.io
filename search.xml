@@ -1,6 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java语言概述</title>
+    <url>/2022/12/09/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> Java基础知识入门</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="1、软件开发介绍"><a href="#1、软件开发介绍" class="headerlink" title="1、软件开发介绍"></a>1、软件开发介绍</h2><p>软件开发：一系列按照特定顺序组织的计算机数据和指令的集合。有系统软件和应用软件之分。</p>
+<p>人机交互方式：</p>
+<p>· 图形化界面：（Graphical User Interface GUI）施乐-苹果-微软</p>
+<p>·命令行方式：（Command Line Interface CLI）</p>
+<p>常用的DOS命令：</p>
+<p>·D：进入某个盘：直接盘符：D:即可</p>
+<p>· dir   ：-列出当前目录下的文件以及文件夹。</p>
+<p>· md ：（make directory） A:创建文件夹，创建路径。B:创建目录   </p>
+<p>· cd  ：（）A：进入某个目录。B：进入指定目录</p>
+<p>· cd.. ：（）A:返回该路径下的上一层目录  。B:退回到上一级目录</p>
+<p>· cd/  ： （）A:返回该路径下的最上层目录。B:退回根目录</p>
+<p>· echo name:Tom age =12 &gt;1.doc  ：A: 创建1.doc文件，内容为name:Tom age = 12。</p>
+<p>· del <em>.txt :  A： * :表示未知的或者是所有的。删除所有的后缀名为txt的文件。B：删除所有的（</em>）文件</p>
+<p>· rd : (remove directory)  ：A： 删除文件夹 删除路径的节点（保证该文件夹为空）。B：删除目录</p>
+<p>exit：退出DOS命令。</p>
+<h2 id="2、计算机编程语言介绍"><a href="#2、计算机编程语言介绍" class="headerlink" title="2、计算机编程语言介绍"></a>2、计算机编程语言介绍</h2><p>###语言升级</p>
+<p>第一代</p>
+<p>·机器语言。二进制</p>
+<p>第二代</p>
+<p>·汇编语言。使用助记符表示一条机器指令。</p>
+<p>第三代</p>
+<p>·高级语言</p>
+<p>C，pascal，Fortran面向过程的语言。</p>
+<p>C++面向过程/面向对象</p>
+<p>Java跨平台的纯面向对面的言语</p>
+<h3 id="why-is-Java"><a href="#why-is-Java" class="headerlink" title="why is Java"></a>why is Java</h3><p>使用程度最高，均衡性最好</p>
+<h2 id="3、Java语言概述"><a href="#3、Java语言概述" class="headerlink" title="3、Java语言概述"></a>3、Java语言概述</h2><p>·是SUN（Stanford University Network ）1995年推出的一门高级语言</p>
+<p>·是一种面向Internet的编程语言。</p>
+<p>后台开发：Java 、PHP、Python、Go、Node.js（这些都可以开发后台）</p>
+<p>从技术角度来分</p>
+<h4 id="Java技术平台体系"><a href="#Java技术平台体系" class="headerlink" title="Java技术平台体系"></a>Java技术平台体系</h4><h5 id="A-Java-SE（Java-standard-Edition）标准版"><a href="#A-Java-SE（Java-standard-Edition）标准版" class="headerlink" title="A:Java SE（Java standard Edition）标准版"></a>A:Java SE（Java standard Edition）标准版</h5><p>支持面向桌面级应用（如Windows下的应用）的Java平台，提供了完整的Java核心API，此版本以前称为J2SE。</p>
+<h5 id="B-Java-EE（Java-Enterprise-Edition）企业版"><a href="#B-Java-EE（Java-Enterprise-Edition）企业版" class="headerlink" title="B:Java EE（Java Enterprise Edition）企业版"></a>B:Java EE（Java Enterprise Edition）企业版</h5><p>是为开发企业环境下的应用程序提供的一套解决方案。该技术体系中包含的技术如：Servlet，Jsp等，主要针对于Web应用开发，版本以前称为J2EE。</p>
+<h5 id="C-Java-ME-（Java-Micro-Edition）小型版"><a href="#C-Java-ME-（Java-Micro-Edition）小型版" class="headerlink" title="C:Java ME （Java Micro Edition）小型版"></a>C:Java ME （Java Micro Edition）小型版</h5><p>支持Java程序运行在移动端（手机、PDA）上的平台，对Java API有所精简，并加入了针对移动端的支持，此版本以前称为J2ME。</p>
+<h5 id="D-Java-Card"><a href="#D-Java-Card" class="headerlink" title="D:Java Card"></a>D:Java Card</h5><p>支持一些Java小程序（APPlets）运行在小内存设备（如智能卡）上的平台。</p>
+<p>从Java的应用领域来分</p>
+<p>· 企业级应用</p>
+<p>·Android平台应用</p>
+<p>·大数据平台开发</p>
+<h2 id="4、运行机制及运行过程"><a href="#4、运行机制及运行过程" class="headerlink" title="4、运行机制及运行过程"></a>4、运行机制及运行过程</h2><h3 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h3><h4 id="特点一：面向对面"><a href="#特点一：面向对面" class="headerlink" title="特点一：面向对面"></a>特点一：面向对面</h4><p>两个基本概念：类，对象</p>
+<p>三大特性：封装，继承，多态</p>
+<h4 id="特点二：健壮性"><a href="#特点二：健壮性" class="headerlink" title="特点二：健壮性"></a>特点二：健壮性</h4><p>吸收了C/C++语言的优点，但去掉了其影响程序健壮性的部分（如指针，内存的申请与释放），提供了一个相对安全的内存管理和访问机制。</p>
+<h4 id="特点三：跨平台性"><a href="#特点三：跨平台性" class="headerlink" title="特点三：跨平台性"></a>特点三：跨平台性</h4><p>跨平台性：通过Java语言编写的应用程序在不同的系统平台上都可以运行。“write once，Run Anywhere”</p>
+<p>原理：只要在需要运行Java应用程序的操作系统上，先安装一个Java虚拟机（JVM Java Virtual Machine）即可。由JVM来负责Java程序在该系统中的运行。</p>
+<h4 id="核心机制："><a href="#核心机制：" class="headerlink" title="核心机制："></a>核心机制：</h4><h6 id="1、垃圾回收"><a href="#1、垃圾回收" class="headerlink" title="1、垃圾回收"></a>1、垃圾回收</h6><p>·不再使用的内存空间应回收–垃圾回收。</p>
+<p>·垃圾回收在Java程序运行中自动进行，程序员无法精确控制和干扰。</p>
+<p>注：Java程序依然会出现内存泄露和内存溢出的问题。</p>
+<h6 id="2、Java虚拟机（JVM，Java-Virtual-Machine）"><a href="#2、Java虚拟机（JVM，Java-Virtual-Machine）" class="headerlink" title="2、Java虚拟机（JVM，Java Virtual Machine）"></a>2、Java虚拟机（JVM，Java Virtual Machine）</h6><p>不同操作系统中的JVM是不一样的（如Windows，mac OS，Linux等）</p>
+<p>##5、Java的环境搭建</p>
+<h3 id="1、什么是JDK，JRE"><a href="#1、什么是JDK，JRE" class="headerlink" title="1、什么是JDK，JRE"></a>1、什么是JDK，JRE</h3><p>JDK：(Java Development Kit)  Java开发工具包</p>
+<p>JDK是提供给Java开发人员使用的，其中包含了Java开发工具，也包括了JRE。所以安装了JDK，就不用在单独安装JRE了</p>
+<p>其中的开发工具：编译工具（Java.exe）打包工具（Jar.exe）等</p>
+<p>JRE：（Java Runtime Environmenr) Java运行环境</p>
+<p>包括Java虚拟机（JVM）和Java程序所需的核心内库等。如果想运行一个开发好的Java程序，计算机中只需要安装JRE即可。</p>
+<p>总结：简单而言，使用JDK的开发工具完成的Java程序，交给JRE去运行。</p>
+<h2 id="6、开发体验-HelloWorld"><a href="#6、开发体验-HelloWorld" class="headerlink" title="6、开发体验-HelloWorld"></a>6、开发体验-HelloWorld</h2><h2 id="7、常见问题及解决办法"><a href="#7、常见问题及解决办法" class="headerlink" title="7、常见问题及解决办法"></a>7、常见问题及解决办法</h2><h2 id="8、注释"><a href="#8、注释" class="headerlink" title="8、注释"></a>8、注释</h2><h2 id="9、Java-API文档"><a href="#9、Java-API文档" class="headerlink" title="9、Java API文档"></a>9、Java API文档</h2><h2 id="10、良好的编程习惯"><a href="#10、良好的编程习惯" class="headerlink" title="10、良好的编程习惯"></a>10、良好的编程习惯</h2><p>##11、常用的Java开发工具</p>
+]]></content>
+      <categories>
+        <category>Java入门</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>java基础目录概述</title>
+    <url>/2022/12/09/java%E5%9F%BA%E7%A1%80%E7%9B%AE%E5%BD%95%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> java入门基础知识</p>
+ <a id="more"></a>
+</blockquote>
+<p>##JavaEE学习路径（大纲）</p>
+<h3 id="第一阶段：JavaSE"><a href="#第一阶段：JavaSE" class="headerlink" title="第一阶段：JavaSE"></a>第一阶段：JavaSE</h3><p>Java基础</p>
+<p>java新特性</p>
+<p>数据库MySQL与SQL语言</p>
+<p>JDBC</p>
+<h3 id="第二阶段：JavaWeb"><a href="#第二阶段：JavaWeb" class="headerlink" title="第二阶段：JavaWeb"></a>第二阶段：JavaWeb</h3><p>HTML基础与CSS</p>
+<p>JavaScript DOM与jQuery</p>
+<p>XML与Tomcat</p>
+<p>HTTP协议</p>
+<p>服务器端组件Servlet</p>
+<p>JSP</p>
+<p>EL表达式</p>
+<p>会话控制Cookie和Session</p>
+<p>服务器端组件Filter</p>
+<p>服务器端组件Listener</p>
+<p>国际化</p>
+<p>异步数据传输框架Ajax</p>
+<p>文件的上传下载</p>
+<h3 id="第三阶段：JavaEE框架"><a href="#第三阶段：JavaEE框架" class="headerlink" title="第三阶段：JavaEE框架"></a>第三阶段：JavaEE框架</h3><p>系统整体分层解耦框架spring</p>
+<p>轻量级Web框架springMVC</p>
+<p>轻量级持久框架mybatis</p>
+<p>服务器操作系统Linus</p>
+<p>内存数据库Redis</p>
+<p>项目架构、jar包管理工具Maven</p>
+<h3 id="第四阶段：JavaEE高级"><a href="#第四阶段：JavaEE高级" class="headerlink" title="第四阶段：JavaEE高级"></a>第四阶段：JavaEE高级</h3><p>svn/IDEA开发工具</p>
+<p>分布式版本管理工具Git与GitHub</p>
+<p>Mysql高级</p>
+<p>Mycat实现MySQL的分布式，分库分表，读写分离</p>
+<p>Nginx反向代理，负载均衡，动静分离</p>
+<p>JVM内存模型，参数调优</p>
+<p>JUC线程高级</p>
+<p>分布式架构注册中心Zookeeper</p>
+<p>虚拟化应用容器Docker</p>
+<p>全文检索引擎ElasticSearch</p>
+<p>消息队列RabbitMQ</p>
+<p>前端VUE/ES6</p>
+<h2 id="Java应用场景"><a href="#Java应用场景" class="headerlink" title="Java应用场景"></a>Java应用场景</h2><p>Java基础是学习JavaEE，大数据，Android开发的基石。</p>
+<p>JavaEE：spring—Rest（spring MVC）</p>
+<p>大数据：Spark-Spark Streaming</p>
+<p>Android：商城页面</p>
+<p>都需要使用Java语言。</p>
+]]></content>
+      <categories>
+        <category>java入门</category>
+      </categories>
+  </entry>
+  <entry>
     <title>每日零碎汇总</title>
     <url>/2022/12/07/%E6%AF%8F%E6%97%A5%E9%9B%B6%E7%A2%8E%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<blockquote>

@@ -86,19 +86,14 @@
 
 
 
-<meta name="description" content="前言: 本章主要内容是了解SDK，静态库.a文件和.framework文件的各种概念。因为根据需求制作以上的文件的目的是解耦，给别人用又不想别人看见我们的源码。做SDK都是做静态库也就是.a和.framework文件。为了准确区分各种概念问题，对所有的概念问题做一个汇总。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS组件化学习-02">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;02&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02&#x2F;index.html">
+<meta name="description" content="个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="知道你在改变">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="知道你在改变">
-<meta property="og:description" content="前言: 本章主要内容是了解SDK，静态库.a文件和.framework文件的各种概念。因为根据需求制作以上的文件的目的是解耦，给别人用又不想别人看见我们的源码。做SDK都是做静态库也就是.a和.framework文件。为了准确区分各种概念问题，对所有的概念问题做一个汇总。">
+<meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;02&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02&#x2F;WX20200103-134203@2x.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;02&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02&#x2F;WX20200103-140029@2x.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;02&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02&#x2F;WX20200103-142612@2x.png">
-<meta property="og:updated_time" content="2022-12-06T06:35:40.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;02&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02&#x2F;WX20200103-134203@2x.png">
 
 
 
@@ -128,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/02/iOS组件化学习-02/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title>iOS组件化学习-02 | 知道你在改变</title>
+  <title>知道你在改变</title>
   
 
 
@@ -153,7 +148,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,9 +276,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -295,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="族战">
@@ -312,7 +308,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS组件化学习-02</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/" itemprop="url">iOS组件化学习-01</a></h1>
         
 
         <div class="post-meta">
@@ -324,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T15:19:05+08:00">
-                2020-01-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T13:40:45+08:00">
+                2019-12-05
               </time>
             
 
@@ -394,7 +392,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -415,67 +413,17 @@
       
 
       
-        <blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章主要内容是了解SDK，静态库.a文件和.framework文件的各种概念。因为根据需求制作以上的文件的目的是解耦，给别人用又不想别人看见我们的源码。做SDK都是做静态库也就是.a和.framework文件。为了准确区分各种概念问题，对所有的概念问题做一个汇总。</p>
- <a id="more"></a>
-</blockquote>
-<h1 id="几个IT行业常用术语"><a href="#几个IT行业常用术语" class="headerlink" title="几个IT行业常用术语"></a>几个IT行业常用术语</h1><h2 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h2><p>software Deveopment Kit：软件开发工具包</p>
-<p>一般都是一些软件工程师为特定的软件包、软件框架，硬件平台、操作系统等建立应用软件时的开发工具的集合。</p>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Application Programming Interface：应用编程接口。</p>
-<p>其实就是操作系统留给应用程序的一个调用接口，应用程序通过调用操作系统的API从而使操作系统去执行应用程序的命令。</p>
-<h2 id="DLL"><a href="#DLL" class="headerlink" title="DLL"></a>DLL</h2><p>Dynamic Link Library，动态链接库。</p>
-<p>在Windows环境下有大量的.dll格式的文件，这些文件就是动态链接库文件，其实也是一种可执行文件格式。跟.exe不同的是，.dll文件不能直接执行，他们通常由.exe在执行时装入，内容是一些资源以及可执行代码等。</p>
-<h1 id="o文件和-a文件和-so文件的区别"><a href="#o文件和-a文件和-so文件的区别" class="headerlink" title=".o文件和.a文件和.so文件的区别"></a>.o文件和.a文件和.so文件的区别</h1><h2 id="o文件"><a href="#o文件" class="headerlink" title=".o文件"></a>.o文件</h2><p>.o文件就是对象文件，包含编译好的可执行代码，当程序执行时，被链接库链接条用（相当于windows里面的obj文件）。</p>
-<h2 id="a文件"><a href="#a文件" class="headerlink" title=".a文件"></a>.a文件</h2><p>unix中的静态链接库，包含多个需要包含的.o文件，主要特点是在连接阶段即把库代码包含入可执行文件的方式（相当于windows操作系统的后缀名为.lib的静态库）。</p>
-<h2 id="so文件"><a href="#so文件" class="headerlink" title=".so文件"></a>.so文件</h2><p>unix中的动态链接库，主要特点是，在运行阶段，动态加载组件时，在将函数加载到程序中，耦合度低（相当于window里面的dll组件）。</p>
-<h1 id="什么是库"><a href="#什么是库" class="headerlink" title="什么是库"></a>什么是库</h1><p>库从本质上来说是一种可执行的二进制格式，可以被载入内存中执行。</p>
-<p>库就是程序代码的集合，是共享代码的一种方式。</p>
-<p>库从广义上可分为开源库和闭源库，而闭源库才分为静态库和动态库</p>
-<h2 id="开源库"><a href="#开源库" class="headerlink" title="开源库"></a>开源库</h2><p>对外公开源码，能看到具体的代码实现，例如github上的第三方开源库都称为开源库。</p>
-<h2 id="闭源库"><a href="#闭源库" class="headerlink" title="闭源库"></a>闭源库</h2><p>不公开源代码，文件是经过编译后的二进制文件，看不见具体实现，例如.a和.framework文件。</p>
-<h2 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h2><p>链接时完整地拷贝至可执行文件中，被多次使用就是有多份冗余拷贝。</p>
-<p>有两种存在形式：.a和.framework</p>
-<h2 id="动态库"><a href="#动态库" class="headerlink" title="动态库"></a>动态库</h2><p>动态库不会复制，只有一份，程序运行时动态加载到内存；系统只加载一次，多个程序共用，节省内存。</p>
-<p>有两种存在形式：.dylib和.framework</p>
-<p>注意的是：系统的.framework是动态库，我们自己建立的.framework是静态库</p>
-<p>但是项目中用到自己的动态库，苹果不允许上架！</p>
-<h2 id="a"><a href="#a" class="headerlink" title=".a"></a>.a</h2><p>.a文件是一个纯二进制文件不能直接使用，必须要有.h文件才能使用，.h文件对外提供接口，.a文件是代码的具体实现，即.m。</p>
-<h2 id="framework"><a href="#framework" class="headerlink" title=".framework"></a>.framework</h2><p>.framework中除了二进制文件之外还有资源文件，可以直接使用。</p>
-<p>所以开发中建议使用.framework</p>
-<h2 id="静态库的架构"><a href="#静态库的架构" class="headerlink" title="静态库的架构"></a>静态库的架构</h2><p>1、在不同的环境下静态库支持的架构也是不同的，模拟器下的静态库和真机下的静态库不能共用，不同型号编译的静态库也是不能共用的。</p>
-<p>2、不同设备使用的CPU不同，从而使用的CPU架构（指令集）也不同，静态库有其支持的CPU架构，如果静态库在不支持的CPU架构上运行程序机会崩溃。</p>
-<h3 id="模拟器使用的CPU架构"><a href="#模拟器使用的CPU架构" class="headerlink" title="模拟器使用的CPU架构"></a>模拟器使用的CPU架构</h3><p>iPhone4s - iPhone5: i386；</p>
-<p>iphone5s - iPhoneX：x86_64;</p>
-<h3 id="真机使用的CPU架构"><a href="#真机使用的CPU架构" class="headerlink" title="真机使用的CPU架构"></a>真机使用的CPU架构</h3><p>iPhone3gs - iPhone4s：armv7；</p>
-<p>iphone5 - iPhone5c：armv7s；</p>
-<p>iPhone5s - iPhoneX：armv64；</p>
-<h3 id="查看静态库所支持的架构"><a href="#查看静态库所支持的架构" class="headerlink" title="查看静态库所支持的架构"></a>查看静态库所支持的架构</h3><p>使用终端，cd到静态库所在的目录，在执行lipo -info 静态库名称即可。</p>
-<h3 id="如何编译多架构静态库"><a href="#如何编译多架构静态库" class="headerlink" title="如何编译多架构静态库"></a>如何编译多架构静态库</h3><p>怎样一次编译支持多个架构的静态库？</p>
-<p>去工程的Build Settings 里面去修改 Build Active Architecture Only,这个选项是默认的YES，意思是只编译当前活跃环境的架构，设置成NO即可。</p>
-<p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-134203@2x.png" alt="WX20200103-134203@2x">设置以后模拟器编译出来的就支持所有模拟器型号，真机亦是如此。</p>
-<h2 id="静态库的版本"><a href="#静态库的版本" class="headerlink" title="静态库的版本"></a>静态库的版本</h2><p>和iOS证书一样分调试版本（Debug）和发布版本（Release）</p>
-<p>真机 - Debug和Release；</p>
-<p>模拟器 - Debug和Release；</p>
-<h3 id="调试版本Debug"><a href="#调试版本Debug" class="headerlink" title="调试版本Debug"></a>调试版本Debug</h3><p>真机 - Debug版本和模拟器 - Debug版本</p>
-<p>调试版本的特点：</p>
-<p>调试版本会包含完整的符号信息，以方便调试。</p>
-<p>调试版本不会带代码进行优化。</p>
-<h3 id="发布版本Release"><a href="#发布版本Release" class="headerlink" title="发布版本Release"></a>发布版本Release</h3><p>发布版本的特点：</p>
-<p>发布版本不会包含完整的符号信息。</p>
-<p>发布版本的执行代码是进行过优化的。</p>
-<p>发布版本的小大会闭调试版本的略小。</p>
-<p>在执行速度方面，发布版本会更快些，但不意味着会有显著的提升。</p>
-<h2 id="生成不同版本的静态库"><a href="#生成不同版本的静态库" class="headerlink" title="生成不同版本的静态库"></a>生成不同版本的静态库</h2><p>选择项目 -&gt; Edit Scheme -&gt; Run -&gt; Release/Debug分别进行编译，即可得到不同版本的静态库。<img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-140029@2x.png" alt="WX20200103-140029@2x"></p>
-<h2 id="生成-a和-h文件"><a href="#生成-a和-h文件" class="headerlink" title="生成.a和.h文件"></a>生成.a和.h文件</h2><p>正常情况下，生成的.h文件是在<code>..//include/$(PRODUCT_NAME)</code>目录下的，<code>$(PRODUCT_NAME)</code>指的是项目名称。</p>
-<p><img src="/2020/01/02/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-02/WX20200103-142612@2x.png" alt="WX20200103-142612@2x"></p>
-<p>修改Subpath的路径地址，即可修改.h文件生成的路径，填空即为和.a文件在统计目录下。</p>
-<p>在Products文件夹下，command + B编译之后，show in Finder即可找到生成的静态库。</p>
-<h2 id="合并静态库"><a href="#合并静态库" class="headerlink" title="合并静态库"></a>合并静态库</h2><p>因为静态库针对模拟器和真机生成了不同的版本（支持不同架构），所以没发同时运行。</p>
-<p>合并后的静态库既可以在真机上调试，也可以在模拟器上调试，省去了来回切换的麻烦。</p>
-<p>但是合并以后的静态库大小是模拟器和真机的大小之和，如果静态库太大。合并打包后，会非常大。因此很多第三方的静态库的.a是区分版本的。</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下所有方式得到的静态库都可以通过lipo -info xx.a方式检测现有的架构, 注意要在xx.a所在的目录下</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 合并静态库</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">lipo -create 静态库<span class="number">1</span>路径 静态库<span class="number">2</span>路径 -output 合并后的静态库名称</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">lipo -create /Users/xxx/Debug-iphoneos/libStateLib.a /Users/xxx/Debug-iphonesimulator/libStateLib.a -output hahah.a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 移除某一个架构</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">lipo -remove 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">lipo -remove arm64 /Users/xxx/Build/Products/hahah.a -output ha_arm64.a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 拆分出一个单独架构的静态库</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">lipo -thin 架构名称 静态库绝对路径 -output 新的静态库名字</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">lipo -thin arm64 /Users/xxx/Build/Products/hahah.a -output only_arm64.a</span></pre></td></tr></table></figure>
-
-
+        
+          <blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本章开始学习如何进行工程的组件化，主要内容是本地私有库的制作和如何关联远程私有库。并将本地私有pod push 进本地私有库。</p></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -483,12 +431,6 @@
     
 	<div>
           
-    	    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  	  
 	</div>
 
     
@@ -501,32 +443,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/12/05/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%AD%A6%E4%B9%A0-01/" rel="next" title="iOS组件化学习-01">
-                <i class="fa fa-chevron-left"></i> iOS组件化学习-01
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/09/25/%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/" rel="prev" title="发布博客流程说明">
-                发布博客流程说明 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -536,11 +458,195 @@
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="族战">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知道你在改变">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/" itemprop="url">个人博客说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T13:30:32+08:00">
+                2019-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%9F%E5%9B%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">个人博客搭建原因</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  188
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。</p></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
+    
+    
+    
+	<div>
+          
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -548,10 +654,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -572,17 +674,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -637,22 +730,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几个IT行业常用术语"><span class="nav-number">2.</span> <span class="nav-text">几个IT行业常用术语</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SDK"><span class="nav-number">2.1.</span> <span class="nav-text">SDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">2.2.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DLL"><span class="nav-number">2.3.</span> <span class="nav-text">DLL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#o文件和-a文件和-so文件的区别"><span class="nav-number">3.</span> <span class="nav-text">.o文件和.a文件和.so文件的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#o文件"><span class="nav-number">3.1.</span> <span class="nav-text">.o文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a文件"><span class="nav-number">3.2.</span> <span class="nav-text">.a文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#so文件"><span class="nav-number">3.3.</span> <span class="nav-text">.so文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是库"><span class="nav-number">4.</span> <span class="nav-text">什么是库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开源库"><span class="nav-number">4.1.</span> <span class="nav-text">开源库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭源库"><span class="nav-number">4.2.</span> <span class="nav-text">闭源库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态库"><span class="nav-number">4.3.</span> <span class="nav-text">静态库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态库"><span class="nav-number">4.4.</span> <span class="nav-text">动态库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a"><span class="nav-number">4.5.</span> <span class="nav-text">.a</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#framework"><span class="nav-number">4.6.</span> <span class="nav-text">.framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态库的架构"><span class="nav-number">4.7.</span> <span class="nav-text">静态库的架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟器使用的CPU架构"><span class="nav-number">4.7.1.</span> <span class="nav-text">模拟器使用的CPU架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#真机使用的CPU架构"><span class="nav-number">4.7.2.</span> <span class="nav-text">真机使用的CPU架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看静态库所支持的架构"><span class="nav-number">4.7.3.</span> <span class="nav-text">查看静态库所支持的架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何编译多架构静态库"><span class="nav-number">4.7.4.</span> <span class="nav-text">如何编译多架构静态库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态库的版本"><span class="nav-number">4.8.</span> <span class="nav-text">静态库的版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调试版本Debug"><span class="nav-number">4.8.1.</span> <span class="nav-text">调试版本Debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布版本Release"><span class="nav-number">4.8.2.</span> <span class="nav-text">发布版本Release</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成不同版本的静态库"><span class="nav-number">4.9.</span> <span class="nav-text">生成不同版本的静态库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成-a和-h文件"><span class="nav-number">4.10.</span> <span class="nav-text">生成.a和.h文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并静态库"><span class="nav-number">4.11.</span> <span class="nav-text">合并静态库</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -812,10 +889,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
