@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言: 长时间没用使用cocoapods会遇见一些小问题，主要解决源，证书等问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决cocoapods更新的一些小问题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;07&#x2F;18&#x2F;%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98&#x2F;index.html">
+<meta property="og:site_name" content="知道你在改变">
+<meta property="og:description" content="前言: 长时间没用使用cocoapods会遇见一些小问题，主要解决源，证书等问题。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;07&#x2F;18&#x2F;%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98&#x2F;cocoapods-1@2x.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;07&#x2F;18&#x2F;%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98&#x2F;cocoapods-2@2x.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;07&#x2F;18&#x2F;%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98&#x2F;cocoapods-3@2x.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;07&#x2F;18&#x2F;%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98&#x2F;cocoapods-5@2x.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;07&#x2F;18&#x2F;%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98&#x2F;cocoapods-4@2x.png">
+<meta property="og:updated_time" content="2023-07-18T08:14:26.940Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2023&#x2F;07&#x2F;18&#x2F;%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98&#x2F;cocoapods-1@2x.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2023/07/18/解决cocoapods更新的一些小问题/"/>
+
+
+
+
+
+  <title>解决cocoapods更新的一些小问题 | 知道你在改变</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">知道你在改变</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">许利平</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="族战">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知道你在改变">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">解决cocoapods更新的一些小问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-07-18T14:11:11+08:00">
+                2023-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cocoapods%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">cocoapods的使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 长时间没用使用cocoapods会遇见一些小问题，主要解决源，证书等问题。</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="一、证书问题"><a href="#一、证书问题" class="headerlink" title="一、证书问题"></a>一、证书问题</h2><p>最近升级cocoapods中发现在更新ruby镜像源的时候遇见ssl证书链接错误的情况,</p>
+<p><code>https://gems.ruby-china.org/</code>已经访问不了,需要替换新的镜像。</p>
+<p>步骤：</p>
+<h3 id="1、首先将查看自己的镜像"><a href="#1、首先将查看自己的镜像" class="headerlink" title="1、首先将查看自己的镜像"></a>1、首先将查看自己的镜像</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">`gem sources -l`</span></pre></td></tr></table></figure>
+
+<h3 id="2、再将之前的镜像删除"><a href="#2、再将之前的镜像删除" class="headerlink" title="2、再将之前的镜像删除"></a>2、再将之前的镜像删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gem sources --remove https:&#x2F;&#x2F;gems.ruby-china.org&#x2F;</span></pre></td></tr></table></figure>
+
+<h3 id="3、添加新的源路径"><a href="#3、添加新的源路径" class="headerlink" title="3、添加新的源路径"></a>3、添加新的源路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gem sources --add https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span></pre></td></tr></table></figure>
+
+<p><strong>这个时候开始报错ssl证书错误</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ERROR: SSL verification error at depth 1: unable to get local issuer certificate (20)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ERROR: You must add &#x2F;O&#x3D;Digital Signature Trust Co.&#x2F;CN&#x3D;DST Root CA X3 to your local trusted store</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Error fetching https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">SSL_connect returned&#x3D;1 errno&#x3D;0 state&#x3D;error: certificate verify failed (https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;specs.4.8.gz)</span></pre></td></tr></table></figure>
+
+<h3 id="4、这时候需要检查自己的OpenSSL正式是否过期"><a href="#4、这时候需要检查自己的OpenSSL正式是否过期" class="headerlink" title="4、这时候需要检查自己的OpenSSL正式是否过期"></a>4、这时候需要检查自己的OpenSSL正式是否过期</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rvm osx-ssl-certs</span></pre></td></tr></table></figure>
+
+<p>效果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Certificates for ~&#x2F;Documents&#x2F;ssldir&#x2F;~&#x2F;Documents&#x2F;ssldir&#x2F;cert.pem: Old.</span></pre></td></tr></table></figure>
+
+<h3 id="5、这时候更新OpenSSL证书"><a href="#5、这时候更新OpenSSL证书" class="headerlink" title="5、这时候更新OpenSSL证书"></a>5、这时候更新OpenSSL证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rvm osx-ssl-certs update all</span></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Updating certificates for ~&#x2F;Documents&#x2F;ssldir&#x2F;~&#x2F;Documents&#x2F;ssldir&#x2F;cert.pem: Updating certificates in &#39;~&#x2F;Documents&#x2F;ssldir&#x2F;~&#x2F;Documents&#x2F;ssldir&#x2F;cert.pem&#39;.Updated.</span></pre></td></tr></table></figure>
+
+<h3 id="6、添加新的镜像源"><a href="#6、添加新的镜像源" class="headerlink" title="6、添加新的镜像源"></a>6、添加新的镜像源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gem sources --add https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;gems.ruby-china.com&#x2F; added to sources</span></pre></td></tr></table></figure>
+
+<h3 id="7、再次检查"><a href="#7、再次检查" class="headerlink" title="7、再次检查"></a>7、再次检查</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gem sources -l</span></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">*** CURRENT SOURCES ***</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span></pre></td></tr></table></figure>
+
+<h2 id="二、可能会出现的问题"><a href="#二、可能会出现的问题" class="headerlink" title="二、可能会出现的问题"></a>二、可能会出现的问题</h2><h3 id="1、可能会出现"><a href="#1、可能会出现" class="headerlink" title="1、可能会出现"></a>1、可能会出现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[!] Unable to find a pod with name, author, summary, or description matching &#96;afnet&#96;</span></pre></td></tr></table></figure>
+
+<p>pod setup成功后，依然不能pod search，是因为之前你执行pod search生成了search_index.json，此时需要删掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rm ~&#x2F;Library&#x2F;Caches&#x2F;CocoaPods&#x2F;search_index.json</span></pre></td></tr></table></figure>
+
+<h3 id="2、删除成功后，再执行"><a href="#2、删除成功后，再执行" class="headerlink" title="2、删除成功后，再执行"></a>2、删除成功后，再执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod search afnetworking</span></pre></td></tr></table></figure>
+
+<h3 id="3、输出"><a href="#3、输出" class="headerlink" title="3、输出"></a>3、输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Creating search index for spec repo &#39;master&#39;..</span></pre></td></tr></table></figure>
+
+<h3 id="4、等待成功，成功之后输出"><a href="#4、等待成功，成功之后输出" class="headerlink" title="4、等待成功，成功之后输出"></a>4、等待成功，成功之后输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Creating search index for spec repo &#39;master&#39;.. Done!</span></pre></td></tr></table></figure>
+
+<p>然后会自动进入你搜索的第三方库。</p>
+<p>注意： 第三步可能会等待的时间比较长，请耐心等待。</p>
+<h2 id="三、cocoapods使用步骤"><a href="#三、cocoapods使用步骤" class="headerlink" title="三、cocoapods使用步骤"></a>三、cocoapods使用步骤</h2><h3 id="1、需要在工程中创建一个Podfile文件"><a href="#1、需要在工程中创建一个Podfile文件" class="headerlink" title="1、需要在工程中创建一个Podfile文件"></a>1、需要在工程中创建一个Podfile文件</h3><p>在以上可以搜索出相关库文件后，使用命令行创建工程相关文件</p>
+<p>使用命令：</p>
+<h4 id="1-1-进入工程目录，cd以后是工程路径"><a href="#1-1-进入工程目录，cd以后是工程路径" class="headerlink" title="1.1 进入工程目录，cd以后是工程路径"></a>1.1 进入工程目录，cd以后是工程路径</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">lipixus-Pro:~ lipixu$ cd &#x2F;Users&#x2F;lipixu&#x2F;Desktop&#x2F;快点相关&#x2F;KoodPower</span></pre></td></tr></table></figure>
+
+<h4 id="1-2-创建Podfile文件"><a href="#1-2-创建Podfile文件" class="headerlink" title="1.2 创建Podfile文件"></a>1.2 创建Podfile文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ touch Podfile</span></pre></td></tr></table></figure>
+
+<p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-1@2x.png" alt="cocoapods-1@2x"></p>
+<h4 id="1-3-使用vim编辑Podfile文件，使用命令"><a href="#1-3-使用vim编辑Podfile文件，使用命令" class="headerlink" title="1.3 使用vim编辑Podfile文件，使用命令"></a>1.3 使用vim编辑Podfile文件，使用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#96;$ vim Podfile&#96;</span></pre></td></tr></table></figure>
+
+
+<p>进入如下界面</p>
+<p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-2@2x.png" alt="cocoapods-2@2x"></p>
+<h4 id="1-4-编辑Podfile文件"><a href="#1-4-编辑Podfile文件" class="headerlink" title="1.4 编辑Podfile文件"></a>1.4 编辑Podfile文件</h4><p>然后紧接着按键盘上的“i”键，变成如下状态，这个时候可以对Podfile文件进行编辑：</p>
+<p>$platform:ios, ‘7.0‘</p>
+<p>$ pod ‘AFNetworking‘, ‘~&gt; 2.3.1‘</p>
+<p>在编辑完成后按“esc”，这是退出编辑状态。</p>
+<h4 id="1-5-退出并保存"><a href="#1-5-退出并保存" class="headerlink" title="1.5 退出并保存"></a>1.5 退出并保存</h4><p>在按“:”,这个时候输入wq,点击回车，保存并退出。</p>
+<p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-3@2x.png" alt="cocoapods-3@2x"></p>
+<h3 id="2、安装第三方库"><a href="#2、安装第三方库" class="headerlink" title="2、安装第三方库"></a>2、安装第三方库</h3><p>然后在终端输入命令安装相应的第三方类库：</p>
+<p>首次使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$pod install</span></pre></td></tr></table></figure>
+
+<p>非首次使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$pod update</span></pre></td></tr></table></figure>
+
+<h2 id="四、cocoapods安装中会遇见的一些小问题"><a href="#四、cocoapods安装中会遇见的一些小问题" class="headerlink" title="四、cocoapods安装中会遇见的一些小问题"></a>四、cocoapods安装中会遇见的一些小问题</h2><h3 id="1、正确的工程名"><a href="#1、正确的工程名" class="headerlink" title="1、正确的工程名"></a>1、正确的工程名</h3><h4 id="1-1-current-Xcode-Session"><a href="#1-1-current-Xcode-Session" class="headerlink" title="1.1 current Xcode Session"></a>1.1 current Xcode Session</h4><p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-5@2x.png" alt="cocoapods-5@2x"></p>
+<p>安装时出现如上图中警告时：</p>
+<p>或者如下图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Could not automatically select an Xcode workspace. Specify one in your Podfile like so:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    workspace &#39;path&#x2F;to&#x2F;Workspace.xcworkspace&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    xcodeproj &#39;path&#x2F;to&#x2F;Project.xcodeproj&#39;</span></pre></td></tr></table></figure>
+
+<p>解决方法：<br>在终端通过 <code>cd</code> 命令切换路径到 <code>Podfile</code> 文件所在目录</p>
+<p>编辑 <code>Podfile</code>：XXX为工程名，下面是自己引入的类库</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">target <span class="string">'XXX'</span> <span class="keyword">do</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt; 3.0'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">end</span></span></pre></td></tr></table></figure>
+
+<h4 id="1-2-错误的target"><a href="#1-2-错误的target" class="headerlink" title="1.2 错误的target"></a>1.2 错误的target</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">target &#39;XXX&#39; do</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">pod &#39;AFNetworking&#39;, &#39;~&gt; 3.0&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">end</span></pre></td></tr></table></figure>
+
+
+<p>这个target和end都必要。</p>
+<h4 id="1-3-完整的Podfile示例"><a href="#1-3-完整的Podfile示例" class="headerlink" title="1.3 完整的Podfile示例"></a>1.3 完整的Podfile示例</h4><p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-4@2x.png" alt="cocoapods-4@2x"></p>
+<p>注意点：#表示是注释</p>
+<p>很多Podfile文件给Platform: ios, ‘9.0’ 打上注释（不知道为何），这里注意不可（会报警告）</p>
+<p>end必须有。</p>
+<h4 id="1-4-更新到最新版本的cocoapods"><a href="#1-4-更新到最新版本的cocoapods" class="headerlink" title="1.4 更新到最新版本的cocoapods"></a>1.4 更新到最新版本的cocoapods</h4><p>报错提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">The &#96;master&#96; repo requires CocoaPods 0.18.1 - </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Update Cocoapods, or checkout the appropriate tag in the repo.</span></pre></td></tr></table></figure>
+
+<p>错误原因：没有更新到最新的Cocoapods版本</p>
+<p>解决方法：更新 CocoaPods ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#96;$ [sudo] gem update cocoapods</span></pre></td></tr></table></figure>
+
+<p>如果你想尝试一个预发布版本的CocoaPods可以运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#96;$ [sudo] gem update cocoapods --pre&#96;</span></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-5-没有正确的依赖目标"><a href="#1-5-没有正确的依赖目标" class="headerlink" title="1.5 没有正确的依赖目标"></a>1.5 没有正确的依赖目标</h4><p>报错提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">The dependency &#96;AFNetworking (~&gt; 3.1.0)&#96; is not used in any concrete target.</span></pre></td></tr></table></figure>
+
+<p>错误原因：第三方库找不到正确的安装目标</p>
+<p>解决方法：</p>
+<p>添加 <code>target名</code>，如下：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">target <span class="string">'XXX'</span>  <span class="keyword">do</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">pod <span class="string">'AFNetworking'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">end</span></span></pre></td></tr></table></figure>
+
+<p>其中XXX要换成当前 <code>target名</code>，最后不要忘记增加一个 <code>end</code> 结尾。</p>
+<p>然后重新进行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod install</span></pre></td></tr></table></figure>
+
+<h4 id="1-6-错误使用了中文标点"><a href="#1-6-错误使用了中文标点" class="headerlink" title="1.6 错误使用了中文标点"></a>1.6 错误使用了中文标点</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Your Podfile has had smart quotes sanitised. To avoid issues in the <span class="built_in">future</span>, you should <span class="keyword">not</span> use TextEdit <span class="keyword">for</span> editing it. If you are <span class="keyword">not</span> <span class="keyword">using</span> TextEdit, you should turn off smart quotes in your editor of choice.</span></pre></td></tr></table></figure>
+
+<p>大意就是你得 <code>Podfile</code> 文件里面有部分引号不合法，不要使用文本编辑。</p>
+<p>注意：<code>Podfile</code> 文件里面引号应该是 <strong><code>&#39;</code></strong>，而不是 <strong><code>‘</code></strong>。注意区分。</p>
+<p>1、不要使用文本编辑去编辑<code>Podfile</code>文件，使用<code>Xcode</code>编辑，或者使用终端敲命令去编辑。</p>
+<p>2、<code>Podfile</code> 的内容语法格式有问题。</p>
+
+      
+    </div>
+    
+    
+    
+	<div>
+          
+    	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  	  
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/12/09/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" rel="next" title="Java语言概述">
+                <i class="fa fa-chevron-left"></i> Java语言概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/" rel="prev" title="iOS13以后使用自定义VC作为根视图">
+                iOS13以后使用自定义VC作为根视图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="族战" />
+            
+              <p class="site-author-name" itemprop="name">族战</p>
+              <p class="site-description motion-element" itemprop="description">个人博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、证书问题"><span class="nav-number">1.1.</span> <span class="nav-text">一、证书问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、首先将查看自己的镜像"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、首先将查看自己的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、再将之前的镜像删除"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、再将之前的镜像删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、添加新的源路径"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、添加新的源路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、这时候需要检查自己的OpenSSL正式是否过期"><span class="nav-number">1.1.4.</span> <span class="nav-text">4、这时候需要检查自己的OpenSSL正式是否过期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、这时候更新OpenSSL证书"><span class="nav-number">1.1.5.</span> <span class="nav-text">5、这时候更新OpenSSL证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、添加新的镜像源"><span class="nav-number">1.1.6.</span> <span class="nav-text">6、添加新的镜像源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、再次检查"><span class="nav-number">1.1.7.</span> <span class="nav-text">7、再次检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、可能会出现的问题"><span class="nav-number">1.2.</span> <span class="nav-text">二、可能会出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、可能会出现"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、可能会出现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、删除成功后，再执行"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、删除成功后，再执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、输出"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、等待成功，成功之后输出"><span class="nav-number">1.2.4.</span> <span class="nav-text">4、等待成功，成功之后输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、cocoapods使用步骤"><span class="nav-number">1.3.</span> <span class="nav-text">三、cocoapods使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、需要在工程中创建一个Podfile文件"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、需要在工程中创建一个Podfile文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-进入工程目录，cd以后是工程路径"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">1.1 进入工程目录，cd以后是工程路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-创建Podfile文件"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">1.2 创建Podfile文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-使用vim编辑Podfile文件，使用命令"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">1.3 使用vim编辑Podfile文件，使用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-编辑Podfile文件"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">1.4 编辑Podfile文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-退出并保存"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">1.5 退出并保存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、安装第三方库"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、安装第三方库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、cocoapods安装中会遇见的一些小问题"><span class="nav-number">1.4.</span> <span class="nav-text">四、cocoapods安装中会遇见的一些小问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、正确的工程名"><span class="nav-number">1.4.1.</span> <span class="nav-text">1、正确的工程名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-current-Xcode-Session"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">1.1 current Xcode Session</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-错误的target"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">1.2 错误的target</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-完整的Podfile示例"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">1.3 完整的Podfile示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-更新到最新版本的cocoapods"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">1.4 更新到最新版本的cocoapods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-没有正确的依赖目标"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">1.5 没有正确的依赖目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-错误使用了中文标点"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">1.6 错误使用了中文标点</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">族战</span>
+
+  
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">16.1k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共16.1k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

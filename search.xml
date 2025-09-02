@@ -1,6 +1,385 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>低版本Xcode上架AppStore需要的准备</title>
+    <url>/2025/09/02/%E4%BD%8E%E7%89%88%E6%9C%ACXcode%E4%B8%8A%E6%9E%B6AppStore%E9%9C%80%E8%A6%81%E7%9A%84%E5%87%86%E5%A4%87/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 最近接到一个App上架的需求，但是我的系统版本以及Xcode版本都已经处于版本太低不支持的状态，在这里记录一下相关需要的资料</p>
+ <a id="more"></a>
+</blockquote>
+<h1 id="一、上架报错的第一条反馈"><a href="#一、上架报错的第一条反馈" class="headerlink" title="一、上架报错的第一条反馈"></a>一、上架报错的第一条反馈</h1><h2 id="1-1、处理各种隐私协议在工程的Info-plist文件中添加以下键值对"><a href="#1-1、处理各种隐私协议在工程的Info-plist文件中添加以下键值对" class="headerlink" title="1.1、处理各种隐私协议在工程的Info.plist文件中添加以下键值对"></a>1.1、处理各种隐私协议在工程的Info.plist文件中添加以下键值对</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;key&gt;NSAppleMusicUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问媒体资料库&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSBluetoothPeripheralUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问蓝牙&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSCalendarsUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问日历&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSCameraUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问相机上传评价图片&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSContactsUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意，才能访问您的联系人&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSHealthShareUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问健康分享&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSHealthUpdateUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问健康更新 &lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSLocationAlwaysAndWhenInUseUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;我们需要通过您的地理位置信息获取您周边的相关店铺数据&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSLocationAlwaysUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能始终访问位置用于定位您的城市名&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSLocationUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问位置用于定位您的城市名&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSLocationWhenInUseUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,用于显示所在城市名称&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSMicrophoneUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问麦克风用于语音收索服务&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSMotionUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问运动与健身&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSPhotoLibraryUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问相册用于上传评价图片&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSPhotoLibraryAddUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,用于保存图片到手机&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;NSRemindersUsageDescription&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;string&gt;App需要您的同意,才能访问提醒事项&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;key&gt;UIRequiredDeviceCapabilities&lt;&#x2F;key&gt;</span></pre></td></tr></table></figure>
+
+<h2 id="1-2-低版本Xcode编译的文件在高版本中编译不通过"><a href="#1-2-低版本Xcode编译的文件在高版本中编译不通过" class="headerlink" title="1.2 低版本Xcode编译的文件在高版本中编译不通过"></a>1.2 低版本Xcode编译的文件在高版本中编译不通过</h2><p>报错的提示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">clang: error: SDK does not contain &#39;libarclite&#39; at the path &#39;&#x2F;Applications&#x2F;Xcode.app&#x2F;Contents&#x2F;Developer&#x2F;Toolchains&#x2F;XcodeDefault.xctoolchain&#x2F;usr&#x2F;lib&#x2F;arc&#x2F;libarclite_iphoneos.a&#39;; try increasing the minimum deployment target</span></pre></td></tr></table></figure>
+
+<p>大致意思 Xcode中缺失 arclibarclite iphoneos.a 文件</p>
+<p>标注：Xcode版本为Version 12.4 (12D4e)</p>
+<p>系统版本：MacOS Big Sur  版本:11.7.10(20G1427)</p>
+<p>libarclite是Apple提供的用于支持自动引用计数(ARC)的库文件，在较旧的iOS版本中用于运行时提供ARC功能</p>
+<p>这种问题就是Xcode高版本不能向下兼容，缺少相关文件。</p>
+<p>在提示的Path里面添加上这个文件即可。</p>
+<p>资料链接地址：</p>
+<p><a href="https://github.com/survivorsfyh/DevelopmentSupport/tree/main/Libarclite_Files" target="_blank" rel="noopener">https://github.com/survivorsfyh/DevelopmentSupport/tree/main/Libarclite_Files</a></p>
+<h2 id="1-3-如果工程中还有UIWebView的使用的话会审核不通过"><a href="#1-3-如果工程中还有UIWebView的使用的话会审核不通过" class="headerlink" title="1.3 如果工程中还有UIWebView的使用的话会审核不通过"></a>1.3 如果工程中还有UIWebView的使用的话会审核不通过</h2><p>包括三方里面均不可以有UIWebView的使用.</p>
+<blockquote>
+<p><strong>2020年4月起App Store将不再接受使用UIWebView的新App上架、2020年12月起将不再接受使用UIWebView的App更新。</strong></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>iOS启动图和图标适配</title>
+    <url>/2023/07/25/iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E5%92%8C%E5%9B%BE%E6%A0%87%E9%80%82%E9%85%8D/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本文将iPhone的型号和启动图和图标做一个对比。方便以后给出尺寸</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="1、屏幕分辨率识别"><a href="#1、屏幕分辨率识别" class="headerlink" title="1、屏幕分辨率识别"></a>1、屏幕分辨率识别</h2><p><img src="/2023/07/25/iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E5%92%8C%E5%9B%BE%E6%A0%87%E9%80%82%E9%85%8D/Picture-1@2x.png" alt="Picture-1@2x"></p>
+<h2 id="2、启动图适配"><a href="#2、启动图适配" class="headerlink" title="2、启动图适配"></a>2、启动图适配</h2><p><img src="/2023/07/25/iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E5%92%8C%E5%9B%BE%E6%A0%87%E9%80%82%E9%85%8D/Picture-2@2x.webp" alt="Picture-2@2x"></p>
+<h2 id="3、app图标适配"><a href="#3、app图标适配" class="headerlink" title="3、app图标适配"></a>3、app图标适配</h2><p><img src="/2023/07/25/iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E5%92%8C%E5%9B%BE%E6%A0%87%E9%80%82%E9%85%8D/Picture-3@2x.png" alt="Picture-3@2x"></p>
+<p>以上图片对比一下即可。</p>
+<h2 id="4、PT与PX的区别"><a href="#4、PT与PX的区别" class="headerlink" title="4、PT与PX的区别"></a>4、PT与PX的区别</h2><p>px就是表示pixel，像素，是屏幕上显示数据的最基本的点；</p>
+<p>pt就是point，是印刷行业常用单位，等于1/72英寸。</p>
+<p>px是一个点，它不是自然界的长度单位，谁能说出一个“点”有多长多大么？可以画的很小，也可以很大。如果点很小，那画面就清晰，我们称它为“分辨率高”，反之，就是“分辨率低”。所以，“点”的大小是会“变”的，也称为“相对长度”。</p>
+<p>pt全称为point，但中文不叫“点”，查金山词霸可以看到，确切的说法是一个专用的印刷单位“磅”，大小为1/72英寸。所以它是一个自然界标准的长度单位，也称为“绝对长度”。</p>
+<p>因此就有这样的说法，pixel是相对大小，而point是绝对大小。</p>
+<p>最后整理一下所有出现过的单位：</p>
+<p>px：pixel，像素，屏幕上显示的最小单位，用于网页设计，直观方便；</p>
+<p>pt：point，是一个标准的长度单位，1pt＝1/72英寸，用于印刷业，非常简单易用；</p>
+<p>em：即％，在CSS中，1em＝100％，是一个比率，结合CSS继承关系使用，具有灵活性。</p>
+<p>PPI（DPI）：pixel（dot）per inch，每英寸的像素（点）数，是一个率，表示了“清晰度”，“精度”PX和PT转换的公式：</p>
+<p>以前在文章中介绍过PX和PT的转换规则，其实很简单，pt=px乘以3/4。比如12px×3/4=9pt大小。</p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>iOS 刘海屏适配篇</title>
+    <url>/2023/07/25/iOS-%E5%88%98%E6%B5%B7%E5%B1%8F%E9%80%82%E9%85%8D%E7%AF%87/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 这篇主要内容是归纳总结iOS的屏幕以及相关适配</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="1、问题归因"><a href="#1、问题归因" class="headerlink" title="1、问题归因"></a>1、问题归因</h2><p>本文主要是分析了遇到的问题，比并提供了解决方案，最后总结了常用的准确获取 iPhone 状态栏、导航栏、TabBar高度的方法。</p>
+<p>问题出现的根源是，获取 「状态栏+导航栏高度」的方法采用的是类似于下面的判断是否为刘海屏，然后返回固定值的写法。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 状态栏高度，iPhoneX 是判断是否为刘海屏</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#define StatusBar_Height (iPhoneX ? 44.0f : 20.0f)</span></span></pre></td></tr></table></figure>
+
+<p>现在早些时间，这种方法确实是没错的，但是在 iOS 14 系统之后，刘海屏手机的状态栏高度就不再统一是 44 了。下表是 iOS 15.2 上各刘海屏机型的状态栏高度，其中 iPhone 13 系列和 iPhone 12 系列是一致的，就不再重复列举。</p>
+<table>
+<thead>
+<tr>
+<th align="center">机型</th>
+<th align="center">状态栏高度（pt）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">iPhone XR/11</td>
+<td align="center">48</td>
+</tr>
+<tr>
+<td align="center">iPhone X/11 Pro/ 11 Pro Max/12 mini</td>
+<td align="center">44</td>
+</tr>
+<tr>
+<td align="center">iPhone 12/12 Pro/Pro Max</td>
+<td align="center">47</td>
+</tr>
+<tr>
+<td align="center">iPhone13/13Pro/Pro Max</td>
+<td align="center">47</td>
+</tr>
+<tr>
+<td align="center">iPhone14/14Pro/Pro Max</td>
+<td align="center">59</td>
+</tr>
+<tr>
+<td align="center">非刘海屏</td>
+<td align="center">20</td>
+</tr>
+</tbody></table>
+<h2 id="2、利用系统方法获取状态栏高度"><a href="#2、利用系统方法获取状态栏高度" class="headerlink" title="2、利用系统方法获取状态栏高度"></a>2、利用系统方法获取状态栏高度</h2><p>因为上面那种写死的方法已经不能满足我们的需求了，于是我们采用系统的方法来获取。在 iOS 13.0 之前，我们可以通过 <code>UIApplication</code> 单例中的 <code>statusBarFrame</code> 属性获取状态状态栏改度，代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[<span class="built_in">UIApplication</span> sharedApplication].statusBarFrame.size.height;</span></pre></td></tr></table></figure>
+
+<p>但是在 iOS 13.0 之后，<code>UIApplication</code> 单例中的 <code>statusBarFrame</code> 属性被废弃⚠️了。官方希望能我们使用 <code>UIStatusBarManager</code> 类中的 <code>statusBarFrame</code> 熟悉来进行获取，代码如下：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (@available(iOS <span class="number">13.0</span>, *)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="built_in">NSSet</span> *set = [<span class="built_in">UIApplication</span> sharedApplication].connectedScenes;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">UIWindowScene</span> *windowScene = [set anyObject];</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">UIStatusBarManager</span> *statusBarManager = windowScene.statusBarManager;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> statusBarManager.statusBarFrame.size.height;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h2 id="3、代码模版"><a href="#3、代码模版" class="headerlink" title="3、代码模版"></a>3、代码模版</h2><p>为了能正确获取系统顶部和底部相关元素（导航栏和安全区）的高度，这里提供了获取顶部和底部安全区、顶部状态栏和导航栏、底部 tabBar。</p>
+<h3 id="3-1-Objective-C-版本"><a href="#3-1-Objective-C-版本" class="headerlink" title="3.1 Objective-C 版本"></a>3.1 Objective-C 版本</h3><p>在 <code>UIDevice+VGAddition.h</code> 中，对各方法进行了声明。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIDevice</span> (<span class="title">VGAddition</span>)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 顶部安全区高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_safeDistanceTop;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 底部安全区高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_safeDistanceBottom;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 顶部状态栏高度（包括安全区）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_statusBarHeight;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 导航栏高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_navigationBarHeight;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 状态栏+导航栏的高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_navigationFullHeight;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 底部导航栏高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_tabBarHeight;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 底部导航栏高度（包括安全区）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_tabBarFullHeight;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">@end</span></span></pre></td></tr></table></figure>
+
+<p>在 <code>UIDevice+VGAddition.m</code> 中，对声明的各方法进行了实现。</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"UIDevice+VGAddition.h"</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIDevice</span> (<span class="title">VGAddition</span>)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 顶部安全区高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_safeDistanceTop &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (@available(iOS <span class="number">13.0</span>, *)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">NSSet</span> *set = [<span class="built_in">UIApplication</span> sharedApplication].connectedScenes;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIWindowScene</span> *windowScene = [set anyObject];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIWindow</span> *window = windowScene.windows.firstObject;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> window.safeAreaInsets.top;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (@available(iOS <span class="number">11.0</span>, *)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIWindow</span> *window = [<span class="built_in">UIApplication</span> sharedApplication].windows.firstObject;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> window.safeAreaInsets.top;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 底部安全区高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_safeDistanceBottom &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (@available(iOS <span class="number">13.0</span>, *)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">NSSet</span> *set = [<span class="built_in">UIApplication</span> sharedApplication].connectedScenes;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIWindowScene</span> *windowScene = [set anyObject];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIWindow</span> *window = windowScene.windows.firstObject;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> window.safeAreaInsets.bottom;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (@available(iOS <span class="number">11.0</span>, *)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIWindow</span> *window = [<span class="built_in">UIApplication</span> sharedApplication].windows.firstObject;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> window.safeAreaInsets.bottom;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 顶部状态栏高度（包括安全区）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_statusBarHeight &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (@available(iOS <span class="number">13.0</span>, *)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">NSSet</span> *set = [<span class="built_in">UIApplication</span> sharedApplication].connectedScenes;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIWindowScene</span> *windowScene = [set anyObject];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">UIStatusBarManager</span> *statusBarManager = windowScene.statusBarManager;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> statusBarManager.statusBarFrame.size.height;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> [<span class="built_in">UIApplication</span> sharedApplication].statusBarFrame.size.height;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 导航栏高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_navigationBarHeight &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">44.0</span>f;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 状态栏+导航栏的高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_navigationFullHeight &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> [<span class="built_in">UIDevice</span> vg_statusBarHeight] + [<span class="built_in">UIDevice</span> vg_navigationBarHeight];</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 底部导航栏高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_tabBarHeight &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">49.0</span>f;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">/// 底部导航栏高度（包括安全区）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">+ (<span class="built_in">CGFloat</span>)vg_tabBarFullHeight &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> [<span class="built_in">UIDevice</span> vg_tabBarHeight] + [<span class="built_in">UIDevice</span> vg_safeDistanceBottom];</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">@end</span></span></pre></td></tr></table></figure>
+
+<h3 id="3-2-Swift-版本"><a href="#3-2-Swift-版本" class="headerlink" title="3.2 Swift 版本"></a>3.2 Swift 版本</h3><p>UIDevice+VGAddition.swift</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIDevice</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">/// 顶部安全区高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">vg_safeDistanceTop</span><span class="params">()</span></span> -&gt; <span class="type">CGFloat</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> #available(iOS <span class="number">13.0</span>, *) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">let</span> scene = <span class="type">UIApplication</span>.shared.connectedScenes.first</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> windowScene = scene <span class="keyword">as</span>? <span class="type">UIWindowScene</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> window = windowScene.windows.first <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> window.safeAreaInsets.top</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> #available(iOS <span class="number">11.0</span>, *) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> window = <span class="type">UIApplication</span>.shared.windows.first <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> window.safeAreaInsets.top</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">/// 底部安全区高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">vg_safeDistanceBottom</span><span class="params">()</span></span> -&gt; <span class="type">CGFloat</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> #available(iOS <span class="number">13.0</span>, *) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">let</span> scene = <span class="type">UIApplication</span>.shared.connectedScenes.first</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> windowScene = scene <span class="keyword">as</span>? <span class="type">UIWindowScene</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> window = windowScene.windows.first <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> window.safeAreaInsets.bottom</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> #available(iOS <span class="number">11.0</span>, *) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> window = <span class="type">UIApplication</span>.shared.windows.first <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> window.safeAreaInsets.bottom</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">/// 顶部状态栏高度（包括安全区）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">vg_statusBarHeight</span><span class="params">()</span></span> -&gt; <span class="type">CGFloat</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">var</span> statusBarHeight: <span class="type">CGFloat</span> = <span class="number">0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> #available(iOS <span class="number">13.0</span>, *) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">let</span> scene = <span class="type">UIApplication</span>.shared.connectedScenes.first</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> windowScene = scene <span class="keyword">as</span>? <span class="type">UIWindowScene</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> statusBarManager = windowScene.statusBarManager <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            statusBarHeight = statusBarManager.statusBarFrame.height</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            statusBarHeight = <span class="type">UIApplication</span>.shared.statusBarFrame.height</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> statusBarHeight</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">/// 导航栏高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">vg_navigationBarHeight</span><span class="params">()</span></span> -&gt; <span class="type">CGFloat</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="number">44.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">/// 状态栏+导航栏的高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">vg_navigationFullHeight</span><span class="params">()</span></span> -&gt; <span class="type">CGFloat</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="type">UIDevice</span>.vg_statusBarHeight() + <span class="type">UIDevice</span>.vg_navigationBarHeight()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">/// 底部导航栏高度</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">vg_tabBarHeight</span><span class="params">()</span></span> -&gt; <span class="type">CGFloat</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="number">49.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">/// 底部导航栏高度（包括安全区）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">vg_tabBarFullHeight</span><span class="params">()</span></span> -&gt; <span class="type">CGFloat</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="type">UIDevice</span>.vg_tabBarHeight() + <span class="type">UIDevice</span>.vg_safeDistanceBottom()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>iOS屏幕适配篇</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>iOS首页隐藏导航栏的方法</title>
+    <url>/2023/07/24/iOS%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 在项目中经常碰到首页顶部是无限轮播,需要靠最上面显示.有的设置导航栏为透明等一系列的方法,这个可以借助第三方.或者干脆简单粗暴的直接隐藏掉导航栏.可是push到下一个页面的时候是需要导航栏的,如何做了,这里给出两种方法.</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="1、动画隐藏"><a href="#1、动画隐藏" class="headerlink" title="1、动画隐藏"></a>1、动画隐藏</h2><p>-注意这里一定要用动画的方式隐藏导航栏,这样在使用滑动返回手势的时候效果最好,和上面动图一致.这样做有一个缺点就是在切换tabBar的时候有一个导航栏向上消失的动画.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)viewWillAppear:(BOOL)animated </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#123; </span></pre></td></tr><tr><td class="code"><pre><span class="line">	[super viewWillAppear:animated];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">  [self.navigationController setNavigationBarHidden:YES animated:YES]; </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125; </span></pre></td></tr><tr><td class="code"><pre><span class="line">- (void)viewWillDisappear:(BOOL)animated </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#123; </span></pre></td></tr><tr><td class="code"><pre><span class="line">	[super viewWillDisappear:animated];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">	[self.navigationController setNavigationBarHidden:NO animated:YES]; </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h2 id="2、代理隐藏"><a href="#2、代理隐藏" class="headerlink" title="2、代理隐藏"></a>2、代理隐藏</h2><p>设置self为导航控制器的代理,实现代理方法,在将要显示控制器中设置导航栏隐藏和显示,使用这种方式不仅完美切合滑动返回手势,同时也解决了切换tabBar的时候,导航栏动态隐藏的问题.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@interface WLHomePageController () &lt;UINavigationControllerDelegate&gt; </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">@end </span></pre></td></tr><tr><td class="code"><pre><span class="line">@implementation WLHomePageController </span></pre></td></tr><tr><td class="code"><pre><span class="line">#pragma mark - lifeCycle</span></pre></td></tr><tr><td class="code"><pre><span class="line">- (void)viewDidLoad </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#123; </span></pre></td></tr><tr><td class="code"><pre><span class="line">	[super viewDidLoad];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">	*&#x2F;&#x2F; 设置导航控制器的代理为self </span></pre></td></tr><tr><td class="code"><pre><span class="line">	self.navigationController.delegate &#x3D; self; </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125; </span></pre></td></tr><tr><td class="code"><pre><span class="line">#pragma mark - UINavigationControllerDelegate *&#x2F;&#x2F; 将要显示控制器* </span></pre></td></tr><tr><td class="code"><pre><span class="line">- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#123; </span></pre></td></tr><tr><td class="code"><pre><span class="line">	*&#x2F;&#x2F; 判断要显示的控制器是否是自己</span></pre></td></tr><tr><td class="code"><pre><span class="line">	*BOOL isShowHomePage &#x3D; [viewController isKindOfClass:[self class]];</span></pre></td></tr><tr><td class="code"><pre><span class="line">	[self.navigationController setNavigationBarHidden:isShowHomePage animated:YES]; </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>App首页隐藏导航栏</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>iOS13以后使用自定义VC作为根视图</title>
+    <url>/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> iOS13以后不可以在Appdelegate里面创建根视图，只能在SceneDelegate中创建。</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>在iOS 13（及以后版本）上，SceneDelegate将负责AppDelegate的某些功能。 最重要的是，<em>window</em>（窗口）的概念已被<em>scene</em>（场景）的概念所代替。 一个应用程序可以具有不止一个场景，而一个场景现在可以作为您应用程序的用户界面和内容的载体（背景）。具体点就是Appdelegate中<code>windows</code>这个概念被转移到SceneDelegate中。导致之前的代码不在合适，但是可以强行改回</p>
+<h3 id="AppDelegate"><a href="#AppDelegate" class="headerlink" title="AppDelegate"></a>AppDelegate</h3><p>iOS13之前做根视图的方法:</p>
+<p>在AppDelegate中使用如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">UIViewController *vc &#x3D; [[UIViewController alloc] init];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">UINavigationController *na &#x3D; [[UINavigationController alloc] initWithRootViewController:vc];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">self.window.rootViewController &#x3D; na;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">self.window &#x3D; [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">self.window.backgroundColor &#x3D; [UIColor whiteColor];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">[self.window makeKeyAndVisible];</span></pre></td></tr></table></figure>
+
+<p>你可能对AppDelegate已经熟悉，他是iOS app的入口，<code>application(_:didFinishLaunchingWithOptions:)</code>是你的app启动后系统调用的第一个函数。</p>
+<p><code>AppDelegate</code>类实现了UIKit库中的<code>UIApplicationDelegate</code> 协议。而到了iOS13 <code>AppDelegate</code>的角色将会发生变化，后面我们会详细讨论。</p>
+<p>下面是你在iOS12中一般会在AppDelegate中做的事情：</p>
+<ul>
+<li>创建app的第一个view controller也就是 rootViewController</li>
+<li>配置并启动一些像日志记录和云服务之类的组件</li>
+<li>注册推送通知处理程序，并响应发送到app的推送通知</li>
+<li>响应应用程序生命周期事件，例如进入后台，恢复应用程序或退出应用程序（终止）</li>
+</ul>
+<p>在上面的代码中，我们创建一个ViewController,并将其放在navigation controller中。然后将其分配给UIWindow对象的rootViewController属性。 这个<code>window</code>对象是AppDelegate的属性，它是我们的应用的一个窗口。</p>
+<p>应用程序的<em>window</em>是一个重要的概念。 本质上，窗口就是应用程序，大多数iOS应用程序只有一个窗口。 它包含您应用的用户界面（UI），将事件调度到视图，并提供了一个主要背景层来显示您的应用内容。 从某种意义上说，“ Windows”的概念就是微软定义的窗口，而在iOS上，这个概念没有什么不同。 （谢谢，Xerox！）</p>
+<p>好了，下面让我们继续SceneDelegate。</p>
+<blockquote>
+<p>如果“窗口”的概念仍然不了解，请查看iPhone上的应用程序切换器。 双击Home键或从iPhone底部向上滑动，然后您会看到当前正在运行的应用程序的窗口。 这就是应用程序切换器。</p>
+</blockquote>
+<h3 id="SceneDelegate"><a href="#SceneDelegate" class="headerlink" title="SceneDelegate"></a>SceneDelegate</h3><p>在iOS 13（及以后版本）上，SceneDelegate将负责AppDelegate的某些功能。 最重要的是，<em>window</em>（窗口）的概念已被<em>scene</em>（场景）的概念所代替。 一个应用程序可以具有不止一个场景，而一个场景现在可以作为您应用程序的用户界面和内容的载体（背景）。</p>
+<p>尤其是一个具有多场景的App的概念很有趣，因为它使您可以在iOS和iPadOS上构建多窗口应用程序。 例如，文档编辑器App中的每个文本文档都可以有自己的场景。 用户还可以创建场景的副本，同时运行一个应用程序的多个实例（类似多开，就是分屏的概念，在general中有这个选项）。</p>
+<p>在Xcode 11中有三个地方可以明显地看到SceneDelegate的身影：</p>
+<ol>
+<li>现在，一个新的iOS项目会自动创建一个<code>SceneDelegate</code>类，其中包括我们熟悉的生命周期事件，例如active，resign和disconnect。</li>
+<li>AppDelegate类中多了两个与“scene sessions”相关的新方法：<code>application(_:configurationForConnecting:options:)</code> 和 <code>application(_:didDiscardSceneSessions:)</code></li>
+<li>Info.plist文件中提供了”Application Scene Manifest“配置项，用于配置App的场景，包括它们的场景配置名，delegate类名和storyboard</li>
+</ol>
+<p>让我们一次开看一看。</p>
+<h4 id="1、SceneDelegate-Class"><a href="#1、SceneDelegate-Class" class="headerlink" title="1、SceneDelegate Class"></a>1、SceneDelegate Class</h4><p>首先，SceneDelegate类：</p>
+<p><img src="/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-1@2x.png" alt="Root-1@2x"></p>
+<p>SceneDelegate的最重要的函数是：<code>scene(_:willConnectTo:options:)</code>。 在某种程度上，它与iOS 12上的 <code>application(_:didFinishLaunchingWithOptions:)</code> 函数的作用最相似。当将场景添加到app中时<code>scene(_:willConnectTo:options:)</code>函数会被调用的，因此这里是配置场景的最理想地方。 在上面的代码中，我们手动地设置了视图控制器堆栈，稍后会进行详细介绍。</p>
+<p>这里需要特别注意的是，“SceneDelegate”采用了协议模式，并且这个delegate通常会响应任何场景。 您使用一个Delegate来配置App中的所有场景。</p>
+<p><code>SceneDelegate</code> 还具有下面这些函数:</p>
+<ul>
+<li><code>sceneDidDisconnect(_:)</code> 当场景与app断开连接是调用（注意，以后它可能被重新连接）</li>
+<li><code>sceneDidBecomeActive(_:)</code> 当用户开始与场景进行交互（例如从应用切换器中选择场景）时，会调用</li>
+<li><code>sceneWillResignActive(_:)</code> 当用户停止与场景交互（例如通过切换器切换到另一个场景）时调用</li>
+<li><code>sceneWillEnterForeground(_:)</code> 当场景变成活动窗口时调用，即从后台状态变成开始或恢复状态</li>
+<li><code>sceneDidEnterBackground(_:)</code> 当场景进入后台时调用，即该应用已最小化但仍存活在后台中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">看到函数的对称性了吗？ Active&#x2F;inactive, background&#x2F;foreground, 和 “disconnect”. 。 这些是任何应用程序的典型生命周期事件。</span></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、AppDelegate中的Scene-Sessions"><a href="#2、AppDelegate中的Scene-Sessions" class="headerlink" title="2、AppDelegate中的Scene Sessions"></a>2、AppDelegate中的Scene Sessions</h4><p>在iOS13中AppDelegate中有两个管理Senen Session的代理函数。在您的应用创建scene（场景）后，“scene session”对象将跟踪与该场景相关的所有信息。</p>
+<p>这两个函数是:</p>
+<ul>
+<li><code>application(_:configurationForConnecting:options:)</code>, 会返回一个创建场景时需要的UISceneConfiguration对象</li>
+<li><code>application(_:didDiscardSceneSessions:)</code>, 当用户通过“应用切换器”关闭一个或多个场景时会被调用</li>
+</ul>
+<p>目前，SceneSession被用于指定场景，例如“外部显示” 或“ CarPlay” 。 它还可用于还原场景的状态，如果您想使用【状态还原】，SceneSession将非常有用。 状态还原允许您在应用启动之间保留并重新创建UI。 您还可以将用户信息存储到场景会话中，它是一个可以放入任何内容的字典。</p>
+<p><code>application(_:didDiscardSceneSessions:)</code>很简单。 当用户通过“应用程序切换器”关闭一个或多个场景时，即会调用该方法。 您可以在该函数中销毁场景所使用的资源，因为不会再需要它们。</p>
+<p>了解<code>application(_:didDiscardSceneSessions:)</code>与<code>sceneDidDisconnect（_ :)</code>的区别很重要，后者仅在场景断开连接时调用，不会被丢弃，它可能会重新连接。而<code>application（_：didDiscardSceneSessions：）</code>发生在使用【应用程序切换器】退出场景时。</p>
+<h4 id="3、Info-plist-中的Application-Scene-Manifest"><a href="#3、Info-plist-中的Application-Scene-Manifest" class="headerlink" title="3、Info.plist 中的Application Scene Manifest"></a>3、Info.plist 中的Application Scene Manifest</h4><p>您的应用支持的每个场景都需要在“Application Scene Manifest”（应用场景清单）中声明。 简而言之，清单列出了您的应用支持的每个场景。 大多数应用程序只有一个场景，但是您可以创建更多场景，例如用于响应推送通知或特定操作的特定场景。</p>
+<p>Application Scene Manifest清单是Info.plist文件的一项，都知道该文件包含App的配置信息。 Info.plist包含诸如App的名称，版本，支持的设备方向以及现在支持的不同场景等配置。</p>
+<p>请务必注意，您声明的是会话的“类型”，而不是会话实例。 您的应用程序可以支持一个场景，然后创建该场景的副本，来实现【多窗口】应用程序。</p>
+<p>下面看一下的 <code>Info.plist</code>中清单的一些配置:</p>
+<p><img src="/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-2@2x.png" alt="Root-2@2x"></p>
+<p>在红框内，您会看到Application Scene Manifest 这一条。 在它下面一条是Enable Multiple Windows，需要将其设置为“ YES”以支持多个窗口。 再往下<em>Application Session Role</em>的值是一个数组，用于在应用程序中声明场景。 你也可以在数组中添加一条【外部屏幕】的场景声明。</p>
+<p>最重要的信息保存在<em>Application Session Role</em>数组中。 从中我们可以看到以下内容：</p>
+<ul>
+<li>Configuration的名称，必须是唯一的</li>
+<li>场景的代理类名，通常为<code>SceneDelegate</code>。</li>
+<li>场景用于创建初始UI的storyboard名称</li>
+</ul>
+<p>Storyboard名称这一项可能使您想起<em>Main Interface</em>设置，该设置可以在Xcode 12项目的Project Properties配置中找到。 现在，在iOS应用中，你可以在此处设置或更改主Storyboard名称。</p>
+<p>AppDelegate中的SceneDelegate、UISceneSession和Application Scene Manifest是如何一起创建多窗口应用的呢？</p>
+<ul>
+<li>首先，我们看<code>SceneDelegate</code>类。 它管理场景的生命周期，处理各种响应，诸如 <code>sceneDidBecomeActive(_:)</code> and <code>sceneDidEnterBackground(_:)</code>之类的事件。</li>
+<li>然后，我们再看看<code>AppDelegate</code>类中的新函数。 它管理场景会话（scene sessions），提供场景的配置数据，并响应用户丢弃场景的事件。</li>
+<li>最后，我们看了一下<em>Application Scene Manifest</em>。 它列出了您的应用程序支持的场景，并将它们连接到delegate类并初始化storyboard。</li>
+</ul>
+<h3 id="在SwiftUI和OC中如何使用Scene-Delegate"><a href="#在SwiftUI和OC中如何使用Scene-Delegate" class="headerlink" title="在SwiftUI和OC中如何使用Scene Delegate"></a>在SwiftUI和OC中如何使用Scene Delegate</h3><p>首先，SwiftUI项目中“<em>Application Scene Manifest</em> ”将长这样：</p>
+<p><img src="/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-2@2x.png" alt="Root-2@2x"></p>
+<p>特别注意，配置中没有设置“Storyboard Name”这一项。 请记住，如果要支持多个窗口，则需要将<em>Enable Multiple Windows</em>设置为<code>YES</code>。</p>
+<p>我们将跳过“ AppDelegate”，因为它相当标准。在SwiftUI项目中，只会返回“true”。</p>
+<p>接下来是<code>SceneDelegate</code>类。 正如我们之前讨论的，SceneDelegate负责设置您应用中的场景，以及设置首个页面。</p>
+<p>像下面一样:</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SceneDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIWindowSceneDelegate</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">var</span> window: <span class="type">UIWindow?</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">scene</span><span class="params">(<span class="number">_</span> scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)</span></span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">let</span> contentView = <span class="type">ContentView</span>()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> windowScene = scene <span class="keyword">as</span>? <span class="type">UIWindowScene</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">let</span> window = <span class="type">UIWindow</span>(windowScene: windowScene)</span></pre></td></tr><tr><td class="code"><pre><span class="line">            window.rootViewController = <span class="type">UIHostingController</span>(rootView: contentView)</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">self</span>.window = window</span></pre></td></tr><tr><td class="code"><pre><span class="line">            window.makeKeyAndVisible()</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#x2F;&#x2F; Use this method to optionally configure and attach the UIWindow &#96;window&#96; to the provided UIWindowScene &#96;scene&#96;.</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#x2F;&#x2F; If using a storyboard, the &#96;window&#96; property will automatically be initialized and attached to the scene.</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#x2F;&#x2F; This delegate does not imply the connecting scene or session are new (see &#96;application:configurationForConnectingSceneSession&#96; instead).   </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  UIViewController *vc &#x3D; [[UIViewController alloc] init];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  UINavigationController *na &#x3D; [[UINavigationController alloc] initWithRootViewController:vc];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  self.window.rootViewController &#x3D; na;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  UIWindowScene *windowScene &#x3D; (UIWindowScene *)scene;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  self.window &#x3D; [[UIWindow alloc] initWithWindowScene:windowScene];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  self.window.frame &#x3D; windowScene.coordinateSpace.bounds;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  self.window.backgroundColor &#x3D; [UIColor whiteColor];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  [self.window makeKeyAndVisible];</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>首先，必须明确的是 在将新场景添加到应用中后 会调用<code>scene(_：willConnectTo：options：)</code>代理函数。 它提供了一个<code>scene</code>对象（和一个session）。 这个“UIWindowScene”对象是由应用创建的，您无需进行其他操作。</li>
+<li>其次，<code>window</code>属性会在这里用到。 App仍然使用“ UIWindow”对象，但现在它们已成为scene（场景）的一部分。 在<code>if let</code>代码块中，您可以清楚地看到如何使用<em>scene</em>来初始化UIWindow对象的。</li>
+<li>然后是设置window的rootViewController，将<code>window</code>实例分配给了场景的<code>window</code>属性，并且设置窗口<code>makeKeyAndVisible</code>为true，即将该窗口置于App的前面。</li>
+<li>接着为SwiftUI项目创建了ContentView实例，并通过使用UIHostingController将其添加为根视图控制器。 该控制器用于将基于SwiftUI的视图显示在屏幕上。</li>
+<li>最后但并非不重要的一点，值得注意的是，UIScene的实例化对象scene实际上是UIWindowScene类型的对象。 这就是<code>as?</code>对可选类型转换的原因。 （到目前为止，已创建的场景通常为“ UIWindowScene”类型，但我猜想将来还会看到更多类型的场景。）</li>
+</ul>
+<p>所有这些看起来似乎很复杂，但是从高层次的概述来看，这很简单：</p>
+<ul>
+<li><p>当<code>scene（_：willConnectTo：options：）</code>被调用时，SceneDelegate会在正确的时间配置场景。</p>
+</li>
+<li><p>AppDelegate和Manifest的默认配置，他们没有涉及storyboard的任何东西。</p>
+</li>
+<li><p><code>scene（_：willConnectTo：options :)</code>函数内，创建一个SwiftUI视图，将其放置在托管控制器中，然后将控制器分配给window属性的根视图控制器，并将该窗口放置在应用程序UI的前面 。</p>
+<p>使用SceneDelegate的核心是将一些代码从AppDelegate移至到SceneDelegate中，并正确配置 Application Scene Manifest 。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>创建根视图的解决方案以及原因</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>解决cocoapods更新的一些小问题</title>
+    <url>/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 长时间没用使用cocoapods会遇见一些小问题，主要解决源，证书等问题。</p>
+ <a id="more"></a>
+</blockquote>
+<h2 id="一、证书问题"><a href="#一、证书问题" class="headerlink" title="一、证书问题"></a>一、证书问题</h2><p>最近升级cocoapods中发现在更新ruby镜像源的时候遇见ssl证书链接错误的情况,</p>
+<p><code>https://gems.ruby-china.org/</code>已经访问不了,需要替换新的镜像。</p>
+<p>步骤：</p>
+<h3 id="1、首先将查看自己的镜像"><a href="#1、首先将查看自己的镜像" class="headerlink" title="1、首先将查看自己的镜像"></a>1、首先将查看自己的镜像</h3><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">`gem sources -l`</span></pre></td></tr></table></figure>
+
+<h3 id="2、再将之前的镜像删除"><a href="#2、再将之前的镜像删除" class="headerlink" title="2、再将之前的镜像删除"></a>2、再将之前的镜像删除</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gem sources --remove https:&#x2F;&#x2F;gems.ruby-china.org&#x2F;</span></pre></td></tr></table></figure>
+
+<h3 id="3、添加新的源路径"><a href="#3、添加新的源路径" class="headerlink" title="3、添加新的源路径"></a>3、添加新的源路径</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gem sources --add https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span></pre></td></tr></table></figure>
+
+<p><strong>这个时候开始报错ssl证书错误</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR: SSL verification error at depth 1: unable to get local issuer certificate (20)</span></pre></td></tr><tr><td class="code"><pre><span class="line">ERROR: You must add &#x2F;O&#x3D;Digital Signature Trust Co.&#x2F;CN&#x3D;DST Root CA X3 to your local trusted store</span></pre></td></tr><tr><td class="code"><pre><span class="line">Error fetching https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;:</span></pre></td></tr><tr><td class="code"><pre><span class="line">SSL_connect returned&#x3D;1 errno&#x3D;0 state&#x3D;error: certificate verify failed (https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;specs.4.8.gz)</span></pre></td></tr></table></figure>
+
+<h3 id="4、这时候需要检查自己的OpenSSL正式是否过期"><a href="#4、这时候需要检查自己的OpenSSL正式是否过期" class="headerlink" title="4、这时候需要检查自己的OpenSSL正式是否过期"></a>4、这时候需要检查自己的OpenSSL正式是否过期</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rvm osx-ssl-certs</span></pre></td></tr></table></figure>
+
+<p>效果:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Certificates for ~&#x2F;Documents&#x2F;ssldir&#x2F;~&#x2F;Documents&#x2F;ssldir&#x2F;cert.pem: Old.</span></pre></td></tr></table></figure>
+
+<h3 id="5、这时候更新OpenSSL证书"><a href="#5、这时候更新OpenSSL证书" class="headerlink" title="5、这时候更新OpenSSL证书"></a>5、这时候更新OpenSSL证书</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rvm osx-ssl-certs update all</span></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Updating certificates for ~&#x2F;Documents&#x2F;ssldir&#x2F;~&#x2F;Documents&#x2F;ssldir&#x2F;cert.pem: Updating certificates in &#39;~&#x2F;Documents&#x2F;ssldir&#x2F;~&#x2F;Documents&#x2F;ssldir&#x2F;cert.pem&#39;.Updated.</span></pre></td></tr></table></figure>
+
+<h3 id="6、添加新的镜像源"><a href="#6、添加新的镜像源" class="headerlink" title="6、添加新的镜像源"></a>6、添加新的镜像源</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gem sources --add https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span></pre></td></tr><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;gems.ruby-china.com&#x2F; added to sources</span></pre></td></tr></table></figure>
+
+<h3 id="7、再次检查"><a href="#7、再次检查" class="headerlink" title="7、再次检查"></a>7、再次检查</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gem sources -l</span></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*** CURRENT SOURCES ***</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span></pre></td></tr></table></figure>
+
+<h2 id="二、可能会出现的问题"><a href="#二、可能会出现的问题" class="headerlink" title="二、可能会出现的问题"></a>二、可能会出现的问题</h2><h3 id="1、可能会出现"><a href="#1、可能会出现" class="headerlink" title="1、可能会出现"></a>1、可能会出现</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[!] Unable to find a pod with name, author, summary, or description matching &#96;afnet&#96;</span></pre></td></tr></table></figure>
+
+<p>pod setup成功后，依然不能pod search，是因为之前你执行pod search生成了search_index.json，此时需要删掉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm ~&#x2F;Library&#x2F;Caches&#x2F;CocoaPods&#x2F;search_index.json</span></pre></td></tr></table></figure>
+
+<h3 id="2、删除成功后，再执行"><a href="#2、删除成功后，再执行" class="headerlink" title="2、删除成功后，再执行"></a>2、删除成功后，再执行</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pod search afnetworking</span></pre></td></tr></table></figure>
+
+<h3 id="3、输出"><a href="#3、输出" class="headerlink" title="3、输出"></a>3、输出</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Creating search index for spec repo &#39;master&#39;..</span></pre></td></tr></table></figure>
+
+<h3 id="4、等待成功，成功之后输出"><a href="#4、等待成功，成功之后输出" class="headerlink" title="4、等待成功，成功之后输出"></a>4、等待成功，成功之后输出</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Creating search index for spec repo &#39;master&#39;.. Done!</span></pre></td></tr></table></figure>
+
+<p>然后会自动进入你搜索的第三方库。</p>
+<p>注意： 第三步可能会等待的时间比较长，请耐心等待。</p>
+<h2 id="三、cocoapods使用步骤"><a href="#三、cocoapods使用步骤" class="headerlink" title="三、cocoapods使用步骤"></a>三、cocoapods使用步骤</h2><h3 id="1、需要在工程中创建一个Podfile文件"><a href="#1、需要在工程中创建一个Podfile文件" class="headerlink" title="1、需要在工程中创建一个Podfile文件"></a>1、需要在工程中创建一个Podfile文件</h3><p>在以上可以搜索出相关库文件后，使用命令行创建工程相关文件</p>
+<p>使用命令：</p>
+<h4 id="1-1-进入工程目录，cd以后是工程路径"><a href="#1-1-进入工程目录，cd以后是工程路径" class="headerlink" title="1.1 进入工程目录，cd以后是工程路径"></a>1.1 进入工程目录，cd以后是工程路径</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lipixus-Pro:~ lipixu$ cd &#x2F;Users&#x2F;lipixu&#x2F;Desktop&#x2F;快点相关&#x2F;KoodPower</span></pre></td></tr></table></figure>
+
+<h4 id="1-2-创建Podfile文件"><a href="#1-2-创建Podfile文件" class="headerlink" title="1.2 创建Podfile文件"></a>1.2 创建Podfile文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ touch Podfile</span></pre></td></tr></table></figure>
+
+<p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-1@2x.png" alt="cocoapods-1@2x"></p>
+<h4 id="1-3-使用vim编辑Podfile文件，使用命令"><a href="#1-3-使用vim编辑Podfile文件，使用命令" class="headerlink" title="1.3 使用vim编辑Podfile文件，使用命令"></a>1.3 使用vim编辑Podfile文件，使用命令</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;$ vim Podfile&#96;</span></pre></td></tr></table></figure>
+
+
+<p>进入如下界面</p>
+<p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-2@2x.png" alt="cocoapods-2@2x"></p>
+<h4 id="1-4-编辑Podfile文件"><a href="#1-4-编辑Podfile文件" class="headerlink" title="1.4 编辑Podfile文件"></a>1.4 编辑Podfile文件</h4><p>然后紧接着按键盘上的“i”键，变成如下状态，这个时候可以对Podfile文件进行编辑：</p>
+<p>$platform:ios, ‘7.0‘</p>
+<p>$ pod ‘AFNetworking‘, ‘~&gt; 2.3.1‘</p>
+<p>在编辑完成后按“esc”，这是退出编辑状态。</p>
+<h4 id="1-5-退出并保存"><a href="#1-5-退出并保存" class="headerlink" title="1.5 退出并保存"></a>1.5 退出并保存</h4><p>在按“:”,这个时候输入wq,点击回车，保存并退出。</p>
+<p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-3@2x.png" alt="cocoapods-3@2x"></p>
+<h3 id="2、安装第三方库"><a href="#2、安装第三方库" class="headerlink" title="2、安装第三方库"></a>2、安装第三方库</h3><p>然后在终端输入命令安装相应的第三方类库：</p>
+<p>首次使用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$pod install</span></pre></td></tr></table></figure>
+
+<p>非首次使用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$pod update</span></pre></td></tr></table></figure>
+
+<h2 id="四、cocoapods安装中会遇见的一些小问题"><a href="#四、cocoapods安装中会遇见的一些小问题" class="headerlink" title="四、cocoapods安装中会遇见的一些小问题"></a>四、cocoapods安装中会遇见的一些小问题</h2><h3 id="1、正确的工程名"><a href="#1、正确的工程名" class="headerlink" title="1、正确的工程名"></a>1、正确的工程名</h3><h4 id="1-1-current-Xcode-Session"><a href="#1-1-current-Xcode-Session" class="headerlink" title="1.1 current Xcode Session"></a>1.1 current Xcode Session</h4><p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-5@2x.png" alt="cocoapods-5@2x"></p>
+<p>安装时出现如上图中警告时：</p>
+<p>或者如下图：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Could not automatically select an Xcode workspace. Specify one in your Podfile like so:</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    workspace &#39;path&#x2F;to&#x2F;Workspace.xcworkspace&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    xcodeproj &#39;path&#x2F;to&#x2F;Project.xcodeproj&#39;</span></pre></td></tr></table></figure>
+
+<p>解决方法：<br>在终端通过 <code>cd</code> 命令切换路径到 <code>Podfile</code> 文件所在目录</p>
+<p>编辑 <code>Podfile</code>：XXX为工程名，下面是自己引入的类库</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">target <span class="string">'XXX'</span> <span class="keyword">do</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt; 3.0'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">end</span></span></pre></td></tr></table></figure>
+
+<h4 id="1-2-错误的target"><a href="#1-2-错误的target" class="headerlink" title="1.2 错误的target"></a>1.2 错误的target</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">target &#39;XXX&#39; do</span></pre></td></tr><tr><td class="code"><pre><span class="line">pod &#39;AFNetworking&#39;, &#39;~&gt; 3.0&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">end</span></pre></td></tr></table></figure>
+
+
+<p>这个target和end都必要。</p>
+<h4 id="1-3-完整的Podfile示例"><a href="#1-3-完整的Podfile示例" class="headerlink" title="1.3 完整的Podfile示例"></a>1.3 完整的Podfile示例</h4><p><img src="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/cocoapods-4@2x.png" alt="cocoapods-4@2x"></p>
+<p>注意点：#表示是注释</p>
+<p>很多Podfile文件给Platform: ios, ‘9.0’ 打上注释（不知道为何），这里注意不可（会报警告）</p>
+<p>end必须有。</p>
+<h4 id="1-4-更新到最新版本的cocoapods"><a href="#1-4-更新到最新版本的cocoapods" class="headerlink" title="1.4 更新到最新版本的cocoapods"></a>1.4 更新到最新版本的cocoapods</h4><p>报错提示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">The &#96;master&#96; repo requires CocoaPods 0.18.1 - </span></pre></td></tr><tr><td class="code"><pre><span class="line">Update Cocoapods, or checkout the appropriate tag in the repo.</span></pre></td></tr></table></figure>
+
+<p>错误原因：没有更新到最新的Cocoapods版本</p>
+<p>解决方法：更新 CocoaPods ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;$ [sudo] gem update cocoapods</span></pre></td></tr></table></figure>
+
+<p>如果你想尝试一个预发布版本的CocoaPods可以运行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;$ [sudo] gem update cocoapods --pre&#96;</span></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-5-没有正确的依赖目标"><a href="#1-5-没有正确的依赖目标" class="headerlink" title="1.5 没有正确的依赖目标"></a>1.5 没有正确的依赖目标</h4><p>报错提示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">The dependency &#96;AFNetworking (~&gt; 3.1.0)&#96; is not used in any concrete target.</span></pre></td></tr></table></figure>
+
+<p>错误原因：第三方库找不到正确的安装目标</p>
+<p>解决方法：</p>
+<p>添加 <code>target名</code>，如下：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">target <span class="string">'XXX'</span>  <span class="keyword">do</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">pod <span class="string">'AFNetworking'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">end</span></span></pre></td></tr></table></figure>
+
+<p>其中XXX要换成当前 <code>target名</code>，最后不要忘记增加一个 <code>end</code> 结尾。</p>
+<p>然后重新进行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pod install</span></pre></td></tr></table></figure>
+
+<h4 id="1-6-错误使用了中文标点"><a href="#1-6-错误使用了中文标点" class="headerlink" title="1.6 错误使用了中文标点"></a>1.6 错误使用了中文标点</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">Your Podfile has had smart quotes sanitised. To avoid issues in the <span class="built_in">future</span>, you should <span class="keyword">not</span> use TextEdit <span class="keyword">for</span> editing it. If you are <span class="keyword">not</span> <span class="keyword">using</span> TextEdit, you should turn off smart quotes in your editor of choice.</span></pre></td></tr></table></figure>
+
+<p>大意就是你得 <code>Podfile</code> 文件里面有部分引号不合法，不要使用文本编辑。</p>
+<p>注意：<code>Podfile</code> 文件里面引号应该是 <strong><code>&#39;</code></strong>，而不是 <strong><code>‘</code></strong>。注意区分。</p>
+<p>1、不要使用文本编辑去编辑<code>Podfile</code>文件，使用<code>Xcode</code>编辑，或者使用终端敲命令去编辑。</p>
+<p>2、<code>Podfile</code> 的内容语法格式有问题。</p>
+]]></content>
+      <categories>
+        <category>cocoapods的使用</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java语言概述</title>
     <url>/2022/12/09/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<blockquote>
