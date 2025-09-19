@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="知道你在改变">
 <meta property="og:description" content="前言: 最近接到一个App上架的需求，但是我的系统版本以及Xcode版本都已经处于版本太低不支持的状态，在这里记录一下相关需要的资料">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-09-02T06:28:23.467Z">
+<meta property="og:updated_time" content="2025-09-05T00:53:55.267Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  917
+                  1.7k
                 </span>
               
 
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  8
                 </span>
               
             </div>
@@ -432,6 +432,64 @@
 <blockquote>
 <p><strong>2020年4月起App Store将不再接受使用UIWebView的新App上架、2020年12月起将不再接受使用UIWebView的App更新。</strong></p>
 </blockquote>
+<h2 id="1-4处理-rvm-安装-ruby-时报错-‘-rvm-make-j8"><a href="#1-4处理-rvm-安装-ruby-时报错-‘-rvm-make-j8" class="headerlink" title="1.4处理 rvm 安装 ruby 时报错 ‘__rvm_make -j8"></a>1.4处理 rvm 安装 ruby 时报错 ‘__rvm_make -j8</h2><p>在最新mac电脑安装cocoapods的时候出现报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Error installing cocoapods:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    The last version of securerandom (&gt;&#x3D; 0.3) to support your Ruby &amp; RubyGems was 0.3.2. Try installing it with &#96;gem install securerandom -v 0.3.2&#96; and then running the current command again</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    securerandom requires Ruby version &gt;&#x3D; 3.1.0. The current ruby version is 2.6.10.210.</span></pre></td></tr></table></figure>
+
+<p>这里的原因是ruby版本过低。解决办法就是升级ruby，我们这里通过rvm去升级ruby。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rvm install 3.4.2</span></pre></td></tr></table></figure>
+
+<p>然后报错</p>
+<blockquote>
+<p>_rvm_make -j8</p>
+</blockquote>
+<p>解决办法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">rvm install 3.4.2 --with-openssl-dir&#x3D;$(brew --prefix openssl@1.1)</span></pre></td></tr></table></figure>
+
+
+
+<p>然后有的方法需要homebrew，这个安装方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;HEAD&#x2F;install.sh)&quot;</span></pre></td></tr></table></figure>
+
+<p>验证：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo &#39;eval &quot;$(&#x2F;opt&#x2F;homebrew&#x2F;bin&#x2F;brew shellenv)&quot;&#39; &gt;&gt; ~&#x2F;.zshrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span></pre></td></tr></table></figure>
+
+<p>安装cocoapods</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo gem install -n &#x2F;usr&#x2F;local&#x2F;bin cocoapods -V</span></pre></td></tr></table></figure>
+
+<p>注意1：-V表示可以看见安装进度</p>
+<p>这一步经常会出现问题，卡住不动或者出错</p>
+<p>卡住不动：墙的原因</p>
+<p>解决办法，替换源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gem sources --remove https:&#x2F;&#x2F;rubygems.org&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">gem sources -a https:&#x2F;&#x2F;gems.ruby-china.com&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">（淘宝的Ruby镜像已经不更新了）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">查看是否替换成功</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">gem sources -l</span></pre></td></tr></table></figure>
+
+<p>安装仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod setup</span></pre></td></tr></table></figure>
+
+<p>拉取pod库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;CocoaPods&#x2F;Specs.git  ~&#x2F;.cocoapods&#x2F;repos&#x2F;trunk</span></pre></td></tr></table></figure>
+
+<p>这里要是clone不成功的话需要替换中科院的镜像。</p>
+<p>检查</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod search AFNetworking</span></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-5-隐私清单的处理"><a href="#1-5-隐私清单的处理" class="headerlink" title="1.5 隐私清单的处理"></a>1.5 隐私清单的处理</h2><p>所有的三方都需要有隐私清单，常见的AFNetworking，SDWebImage，Sanpkit等常见三方都需要创建隐私清单，但是AFNetworking这些常使用的三方已经停止维护了。</p>
+<p>Xcode要求版本：Xcode15+以上。</p>
+<p>解决方案：</p>
+<p>在使用cocoapods后 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pod install</span></pre></td></tr></table></figure>
+
+<p>后手动创建隐私清单</p>
+<p>1、选中pods工程下SDWebImage文件夹</p>
+<p>2、Command+N创建如下文件：App Privacy</p>
+<p>3、下一步后，文件名不用更改，也不能更改，Targets：SDWebImage进行勾选。</p>
+<p>4、确认后，SDWebImage文件夹下会多出PrivacyInfo文件</p>
+<p>5、选中PrivacyInfo文件往里面添加隐私内容，内容如下，复制替换即可</p>
+<p>注意1、(本质上是一个plist文件，内容基本都一样)。</p>
+<p>注意2、每次pod install 都会覆盖掉创建的PrivacyInfo文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE plist PUBLIC &quot;-&#x2F;&#x2F;Apple&#x2F;&#x2F;DTD PLIST 1.0&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.apple.com&#x2F;DTDs&#x2F;PropertyList-1.0.dtd&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&lt;plist version&#x3D;&quot;1.0&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;dict&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &lt;key&gt;NSPrivacyCollectedDataTypes&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &lt;array&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &lt;dict&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            &lt;key&gt;NSPrivacyCollectedDataType&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            &lt;string&gt;NSPrivacyCollectedDataTypeUserID&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            &lt;key&gt;NSPrivacyCollectedDataTypeLinked&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            &lt;true&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">            &lt;key&gt;NSPrivacyCollectedDataTypeTracking&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">            &lt;false&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">            &lt;key&gt;NSPrivacyCollectedDataTypePurposes&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">            &lt;array&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">                &lt;string&gt;Analytics&lt;&#x2F;string&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">            &lt;&#x2F;array&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        &lt;&#x2F;dict&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    &lt;&#x2F;array&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    &lt;key&gt;NSPrivacyTracking&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    &lt;false&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    &lt;key&gt;NSPrivacyTrackingDomains&lt;&#x2F;key&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    &lt;array&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;dict&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;plist&gt;</span></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -600,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、上架报错的第一条反馈"><span class="nav-number">2.</span> <span class="nav-text">一、上架报错的第一条反馈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1、处理各种隐私协议在工程的Info-plist文件中添加以下键值对"><span class="nav-number">2.1.</span> <span class="nav-text">1.1、处理各种隐私协议在工程的Info.plist文件中添加以下键值对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-低版本Xcode编译的文件在高版本中编译不通过"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 低版本Xcode编译的文件在高版本中编译不通过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-如果工程中还有UIWebView的使用的话会审核不通过"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 如果工程中还有UIWebView的使用的话会审核不通过</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、上架报错的第一条反馈"><span class="nav-number">2.</span> <span class="nav-text">一、上架报错的第一条反馈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1、处理各种隐私协议在工程的Info-plist文件中添加以下键值对"><span class="nav-number">2.1.</span> <span class="nav-text">1.1、处理各种隐私协议在工程的Info.plist文件中添加以下键值对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-低版本Xcode编译的文件在高版本中编译不通过"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 低版本Xcode编译的文件在高版本中编译不通过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-如果工程中还有UIWebView的使用的话会审核不通过"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 如果工程中还有UIWebView的使用的话会审核不通过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4处理-rvm-安装-ruby-时报错-‘-rvm-make-j8"><span class="nav-number">2.4.</span> <span class="nav-text">1.4处理 rvm 安装 ruby 时报错 ‘__rvm_make -j8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-隐私清单的处理"><span class="nav-number">2.5.</span> <span class="nav-text">1.5 隐私清单的处理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -637,7 +695,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.1k</span>
+    <span title="Site words total count">16.9k</span>
   
 </div>
 
@@ -666,7 +724,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共16.1k字</span>
+  <span class="post-count">博客全站共16.9k字</span>
 </div>
 
         
