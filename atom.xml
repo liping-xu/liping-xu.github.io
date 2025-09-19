@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2025-09-19T06:45:09.627Z</updated>
+  <updated>2025-09-19T04:11:09.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,25 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2025/09/19/test/"/>
-    <id>http://yoursite.com/2025/09/19/test/</id>
-    <published>2025-09-19T06:44:23.000Z</published>
-    <updated>2025-09-19T06:45:09.627Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p>新电脑迁移测试</p></blockquote><a id="more"></a><p>发布test</p>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言:&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言:&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;新电脑迁移测试&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>git多账号设置-github和gitee</title>
@@ -411,6 +392,26 @@
     
     
     <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客说明</title>
+    <link href="http://yoursite.com/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/"/>
+    <id>http://yoursite.com/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</id>
+    <published>2019-12-05T05:30:32.000Z</published>
+    <updated>2019-12-05T08:51:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。</p> <a id="more"></a></blockquote><p>搭建的过程就不多说了，网上随便找个教程跟着搭建就完事了，主要是记录自己的技术等经历。</p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言:&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言:&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt; 本人其实不太喜欢写博客，是因为一些工作原因吧，导致之前工作很多代码并不能发表在博客上面。后来自己打算出去找工作的时候，稍微牛逼一点的公司都需要提供自己的博客地址，而我没有，有些难点和做的笔记都写在有道笔记上面了，结果有道笔记坏了，之前的记录全没，有次面试的时候给人家看了一空白页，所以一生气之下就搭建了这个个人博客。&lt;/p&gt;&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="个人博客搭建原因" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%9F%E5%9B%A0/"/>
     
     
   </entry>
