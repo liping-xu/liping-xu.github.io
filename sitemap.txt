@@ -22,12 +22,12 @@ http://yoursite.com/2021/02/04/git%E4%B9%8B%E6%B8%85%E9%99%A4%E6%9C%AC%E5%9C%B0%
 http://yoursite.com/2019/12/05/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/
 http://yoursite.com/tags/index.html
 http://yoursite.com/
+http://yoursite.com/categories/Java%E5%85%A5%E9%97%A8/
 http://yoursite.com/categories/git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/
 http://yoursite.com/categories/iOS/
-http://yoursite.com/categories/Java%E5%85%A5%E9%97%A8/
 http://yoursite.com/categories/markDown%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/
-http://yoursite.com/categories/hexo%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%9B%B6%E7%A2%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/
 http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%9F%E5%9B%A0/
-http://yoursite.com/categories/%E6%AF%8F%E5%A4%A9%E9%81%97%E6%BC%8F/
+http://yoursite.com/categories/hexo%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%9B%B6%E7%A2%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/
 http://yoursite.com/categories/%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/
+http://yoursite.com/categories/%E6%AF%8F%E5%A4%A9%E9%81%97%E6%BC%8F/
 http://yoursite.com/categories/cocoapods%E7%9A%84%E4%BD%BF%E7%94%A8/
