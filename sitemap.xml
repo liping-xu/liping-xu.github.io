@@ -246,13 +246,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/hexo%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%9B%B6%E7%A2%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2025-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</loc>
     <lastmod>2025-09-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -260,7 +253,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/cocoapods%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://yoursite.com/categories/hexo%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%9B%B6%E7%A2%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
     <lastmod>2025-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -268,6 +261,13 @@
   
   <url>
     <loc>http://yoursite.com/categories/%E6%AF%8F%E5%A4%A9%E9%81%97%E6%BC%8F/</loc>
+    <lastmod>2025-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/cocoapods%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2025-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
