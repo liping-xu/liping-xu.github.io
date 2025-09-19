@@ -90,20 +90,18 @@
 
 
 
-<meta name="description" content="前言: iOS13以后不可以在Appdelegate里面创建根视图，只能在SceneDelegate中创建。">
+<meta name="description" content="前言: git需要从两个不同的网站（分别是github和gitee）仓库拉取代码库，这里拉取失败的原因就是因为账号SSH无法认证的问题，在此作个备忘。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS13以后使用自定义VC作为根视图">
-<meta property="og:url" content="http://yoursite.com/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/index.html">
+<meta property="og:title" content="git多账号设置-github和gitee">
+<meta property="og:url" content="http://yoursite.com/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/index.html">
 <meta property="og:site_name" content="知道你在改变">
-<meta property="og:description" content="前言: iOS13以后不可以在Appdelegate里面创建根视图，只能在SceneDelegate中创建。">
-<meta property="og:image" content="http://yoursite.com/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-1@2x.png">
-<meta property="og:image" content="http://yoursite.com/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-2@2x.png">
-<meta property="og:image" content="http://yoursite.com/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-2@2x.png">
-<meta property="article:published_time" content="2023-07-24T08:42:41.000Z">
-<meta property="article:modified_time" content="2025-09-19T02:44:40.000Z">
+<meta property="og:description" content="前言: git需要从两个不同的网站（分别是github和gitee）仓库拉取代码库，这里拉取失败的原因就是因为账号SSH无法认证的问题，在此作个备忘。">
+<meta property="og:image" content="http://yoursite.com/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/rsa.jpg">
+<meta property="article:published_time" content="2025-09-19T03:27:50.000Z">
+<meta property="article:modified_time" content="2025-09-19T04:11:09.000Z">
 <meta property="article:author" content="族战">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-1@2x.png">
+<meta name="twitter:image" content="http://yoursite.com/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/rsa.jpg">
 
 
 
@@ -133,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2023/07/24/iOS13以后使用自定义VC作为根视图/"/>
+  <link rel="canonical" href="http://yoursite.com/2025/09/19/git多账号设置-github和gitee/"/>
 
 
 
 
 
-  <title>iOS13以后使用自定义VC作为根视图 | 知道你在改变</title>
+  <title>git多账号设置-github和gitee | 知道你在改变</title>
   
 
 
@@ -300,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="族战">
@@ -317,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS13以后使用自定义VC作为根视图</h1>
+          <h1 class="post-title" itemprop="name headline">git多账号设置-github和gitee</h1>
         
 
         <div class="post-meta">
@@ -329,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-07-24T16:42:41+08:00">
-                2023-07-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2025-09-19T11:27:50+08:00">
+                2025-09-19
               </time>
             
 
@@ -352,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">git相关操作</span>
                   </a>
                 </span>
 
@@ -383,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k
+                  558
                 </span>
               
 
@@ -399,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  2
                 </span>
               
             </div>
@@ -421,113 +419,44 @@
 
       
         <blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> iOS13以后不可以在Appdelegate里面创建根视图，只能在SceneDelegate中创建。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言:"></a><strong>前言:</strong></h1><p> git需要从两个不同的网站（分别是github和gitee）仓库拉取代码库，这里拉取失败的原因就是因为账号SSH无法认证的问题，在此作个备忘。</p>
  <a id="more"></a>
 </blockquote>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>在iOS 13（及以后版本）上，SceneDelegate将负责AppDelegate的某些功能。 最重要的是，<em>window</em>（窗口）的概念已被<em>scene</em>（场景）的概念所代替。 一个应用程序可以具有不止一个场景，而一个场景现在可以作为您应用程序的用户界面和内容的载体（背景）。具体点就是Appdelegate中<code>windows</code>这个概念被转移到SceneDelegate中。导致之前的代码不在合适，但是可以强行改回</p>
-<h3 id="AppDelegate"><a href="#AppDelegate" class="headerlink" title="AppDelegate"></a>AppDelegate</h3><p>iOS13之前做根视图的方法:</p>
-<p>在AppDelegate中使用如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">UIViewController *vc &#x3D; [[UIViewController alloc] init];</span><br><span class="line"></span><br><span class="line">UINavigationController *na &#x3D; [[UINavigationController alloc] initWithRootViewController:vc];</span><br><span class="line"></span><br><span class="line">self.window.rootViewController &#x3D; na;</span><br><span class="line"></span><br><span class="line">self.window &#x3D; [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];</span><br><span class="line"></span><br><span class="line">self.window.backgroundColor &#x3D; [UIColor whiteColor];</span><br><span class="line"></span><br><span class="line">[self.window makeKeyAndVisible];</span><br></pre></td></tr></table></figure>
+<h1 id="一、生成密钥对"><a href="#一、生成密钥对" class="headerlink" title="一、生成密钥对"></a>一、生成密钥对</h1><p>所谓密钥对是本地git与github或gitee进行连接时使用的RSA非对称加密密钥对，即本地存储一个私钥，给予github或gitee一个公钥，这样每次提交的时候github或gitee都会比对公钥与私钥。比对成功即可正常使用github和gitee拉取代码或push代码。无需输入账号密码。</p>
+<p>1、生成github上的仓库密钥对，通过 -C 参数填写github的邮箱</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;365278654@qq.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>你可能对AppDelegate已经熟悉，他是iOS app的入口，<code>application(_:didFinishLaunchingWithOptions:)</code>是你的app启动后系统调用的第一个函数。</p>
-<p><code>AppDelegate</code>类实现了UIKit库中的<code>UIApplicationDelegate</code> 协议。而到了iOS13 <code>AppDelegate</code>的角色将会发生变化，后面我们会详细讨论。</p>
-<p>下面是你在iOS12中一般会在AppDelegate中做的事情：</p>
-<ul>
-<li>创建app的第一个view controller也就是 rootViewController</li>
-<li>配置并启动一些像日志记录和云服务之类的组件</li>
-<li>注册推送通知处理程序，并响应发送到app的推送通知</li>
-<li>响应应用程序生命周期事件，例如进入后台，恢复应用程序或退出应用程序（终止）</li>
-</ul>
-<p>在上面的代码中，我们创建一个ViewController,并将其放在navigation controller中。然后将其分配给UIWindow对象的rootViewController属性。 这个<code>window</code>对象是AppDelegate的属性，它是我们的应用的一个窗口。</p>
-<p>应用程序的<em>window</em>是一个重要的概念。 本质上，窗口就是应用程序，大多数iOS应用程序只有一个窗口。 它包含您应用的用户界面（UI），将事件调度到视图，并提供了一个主要背景层来显示您的应用内容。 从某种意义上说，“ Windows”的概念就是微软定义的窗口，而在iOS上，这个概念没有什么不同。 （谢谢，Xerox！）</p>
-<p>好了，下面让我们继续SceneDelegate。</p>
-<blockquote>
-<p>如果“窗口”的概念仍然不了解，请查看iPhone上的应用程序切换器。 双击Home键或从iPhone底部向上滑动，然后您会看到当前正在运行的应用程序的窗口。 这就是应用程序切换器。</p>
-</blockquote>
-<h3 id="SceneDelegate"><a href="#SceneDelegate" class="headerlink" title="SceneDelegate"></a>SceneDelegate</h3><p>在iOS 13（及以后版本）上，SceneDelegate将负责AppDelegate的某些功能。 最重要的是，<em>window</em>（窗口）的概念已被<em>scene</em>（场景）的概念所代替。 一个应用程序可以具有不止一个场景，而一个场景现在可以作为您应用程序的用户界面和内容的载体（背景）。</p>
-<p>尤其是一个具有多场景的App的概念很有趣，因为它使您可以在iOS和iPadOS上构建多窗口应用程序。 例如，文档编辑器App中的每个文本文档都可以有自己的场景。 用户还可以创建场景的副本，同时运行一个应用程序的多个实例（类似多开，就是分屏的概念，在general中有这个选项）。</p>
-<p>在Xcode 11中有三个地方可以明显地看到SceneDelegate的身影：</p>
-<ol>
-<li>现在，一个新的iOS项目会自动创建一个<code>SceneDelegate</code>类，其中包括我们熟悉的生命周期事件，例如active，resign和disconnect。</li>
-<li>AppDelegate类中多了两个与“scene sessions”相关的新方法：<code>application(_:configurationForConnecting:options:)</code> 和 <code>application(_:didDiscardSceneSessions:)</code></li>
-<li>Info.plist文件中提供了”Application Scene Manifest“配置项，用于配置App的场景，包括它们的场景配置名，delegate类名和storyboard</li>
-</ol>
-<p>让我们一次开看一看。</p>
-<h4 id="1、SceneDelegate-Class"><a href="#1、SceneDelegate-Class" class="headerlink" title="1、SceneDelegate Class"></a>1、SceneDelegate Class</h4><p>首先，SceneDelegate类：</p>
-<p><img src="/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-1@2x.png" alt="Root-1@2x"></p>
-<p>SceneDelegate的最重要的函数是：<code>scene(_:willConnectTo:options:)</code>。 在某种程度上，它与iOS 12上的 <code>application(_:didFinishLaunchingWithOptions:)</code> 函数的作用最相似。当将场景添加到app中时<code>scene(_:willConnectTo:options:)</code>函数会被调用的，因此这里是配置场景的最理想地方。 在上面的代码中，我们手动地设置了视图控制器堆栈，稍后会进行详细介绍。</p>
-<p>这里需要特别注意的是，“SceneDelegate”采用了协议模式，并且这个delegate通常会响应任何场景。 您使用一个Delegate来配置App中的所有场景。</p>
-<p><code>SceneDelegate</code> 还具有下面这些函数:</p>
-<ul>
-<li><code>sceneDidDisconnect(_:)</code> 当场景与app断开连接是调用（注意，以后它可能被重新连接）</li>
-<li><code>sceneDidBecomeActive(_:)</code> 当用户开始与场景进行交互（例如从应用切换器中选择场景）时，会调用</li>
-<li><code>sceneWillResignActive(_:)</code> 当用户停止与场景交互（例如通过切换器切换到另一个场景）时调用</li>
-<li><code>sceneWillEnterForeground(_:)</code> 当场景变成活动窗口时调用，即从后台状态变成开始或恢复状态</li>
-<li><code>sceneDidEnterBackground(_:)</code> 当场景进入后台时调用，即该应用已最小化但仍存活在后台中</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">看到函数的对称性了吗？ Active&#x2F;inactive, background&#x2F;foreground, 和 “disconnect”. 。 这些是任何应用程序的典型生命周期事件。</span><br></pre></td></tr></table></figure>
+<p>（需要三次回车，第二次回车可以修改名称）这里可以修改输出rsa的名字</p>
+<p>例如修改为id_xlp_github_rsa等。</p>
+<p>至此我生成了两套rsa文件如下<img src="/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/rsa.jpg" alt="rsa"></p>
+<p>pub中的内容就是公钥。</p>
+<h1 id="二、Github和Gitee的网页配置公钥"><a href="#二、Github和Gitee的网页配置公钥" class="headerlink" title="二、Github和Gitee的网页配置公钥"></a>二、Github和Gitee的网页配置公钥</h1><p> 获取公钥</p>
+<p>在命令行中</p>
+<p>cat ~/.ssh/id_xlp_github_rsa.pub</p>
+<p>将内容copy拷贝进入github和gitee的账户设置里面（这一步自行查找，就在账号的设置页面）。</p>
+<h1 id="三、Git本地配置私钥"><a href="#三、Git本地配置私钥" class="headerlink" title="三、Git本地配置私钥"></a>三、Git本地配置私钥</h1><p>使用下述代码添加本地私钥进本地Git。</p>
+<p>ssh-add ~/.ssh/id_xlp_github_rsa</p>
+<p>ssh-add ~/.ssh/id_xlp_gitee_rsa</p>
+<p>添加完毕后，可以通过以下命令进行验证</p>
+<p>ssh-add -l</p>
+<p>注意，我这里使用的mac配置就此结束，但是很多博客上说需要使用ssh的config文件，以下内容我没有进行操作，可参考</p>
+<p>编辑 ~/.ssh目录下的config文件，如果没有请创建，配置内容如下</p>
+<p>以下是sourcetree自动创建的config内容，可以模仿写下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    User liping-xu</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile &#x2F;Users&#x2F;mac&#x2F;.ssh&#x2F;liping-xu-GitHub</span><br><span class="line">    UseKeychain yes</span><br><span class="line">    AddKeysToAgent yes</span><br></pre></td></tr></table></figure>
+
+<p>gitee</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Host gitee.com</span><br><span class="line">    HostName gitee.com</span><br><span class="line">    User 许利平</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile &#x2F;Users&#x2F;mac&#x2F;.ssh&#x2F;id_xlp_gitee_rsa</span><br><span class="line">    UseKeychain yes</span><br><span class="line">    AddKeysToAgent yes</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="2、AppDelegate中的Scene-Sessions"><a href="#2、AppDelegate中的Scene-Sessions" class="headerlink" title="2、AppDelegate中的Scene Sessions"></a>2、AppDelegate中的Scene Sessions</h4><p>在iOS13中AppDelegate中有两个管理Senen Session的代理函数。在您的应用创建scene（场景）后，“scene session”对象将跟踪与该场景相关的所有信息。</p>
-<p>这两个函数是:</p>
-<ul>
-<li><code>application(_:configurationForConnecting:options:)</code>, 会返回一个创建场景时需要的UISceneConfiguration对象</li>
-<li><code>application(_:didDiscardSceneSessions:)</code>, 当用户通过“应用切换器”关闭一个或多个场景时会被调用</li>
-</ul>
-<p>目前，SceneSession被用于指定场景，例如“外部显示” 或“ CarPlay” 。 它还可用于还原场景的状态，如果您想使用【状态还原】，SceneSession将非常有用。 状态还原允许您在应用启动之间保留并重新创建UI。 您还可以将用户信息存储到场景会话中，它是一个可以放入任何内容的字典。</p>
-<p><code>application(_:didDiscardSceneSessions:)</code>很简单。 当用户通过“应用程序切换器”关闭一个或多个场景时，即会调用该方法。 您可以在该函数中销毁场景所使用的资源，因为不会再需要它们。</p>
-<p>了解<code>application(_:didDiscardSceneSessions:)</code>与<code>sceneDidDisconnect（_ :)</code>的区别很重要，后者仅在场景断开连接时调用，不会被丢弃，它可能会重新连接。而<code>application（_：didDiscardSceneSessions：）</code>发生在使用【应用程序切换器】退出场景时。</p>
-<h4 id="3、Info-plist-中的Application-Scene-Manifest"><a href="#3、Info-plist-中的Application-Scene-Manifest" class="headerlink" title="3、Info.plist 中的Application Scene Manifest"></a>3、Info.plist 中的Application Scene Manifest</h4><p>您的应用支持的每个场景都需要在“Application Scene Manifest”（应用场景清单）中声明。 简而言之，清单列出了您的应用支持的每个场景。 大多数应用程序只有一个场景，但是您可以创建更多场景，例如用于响应推送通知或特定操作的特定场景。</p>
-<p>Application Scene Manifest清单是Info.plist文件的一项，都知道该文件包含App的配置信息。 Info.plist包含诸如App的名称，版本，支持的设备方向以及现在支持的不同场景等配置。</p>
-<p>请务必注意，您声明的是会话的“类型”，而不是会话实例。 您的应用程序可以支持一个场景，然后创建该场景的副本，来实现【多窗口】应用程序。</p>
-<p>下面看一下的 <code>Info.plist</code>中清单的一些配置:</p>
-<p><img src="/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-2@2x.png" alt="Root-2@2x"></p>
-<p>在红框内，您会看到Application Scene Manifest 这一条。 在它下面一条是Enable Multiple Windows，需要将其设置为“ YES”以支持多个窗口。 再往下<em>Application Session Role</em>的值是一个数组，用于在应用程序中声明场景。 你也可以在数组中添加一条【外部屏幕】的场景声明。</p>
-<p>最重要的信息保存在<em>Application Session Role</em>数组中。 从中我们可以看到以下内容：</p>
-<ul>
-<li>Configuration的名称，必须是唯一的</li>
-<li>场景的代理类名，通常为<code>SceneDelegate</code>。</li>
-<li>场景用于创建初始UI的storyboard名称</li>
-</ul>
-<p>Storyboard名称这一项可能使您想起<em>Main Interface</em>设置，该设置可以在Xcode 12项目的Project Properties配置中找到。 现在，在iOS应用中，你可以在此处设置或更改主Storyboard名称。</p>
-<p>AppDelegate中的SceneDelegate、UISceneSession和Application Scene Manifest是如何一起创建多窗口应用的呢？</p>
-<ul>
-<li>首先，我们看<code>SceneDelegate</code>类。 它管理场景的生命周期，处理各种响应，诸如 <code>sceneDidBecomeActive(_:)</code> and <code>sceneDidEnterBackground(_:)</code>之类的事件。</li>
-<li>然后，我们再看看<code>AppDelegate</code>类中的新函数。 它管理场景会话（scene sessions），提供场景的配置数据，并响应用户丢弃场景的事件。</li>
-<li>最后，我们看了一下<em>Application Scene Manifest</em>。 它列出了您的应用程序支持的场景，并将它们连接到delegate类并初始化storyboard。</li>
-</ul>
-<h3 id="在SwiftUI和OC中如何使用Scene-Delegate"><a href="#在SwiftUI和OC中如何使用Scene-Delegate" class="headerlink" title="在SwiftUI和OC中如何使用Scene Delegate"></a>在SwiftUI和OC中如何使用Scene Delegate</h3><p>首先，SwiftUI项目中“<em>Application Scene Manifest</em> ”将长这样：</p>
-<p><img src="/2023/07/24/iOS13%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89VC%E4%BD%9C%E4%B8%BA%E6%A0%B9%E8%A7%86%E5%9B%BE/Root-2@2x.png" alt="Root-2@2x"></p>
-<p>特别注意，配置中没有设置“Storyboard Name”这一项。 请记住，如果要支持多个窗口，则需要将<em>Enable Multiple Windows</em>设置为<code>YES</code>。</p>
-<p>我们将跳过“ AppDelegate”，因为它相当标准。在SwiftUI项目中，只会返回“true”。</p>
-<p>接下来是<code>SceneDelegate</code>类。 正如我们之前讨论的，SceneDelegate负责设置您应用中的场景，以及设置首个页面。</p>
-<p>像下面一样:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SceneDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIWindowSceneDelegate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> window: <span class="type">UIWindow?</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">scene</span><span class="params">(<span class="number">_</span> scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> contentView = <span class="type">ContentView</span>()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> windowScene = scene <span class="keyword">as</span>? <span class="type">UIWindowScene</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> window = <span class="type">UIWindow</span>(windowScene: windowScene)</span><br><span class="line">            window.rootViewController = <span class="type">UIHostingController</span>(rootView: contentView)</span><br><span class="line">            <span class="keyword">self</span>.window = window</span><br><span class="line">            window.makeKeyAndVisible()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions &#123;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; Use this method to optionally configure and attach the UIWindow &#96;window&#96; to the provided UIWindowScene &#96;scene&#96;.</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; If using a storyboard, the &#96;window&#96; property will automatically be initialized and attached to the scene.</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; This delegate does not imply the connecting scene or session are new (see &#96;application:configurationForConnectingSceneSession&#96; instead).   </span><br><span class="line"></span><br><span class="line">  UIViewController *vc &#x3D; [[UIViewController alloc] init];</span><br><span class="line"></span><br><span class="line">  UINavigationController *na &#x3D; [[UINavigationController alloc] initWithRootViewController:vc];</span><br><span class="line"></span><br><span class="line">  self.window.rootViewController &#x3D; na;</span><br><span class="line"></span><br><span class="line">  UIWindowScene *windowScene &#x3D; (UIWindowScene *)scene;</span><br><span class="line"></span><br><span class="line">  self.window &#x3D; [[UIWindow alloc] initWithWindowScene:windowScene];</span><br><span class="line"></span><br><span class="line">  self.window.frame &#x3D; windowScene.coordinateSpace.bounds;</span><br><span class="line"></span><br><span class="line">  self.window.backgroundColor &#x3D; [UIColor whiteColor];</span><br><span class="line"></span><br><span class="line">  [self.window makeKeyAndVisible];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>首先，必须明确的是 在将新场景添加到应用中后 会调用<code>scene(_：willConnectTo：options：)</code>代理函数。 它提供了一个<code>scene</code>对象（和一个session）。 这个“UIWindowScene”对象是由应用创建的，您无需进行其他操作。</li>
-<li>其次，<code>window</code>属性会在这里用到。 App仍然使用“ UIWindow”对象，但现在它们已成为scene（场景）的一部分。 在<code>if let</code>代码块中，您可以清楚地看到如何使用<em>scene</em>来初始化UIWindow对象的。</li>
-<li>然后是设置window的rootViewController，将<code>window</code>实例分配给了场景的<code>window</code>属性，并且设置窗口<code>makeKeyAndVisible</code>为true，即将该窗口置于App的前面。</li>
-<li>接着为SwiftUI项目创建了ContentView实例，并通过使用UIHostingController将其添加为根视图控制器。 该控制器用于将基于SwiftUI的视图显示在屏幕上。</li>
-<li>最后但并非不重要的一点，值得注意的是，UIScene的实例化对象scene实际上是UIWindowScene类型的对象。 这就是<code>as?</code>对可选类型转换的原因。 （到目前为止，已创建的场景通常为“ UIWindowScene”类型，但我猜想将来还会看到更多类型的场景。）</li>
-</ul>
-<p>所有这些看起来似乎很复杂，但是从高层次的概述来看，这很简单：</p>
-<ul>
-<li><p>当<code>scene（_：willConnectTo：options：）</code>被调用时，SceneDelegate会在正确的时间配置场景。</p>
-</li>
-<li><p>AppDelegate和Manifest的默认配置，他们没有涉及storyboard的任何东西。</p>
-</li>
-<li><p><code>scene（_：willConnectTo：options :)</code>函数内，创建一个SwiftUI视图，将其放置在托管控制器中，然后将控制器分配给window属性的根视图控制器，并将该窗口放置在应用程序UI的前面 。</p>
-<p>使用SceneDelegate的核心是将一些代码从AppDelegate移至到SceneDelegate中，并正确配置 Application Scene Manifest 。</p>
-</li>
-</ul>
+<p>Host :仓库网站的别名，随意写</p>
+<p>HostName：仓库网站的域名</p>
+<p>User：仓库网站的用户名</p>
+<p>IdentityFile：私钥的绝对路径</p>
+<h1 id="四、测试链接"><a href="#四、测试链接" class="headerlink" title="四、测试链接"></a>四、测试链接</h1><p>可以使用ssh -T 命令检测配置的Host是否联通</p>
+<p>ssh -T github.com</p>
+<p>ssh -T gitee.com</p>
+<p>出现successfully的表示成功。</p>
 
       
     </div>
@@ -561,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/" rel="next" title="解决cocoapods更新的一些小问题">
-                <i class="fa fa-chevron-left"></i> 解决cocoapods更新的一些小问题
+              <a href="/2025/09/19/iOS-Xcode%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BB%A5%E5%8F%8A%E8%BF%81%E7%A7%BB/" rel="next" title="iOS Xcode自定义代码块以及迁移">
+                <i class="fa fa-chevron-left"></i> iOS Xcode自定义代码块以及迁移
               </a>
             
           </div>
@@ -571,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2023/07/24/iOS%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84%E6%96%B9%E6%B3%95/" rel="prev" title="iOS首页隐藏导航栏的方法">
-                iOS首页隐藏导航栏的方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2025/09/19/test/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -707,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">1.1.</span> <span class="nav-text">原因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AppDelegate"><span class="nav-number">1.1.1.</span> <span class="nav-text">AppDelegate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SceneDelegate"><span class="nav-number">1.1.2.</span> <span class="nav-text">SceneDelegate</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、SceneDelegate-Class"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1、SceneDelegate Class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、AppDelegate中的Scene-Sessions"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2、AppDelegate中的Scene Sessions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Info-plist-中的Application-Scene-Manifest"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">3、Info.plist 中的Application Scene Manifest</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在SwiftUI和OC中如何使用Scene-Delegate"><span class="nav-number">1.1.3.</span> <span class="nav-text">在SwiftUI和OC中如何使用Scene Delegate</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、生成密钥对"><span class="nav-number">2.</span> <span class="nav-text">一、生成密钥对</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Github和Gitee的网页配置公钥"><span class="nav-number">3.</span> <span class="nav-text">二、Github和Gitee的网页配置公钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Git本地配置私钥"><span class="nav-number">4.</span> <span class="nav-text">三、Git本地配置私钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、测试链接"><span class="nav-number">5.</span> <span class="nav-text">四、测试链接</span></a></li></ol></div>
             
 
           </div>
