@@ -98,7 +98,7 @@
 <meta property="og:description" content="前言: git需要从两个不同的网站（分别是github和gitee）仓库拉取代码库，这里拉取失败的原因就是因为账号SSH无法认证的问题，在此作个备忘。">
 <meta property="og:image" content="http://yoursite.com/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/rsa.jpg">
 <meta property="article:published_time" content="2025-09-19T03:27:50.000Z">
-<meta property="article:modified_time" content="2025-09-19T04:11:09.000Z">
+<meta property="article:modified_time" content="2025-10-18T03:06:22.384Z">
 <meta property="article:author" content="族战">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/rsa.jpg">
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  558
+                  582
                 </span>
               
 
@@ -434,7 +434,7 @@
 <p>在命令行中</p>
 <p>cat ~/.ssh/id_xlp_github_rsa.pub</p>
 <p>将内容copy拷贝进入github和gitee的账户设置里面（这一步自行查找，就在账号的设置页面）。</p>
-<h1 id="三、Git本地配置私钥"><a href="#三、Git本地配置私钥" class="headerlink" title="三、Git本地配置私钥"></a>三、Git本地配置私钥</h1><p>使用下述代码添加本地私钥进本地Git。</p>
+<h1 id="三、Git本地配置私钥"><a href="#三、Git本地配置私钥" class="headerlink" title="三、Git本地配置私钥"></a>三、Git本地配置私钥</h1><p>使用下述代码添加本地私钥进本地Git。(一般长时间不上传代码后出现验证问题进行这一步即可)</p>
 <p>ssh-add ~/.ssh/id_xlp_github_rsa</p>
 <p>ssh-add ~/.ssh/id_xlp_gitee_rsa</p>
 <p>添加完毕后，可以通过以下命令进行验证</p>
@@ -499,6 +499,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2025/10/16/%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%8C%E5%A6%82%E4%BD%95%E5%BC%95%E5%85%A5CommonFile/" rel="prev" title="新建项目的步骤，如何引入CommonFile">
+                新建项目的步骤，如何引入CommonFile <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -579,7 +583,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -669,7 +673,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.8k</span>
+    <span title="Site words total count">20.2k</span>
   
 </div>
 
@@ -698,7 +702,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共17.8k字</span>
+  <span class="post-count">博客全站共20.2k字</span>
 </div>
 
         

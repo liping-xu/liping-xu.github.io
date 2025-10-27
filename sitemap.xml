@@ -2,9 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2025/10/18/iOS%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2025-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2025/09/19/git%E5%A4%9A%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE-github%E5%92%8Cgitee/</loc>
     
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2025/10/16/%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%8C%E5%A6%82%E4%BD%95%E5%BC%95%E5%85%A5CommonFile/</loc>
+    
+    <lastmod>2025-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2025-10-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -77,15 +104,6 @@
     <loc>http://yoursite.com/2023/07/25/iOS%E5%90%AF%E5%8A%A8%E5%9B%BE%E5%92%8C%E5%9B%BE%E6%A0%87%E9%80%82%E9%85%8D/</loc>
     
     <lastmod>2023-07-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2023/07/18/%E8%A7%A3%E5%86%B3cocoapods%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,7 +220,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -212,63 +230,63 @@
   
   <url>
     <loc>http://yoursite.com/categories/git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/Java%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/iOS/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/markDown%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2025-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%9F%E5%9B%A0/</loc>
-    <lastmod>2025-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/hexo%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%9B%B6%E7%A2%8E%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%9F%E5%9B%A0/</loc>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/%E6%AF%8F%E5%A4%A9%E9%81%97%E6%BC%8F/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/cocoapods%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
